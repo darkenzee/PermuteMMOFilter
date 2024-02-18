@@ -1,0 +1,9 @@
+* B1|B1|S2|S2|S3|B1|B1                  >>>       Spawn1 = NOT αlpha - Turtwig
+Shiny: ★ - Shiny Rolls:  20
+PID: A2B949C3
+EC: 1C6FA316
+IVs: 28/24/9/5/28/3
+Gender:  (M)
+Nature: Modest
+Level: 1
+Height: 107 | Weight: 230 -- Skittish: Multi scaring!
