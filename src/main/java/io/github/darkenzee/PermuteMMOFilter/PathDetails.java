@@ -247,7 +247,14 @@ public class PathDetails {
 		return fullPathLength;
 	}
 
-	public Boolean isAlpha() {
+	public boolean isAlpha() {
+		if (alpha == null) {
+			if (isCompactFormat()) {
+				alpha = getOriginalText().contains("α-");
+			} else {
+				alpha = !getOriginalText().contains("NOT αlpha");
+			}
+		}
 		return alpha;
 	}
 
