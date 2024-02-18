@@ -1,0 +1,9 @@
+* -> -> -> -> -> -> A4                  >>> Bonus Spawn4 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:   1
+PID: 01BED142
+EC: 3C7919CF
+IVs: 31/31/10/21/31/31
+Gender:  (M)
+Nature: Quiet
+Level: 75
+Height: 255 | Weight: 255 -- Skittish: Multi scaring! ~~ Chain result!

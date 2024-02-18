@@ -1,0 +1,9 @@
+* A1|A1|A1|A1|A1|A1|A1|A1|A1|A1|A1|A1|A1 >>>       Spawn1 = αlpha - Eevee
+Shiny: 
+PID: B895158D
+EC: 3A74620B
+IVs: 5/31/31/31/11/23
+Gender:  (M)
+Nature: Naive
+Level: 18
+Height: 255 | Weight: 255 -- Single advances!

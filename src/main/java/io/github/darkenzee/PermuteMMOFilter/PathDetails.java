@@ -70,12 +70,13 @@ public class PathDetails {
 		return path;
 	}
 
-	private static Pattern SPECIES_PATTERN_COMPACT = Pattern.compile("^\\*.* =\\s*(\\S+) ", PATTERN_FLAGS);
+	private static Pattern SPECIES_PATTERN_COMPACT = Pattern.compile("^\\*.* =\\s*(?:α-)?(\\S+)[ :]", PATTERN_FLAGS);
 	private static Pattern SPECIES_PATTERN_FULL = Pattern.compile("^\\*.* - (\\S+)$", PATTERN_FLAGS);
 
 	public String getSpecies() {
 		if (species == null) {
-			species = applyPattern(isCompactFormat() ? SPECIES_PATTERN_COMPACT : SPECIES_PATTERN_FULL, "Could not identify species in input text");
+			species = applyPattern(isCompactFormat() ? SPECIES_PATTERN_COMPACT : SPECIES_PATTERN_FULL,
+					"Could not identify species in input text");
 		}
 		return species;
 	}
@@ -90,14 +91,14 @@ public class PathDetails {
 	}
 
 	private static Pattern EC_PATTERN = simplePropertyPattern("EC");
-	
+
 	public String getEc() {
 		if (ec == null) {
 			ec = applyPattern(EC_PATTERN);
 		}
 		return ec;
 	}
-	
+
 	private static Pattern IVS_PATTERN_COMPACT = Pattern.compile("((?:\\d+\\/){5}\\d+)", PATTERN_FLAGS);
 	private static Pattern IVS_PATTERN_FULL = simplePropertyPattern("IVs");
 
@@ -110,46 +111,139 @@ public class PathDetails {
 
 	private static Pattern NATURE_PATTERN_COMPACT = Pattern.compile("(?:(?:\\d+\\/){5}\\d+)\\s+(\\S+)", PATTERN_FLAGS);
 	private static Pattern NATURE_PATTERN_FULL = simplePropertyPattern("Nature");
+
 	public PokemonNature getNature() {
 		if (nature == null) {
-			nature = PokemonNature.valueOf(applyPattern(isCompactFormat() ? NATURE_PATTERN_COMPACT : NATURE_PATTERN_FULL, "Could not identify nature in input text"));
+			nature = PokemonNature
+					.valueOf(applyPattern(isCompactFormat() ? NATURE_PATTERN_COMPACT : NATURE_PATTERN_FULL,
+							"Could not identify nature in input text"));
 		}
 		return nature;
 	}
 
+	private static Pattern GENDER_PATTERN = Pattern.compile("\\(([FM])\\)", PATTERN_FLAGS);
+
 	public PokemonGender getGender() {
+		if (gender == null) {
+			String genderStr = applyPattern(GENDER_PATTERN);
+			switch (genderStr) {
+			case "F":
+				gender = PokemonGender.Female;
+				break;
+			case "M":
+				gender = PokemonGender.Male;
+				break;
+			default:
+				gender = PokemonGender.Genderless;
+			}
+		}
 		return gender;
 	}
 
+	private static Pattern SHINY_PATTERN_COMPACT = Pattern.compile(" ([■*]) ", PATTERN_FLAGS);
+	private static Pattern SHINY_PATTERN_FULL = simplePropertyPattern("Shiny");
+
 	public ShinyType getShinyType() {
+		//★■*
+		if (shinyType == null) {
+			String shinyStr = applyPattern(isCompactFormat() ? SHINY_PATTERN_COMPACT : SHINY_PATTERN_FULL);
+			switch (shinyStr) {
+			case "★":
+			case "*":
+				shinyType = ShinyType.Star;
+				break;
+			case "■":
+				shinyType = ShinyType.Square;
+				break;
+			default:
+				shinyType = ShinyType.Not;
+			}
+		}
 		return shinyType;
 	}
 
-	public Integer getSpawn() {
+	private static Pattern SPAWN_PATTERN = Pattern.compile("Spawn(\\d)", PATTERN_FLAGS);
+	
+	public int getSpawn() {
+		if (spawn == null) {
+			spawn = Integer.valueOf(applyPattern(SPAWN_PATTERN, "Could not identify spawn number in input text"));
+		}
 		return spawn;
 	}
+	
+	private static Pattern SHINY_ROLLS_PATTERN_COMPACT = Pattern.compile(":\\s+(\\d+)\\s", PATTERN_FLAGS);
+	private static Pattern SHINY_ROLLS_PATTERN_FULL = simplePropertyPattern("Shiny Rolls");
 
-	public Integer getShinyRolls() {
+	public int getShinyRolls() {
+		if (shinyRolls == null) {
+			if (getShinyType() == ShinyType.Not) {
+				shinyRolls = -1;
+			} else {
+				shinyRolls = Integer.valueOf(applyPattern(isCompactFormat() ? SHINY_ROLLS_PATTERN_COMPACT : SHINY_ROLLS_PATTERN_FULL));
+			}
+		}
 		return shinyRolls;
 	}
 
-	public Integer getLevel() {
+	private static Pattern LEVEL_PATTERN = simplePropertyPattern("Level");
+	
+	public int getLevel() {
+		if (level == null) {
+			String levelStr = applyPattern(LEVEL_PATTERN);
+			switch (levelStr) {
+			case "Unknown":
+				level = -1;
+				break;
+			default:
+				level = Integer.valueOf(levelStr);
+			}
+		}
 		return level;
 	}
 
-	public Integer getHeight() {
+	private static Pattern HEIGHT_PATTERN = simplePropertyPattern("Height");
+	
+	public int getHeight() {
+		if (height == null) {
+			String heightStr = applyPattern(HEIGHT_PATTERN);
+			switch (heightStr) {
+			case "Unknown":
+				height = -1;
+				break;
+			default:
+				height = Integer.valueOf(heightStr);
+			}
+		}
 		return height;
 	}
 
-	public Integer getWeight() {
+	private static Pattern WEIGHT_PATTERN = simplePropertyPattern("Weight");
+	
+	public int getWeight() {
+		if (weight == null) {
+			String weightStr = applyPattern(WEIGHT_PATTERN);
+			switch (weightStr) {
+			case "Unknown":
+				weight = -1;
+				break;
+			default:
+				weight = Integer.valueOf(weightStr);
+			}
+		}
 		return weight;
 	}
 
-	public Integer getChainParentPathLength() {
+	public int getChainParentPathLength() {
+		if (chainParentPathLength == null) {
+			chainParentPathLength = getFullPathLength() - getPath().replaceAll("-> ", "").split("[|]").length;
+		}
 		return chainParentPathLength;
 	}
 
-	public Integer getFullPathLength() {
+	public int getFullPathLength() {
+		if (fullPathLength == null) {
+			fullPathLength = getPath().split("[| ]").length;
+		}
 		return fullPathLength;
 	}
 
@@ -213,7 +307,7 @@ public class PathDetails {
 	private String applyPattern(Pattern p) {
 		return applyPattern(p, null);
 	}
-	
+
 	private String applyPattern(Pattern p, String errorOnFindFail) {
 		Matcher m = p.matcher(getOriginalText());
 		if (m.find()) {

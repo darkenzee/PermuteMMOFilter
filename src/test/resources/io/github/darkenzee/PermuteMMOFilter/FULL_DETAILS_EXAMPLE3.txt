@@ -1,0 +1,9 @@
+* A3|A2|G1|G1|CR|A2                     >>> Bonus Spawn1 = NOT αlpha - Bronzong
+Shiny: ■ - Shiny Rolls:   2
+PID: 8599C256
+EC: DCA4B46E
+IVs: 31/31/6/31/3/13
+Gender: 
+Nature: Relaxed
+Level: 64
+Height: 173 | Weight: 116
