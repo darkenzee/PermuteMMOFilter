@@ -1,4 +1,4 @@
-package io.github.darkenzee.PermuteMMOFilter;
+package io.github.darkenzee.PermuteMMOFilter.parser;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -18,6 +18,10 @@ import java.util.regex.Pattern;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+
+import io.github.darkenzee.PermuteMMOFilter.types.PokemonGender;
+import io.github.darkenzee.PermuteMMOFilter.types.PokemonNature;
+import io.github.darkenzee.PermuteMMOFilter.types.ShinyType;
 
 public class PathDetails {
 
@@ -400,8 +404,6 @@ public class PathDetails {
 								currentChainParent = next;
 							}
 						}
-					} else {
-						currentChainParent = null;
 					}
 				}
 				builder.setLength(0);
