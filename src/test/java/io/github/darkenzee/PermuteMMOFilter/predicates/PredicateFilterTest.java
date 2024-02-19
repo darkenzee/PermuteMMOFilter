@@ -11,13 +11,14 @@ import java.util.List;
 import org.junit.Test;
 
 import io.github.darkenzee.PermuteMMOFilter.parser.PathDetails;
+import io.github.darkenzee.PermuteMMOFilter.parser.PathDetailsParser;
 import io.github.darkenzee.PermuteMMOFilter.types.PokemonGender;
 
 public class PredicateFilterTest {
 
 	@Test
 	public void testSomeFilters() throws FileNotFoundException, IOException {
-		List<PathDetails> paths = PathDetails.loadFromFile(new File("src/test/resources/io/github/darkenzee/PermuteMMOFilter/PermuteMMO_8745357205966506115.txt"));
+		List<PathDetails> paths = PathDetailsParser.loadFromFile(new File("src/test/resources/io/github/darkenzee/PermuteMMOFilter/PermuteMMO_8745357205966506115.txt"));
 		assertEquals(37655, paths.size());
 		
 		List<IPredicate> predicates = new ArrayList<>();
@@ -26,6 +27,6 @@ public class PredicateFilterTest {
 		assertEquals(37655, underTest.applyFilters(paths).size());
 		
 		predicates.add(d -> d.getGender() == PokemonGender.Female);
-		assertEquals(37655, underTest.applyFilters(paths).size());
+		assertEquals(14620, underTest.applyFilters(paths).size());
 	}
 }

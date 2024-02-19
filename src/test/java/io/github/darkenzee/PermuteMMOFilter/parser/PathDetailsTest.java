@@ -6,10 +6,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.List;
 
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
@@ -320,25 +317,25 @@ public class PathDetailsTest {
 	@Test
 	public void testIsChainFromCompact() {
 		PathDetails underTest = new PathDetails(COMPACT_PATH_EXAMPLE1);
-		assertFalse(underTest.isChain());
+		assertFalse(underTest.isChainLabelled());
 	}
 
 	@Test
 	public void testIsChainFromCompact2() {
 		PathDetails underTest = new PathDetails(COMPACT_PATH_EXAMPLE5);
-		assertTrue(underTest.isChain());
+		assertTrue(underTest.isChainLabelled());
 	}
 
 	@Test
 	public void testIsChainFromFullDetails() {
 		PathDetails underTest = new PathDetails(FULL_DETAILS_EXAMPLE4);
-		assertTrue(underTest.isChain());
+		assertTrue(underTest.isChainLabelled());
 	}
 
 	@Test
 	public void testIsChainFromFullDetails2() {
 		PathDetails underTest = new PathDetails(FULL_DETAILS_EXAMPLE1);
-		assertFalse(underTest.isChain());
+		assertFalse(underTest.isChainLabelled());
 	}
 	
 	@Test
@@ -472,10 +469,5 @@ public class PathDetailsTest {
 		assertSame(underTest2, underTest1.getChainChildren().get(0));
 		assertNull(underTest1.getChainParent());
 	}
-	
-	@Test
-	public void testLoadFromFile() throws FileNotFoundException, IOException {
-		List<PathDetails> paths = PathDetails.loadFromFile(new File("src/test/resources/io/github/darkenzee/PermuteMMOFilter/PermuteMMO_8745357205966506115.txt"));
-		assertEquals(37655, paths.size());
-	}
+
 }

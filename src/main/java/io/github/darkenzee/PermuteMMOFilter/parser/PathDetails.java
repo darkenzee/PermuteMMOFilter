@@ -1,13 +1,5 @@
 package io.github.darkenzee.PermuteMMOFilter.parser;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -15,7 +7,6 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
@@ -45,7 +36,6 @@ public class PathDetails {
 	private Integer level;
 	private Integer height;
 	private Integer weight;
-	private Integer chainParentPathLength;
 	private Integer fullPathLength;
 
 	private Boolean alpha;
@@ -249,10 +239,11 @@ public class PathDetails {
 	}
 
 	public int getChainParentPathLength() {
-		if (chainParentPathLength == null) {
-			chainParentPathLength = getFullPathLength() - getPath().replaceAll("-> ", "").split("[|]").length;
+		if (getChainParent() != null) {
+			return getChainParent().getFullPathLength();
+		} else {
+			return 0;
 		}
-		return chainParentPathLength;
 	}
 
 	public int getFullPathLength() {
@@ -280,7 +271,7 @@ public class PathDetails {
 		return bonus;
 	}
 
-	public boolean isChain() {
+	public boolean isChainLabelled() {
 		if (chain == null) {
 			chain = getOriginalText().contains("Chain result!");
 		}
@@ -322,6 +313,10 @@ public class PathDetails {
 		return spawnsMultipleResults;
 	}
 
+	public boolean isChain() {
+		return getChainParent() != null || chainChildren.size() > 0;
+	}
+	
 	public PathDetails getChainParent() {
 		return chainParent;
 	}
@@ -360,71 +355,5 @@ public class PathDetails {
 			throw new IllegalArgumentException(errorOnFindFail);
 		}
 		return "Unknown";
-	}
-
-	public static List<PathDetails> loadFromFile(File inputFile) throws FileNotFoundException, IOException {
-		try (FileInputStream fis = new FileInputStream(inputFile)) {
-			return loadFromInputStream(fis);
-		}
-	}
-
-	public static List<PathDetails> loadFromString(String inputString) throws IOException {
-		try (InputStream inputStream = IOUtils.toInputStream(inputString, Charset.defaultCharset())) {
-			return loadFromInputStream(inputStream);
-		}
-	}
-
-	private static List<PathDetails> loadFromInputStream(InputStream inputStream) throws IOException {
-		List<PathDetails> results = new ArrayList<>();
-		StringBuilder builder = new StringBuilder();
-		PathDetails currentChainParent = null;
-		String line = null;
-		BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-		while((line = reader.readLine()) != null) {
-			if (line.length() == 0) continue;
-			if (line.startsWith("*")) {
-				if (builder.length() > 0) {
-					PathDetails next = new PathDetails(builder.toString().trim());
-					results.add(next);
-					if (next.isChain()) {
-						if (currentChainParent == null) {
-							currentChainParent = next;
-						} else {
-							if (next.getChainParentPathLength() > currentChainParent.getFullPathLength()) {
-								//Nested Chain
-								currentChainParent = results.get(results.size() - 1);
-							} else if (next.getChainParentPathLength() < currentChainParent.getFullPathLength()) {
-								//Pop out of nesting
-								currentChainParent = currentChainParent.getChainParent();
-							}
-							if (currentChainParent != null) {
-								//Add next child to current parent
-								currentChainParent.addChainChild(next);
-							} else {
-								currentChainParent = next;
-							}
-						}
-					}
-				}
-				builder.setLength(0);
-			}
-			builder.append(line).append("\n");
-		}
-		if (builder.length() > 0) {
-			PathDetails next = new PathDetails(builder.toString().trim());
-			results.add(next);
-			if (next.isChain()) {
-				if (next.getChainParentPathLength() > currentChainParent.getFullPathLength()) {
-					//Nested Chain
-					currentChainParent = results.get(results.size() - 1);
-				} else if (next.getChainParentPathLength() < currentChainParent.getFullPathLength()) {
-					//Pop out of nesting
-					currentChainParent = currentChainParent.getChainParent();
-				}
-				//Add next child to current parent
-				currentChainParent.addChainChild(next);
-			}
-		}
-		return results;
 	}
 }
