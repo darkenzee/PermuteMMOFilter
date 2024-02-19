@@ -28,5 +28,16 @@ public class PredicateFilterTest {
 		
 		predicates.add(d -> d.getGender() == PokemonGender.Female);
 		assertEquals(14620, underTest.applyFilters(paths).size());
+		
+		predicates.add(d -> d.isAlpha());
+		assertEquals(14620, underTest.applyFilters(paths).size());
+		
+		predicates.add(d -> d.getSpecies().equals("Eevee"));
+		assertEquals(1453, underTest.applyFilters(paths).size());
+		
+		predicates.add(d -> d.getFullPathLength() < 11);
+		assertEquals(3, underTest.applyFilters(paths).size());
+		
+//		System.err.println(underTest.applyFilters(paths));
 	}
 }
