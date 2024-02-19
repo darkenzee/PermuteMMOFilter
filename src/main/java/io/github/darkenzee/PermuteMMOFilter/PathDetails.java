@@ -1,5 +1,13 @@
 package io.github.darkenzee.PermuteMMOFilter;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -7,6 +15,7 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
@@ -145,7 +154,7 @@ public class PathDetails {
 	private static Pattern SHINY_PATTERN_FULL = simplePropertyPattern("Shiny");
 
 	public ShinyType getShinyType() {
-		//★■*
+		// ★■*
 		if (shinyType == null) {
 			String shinyStr = applyPattern(isCompactFormat() ? SHINY_PATTERN_COMPACT : SHINY_PATTERN_FULL);
 			switch (shinyStr) {
@@ -164,14 +173,14 @@ public class PathDetails {
 	}
 
 	private static Pattern SPAWN_PATTERN = Pattern.compile("Spawn(\\d)", PATTERN_FLAGS);
-	
+
 	public int getSpawn() {
 		if (spawn == null) {
 			spawn = Integer.valueOf(applyPattern(SPAWN_PATTERN, "Could not identify spawn number in input text"));
 		}
 		return spawn;
 	}
-	
+
 	private static Pattern SHINY_ROLLS_PATTERN_COMPACT = Pattern.compile(":\\s+(\\d+)\\s", PATTERN_FLAGS);
 	private static Pattern SHINY_ROLLS_PATTERN_FULL = simplePropertyPattern("Shiny Rolls");
 
@@ -180,14 +189,15 @@ public class PathDetails {
 			if (getShinyType() == ShinyType.Not) {
 				shinyRolls = -1;
 			} else {
-				shinyRolls = Integer.valueOf(applyPattern(isCompactFormat() ? SHINY_ROLLS_PATTERN_COMPACT : SHINY_ROLLS_PATTERN_FULL));
+				shinyRolls = Integer.valueOf(
+						applyPattern(isCompactFormat() ? SHINY_ROLLS_PATTERN_COMPACT : SHINY_ROLLS_PATTERN_FULL));
 			}
 		}
 		return shinyRolls;
 	}
 
 	private static Pattern LEVEL_PATTERN = simplePropertyPattern("Level");
-	
+
 	public int getLevel() {
 		if (level == null) {
 			String levelStr = applyPattern(LEVEL_PATTERN);
@@ -203,7 +213,7 @@ public class PathDetails {
 	}
 
 	private static Pattern HEIGHT_PATTERN = simplePropertyPattern("Height");
-	
+
 	public int getHeight() {
 		if (height == null) {
 			String heightStr = applyPattern(HEIGHT_PATTERN);
@@ -219,7 +229,7 @@ public class PathDetails {
 	}
 
 	private static Pattern WEIGHT_PATTERN = simplePropertyPattern("Weight");
-	
+
 	public int getWeight() {
 		if (weight == null) {
 			String weightStr = applyPattern(WEIGHT_PATTERN);
@@ -346,5 +356,73 @@ public class PathDetails {
 			throw new IllegalArgumentException(errorOnFindFail);
 		}
 		return "Unknown";
+	}
+
+	public static List<PathDetails> loadFromFile(File inputFile) throws FileNotFoundException, IOException {
+		try (FileInputStream fis = new FileInputStream(inputFile)) {
+			return loadFromInputStream(fis);
+		}
+	}
+
+	public static List<PathDetails> loadFromString(String inputString) throws IOException {
+		try (InputStream inputStream = IOUtils.toInputStream(inputString, Charset.defaultCharset())) {
+			return loadFromInputStream(inputStream);
+		}
+	}
+
+	private static List<PathDetails> loadFromInputStream(InputStream inputStream) throws IOException {
+		List<PathDetails> results = new ArrayList<>();
+		StringBuilder builder = new StringBuilder();
+		PathDetails currentChainParent = null;
+		String line = null;
+		BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+		while((line = reader.readLine()) != null) {
+			if (line.length() == 0) continue;
+			if (line.startsWith("*")) {
+				if (builder.length() > 0) {
+					PathDetails next = new PathDetails(builder.toString().trim());
+					results.add(next);
+					if (next.isChain()) {
+						if (currentChainParent == null) {
+							currentChainParent = next;
+						} else {
+							if (next.getChainParentPathLength() > currentChainParent.getFullPathLength()) {
+								//Nested Chain
+								currentChainParent = results.get(results.size() - 1);
+							} else if (next.getChainParentPathLength() < currentChainParent.getFullPathLength()) {
+								//Pop out of nesting
+								currentChainParent = currentChainParent.getChainParent();
+							}
+							if (currentChainParent != null) {
+								//Add next child to current parent
+								currentChainParent.addChainChild(next);
+							} else {
+								currentChainParent = next;
+							}
+						}
+					} else {
+						currentChainParent = null;
+					}
+				}
+				builder.setLength(0);
+			}
+			builder.append(line).append("\n");
+		}
+		if (builder.length() > 0) {
+			PathDetails next = new PathDetails(builder.toString().trim());
+			results.add(next);
+			if (next.isChain()) {
+				if (next.getChainParentPathLength() > currentChainParent.getFullPathLength()) {
+					//Nested Chain
+					currentChainParent = results.get(results.size() - 1);
+				} else if (next.getChainParentPathLength() < currentChainParent.getFullPathLength()) {
+					//Pop out of nesting
+					currentChainParent = currentChainParent.getChainParent();
+				}
+				//Add next child to current parent
+				currentChainParent.addChainChild(next);
+			}
+		}
+		return results;
 	}
 }

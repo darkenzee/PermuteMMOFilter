@@ -2,7 +2,10 @@ package io.github.darkenzee.PermuteMMOFilter;
 
 import static org.junit.Assert.*;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.List;
 
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
@@ -460,5 +463,11 @@ public class PathDetailsTest {
 		assertEquals(1, underTest1.getChainChildren().size());
 		assertSame(underTest2, underTest1.getChainChildren().get(0));
 		assertNull(underTest1.getChainParent());
+	}
+	
+	@Test
+	public void testLoadFromFile() throws FileNotFoundException, IOException {
+		List<PathDetails> paths = PathDetails.loadFromFile(new File("src/test/resources/io/github/darkenzee/PermuteMMOFilter/PermuteMMO_8745357205966506115.txt"));
+		assertEquals(37655, paths.size());
 	}
 }
