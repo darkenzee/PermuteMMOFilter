@@ -3,6 +3,7 @@ package io.github.darkenzee.PermuteMMOFilter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -258,31 +259,52 @@ public class PathDetails {
 		return alpha;
 	}
 
-	public Boolean isBonus() {
+	public boolean isBonus() {
+		if (bonus == null) {
+			bonus = getOriginalText().contains("Bonus");
+		}
 		return bonus;
 	}
 
-	public Boolean isChain() {
+	public boolean isChain() {
+		if (chain == null) {
+			chain = getOriginalText().contains("Chain result!");
+		}
 		return chain;
 	}
 
-	public Boolean isSkittish() {
+	public boolean isSkittish() {
+		if (skittish == null) {
+			skittish = getOriginalText().contains("Skittish");
+		}
 		return skittish;
 	}
 
-	public Boolean isSkittishAggressive() {
+	public boolean isSkittishAggressive() {
+		if (skittishAggressive == null) {
+			skittishAggressive = getOriginalText().toLowerCase(Locale.getDefault()).contains("aggressive!");
+		}
 		return skittishAggressive;
 	}
 
-	public Boolean isSkittishMultiScaring() {
+	public boolean isSkittishMultiScaring() {
+		if (skittishMultiScaring == null) {
+			skittishMultiScaring = getOriginalText().contains("Multi scaring");
+		}
 		return skittishMultiScaring;
 	}
 
-	public Boolean isSingleAdvances() {
+	public boolean isSingleAdvances() {
+		if (singleAdvances == null) {
+			singleAdvances = getOriginalText().contains("Single advances!");
+		}
 		return singleAdvances;
 	}
 
-	public Boolean isSpawnsMultipleResults() {
+	public boolean isSpawnsMultipleResults() {
+		if (spawnsMultipleResults == null) {
+			spawnsMultipleResults = getOriginalText().contains("Spawns multiple results!");
+		}
 		return spawnsMultipleResults;
 	}
 
@@ -300,6 +322,7 @@ public class PathDetails {
 
 	public void addChainChild(PathDetails chainChild) {
 		chainChildren.add(chainChild);
+		chainChild.setChainParent(this);
 	}
 
 	@Override

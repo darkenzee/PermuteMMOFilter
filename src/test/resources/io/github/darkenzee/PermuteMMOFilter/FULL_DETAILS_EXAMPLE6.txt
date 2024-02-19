@@ -1,0 +1,9 @@
+* A3|A1|A2|G1|G1|CR|A3                  >>> Bonus Spawn3 = αlpha - Carnivine
+Shiny: ★ - Shiny Rolls:   8
+PID: 31DA9A41
+EC: 6FA495BD
+IVs: 31/31/25/31/9/31
+Gender:  (M)
+Nature: Hasty
+Level: 76
+Height: 255 | Weight: 255 ~~ Spawns multiple results!
