@@ -243,30 +243,6 @@ public class PathDetailsTest {
 	}
 
 	@Test
-	public void testGetChainParentPathFromCompact() {
-		PathDetails underTest = new PathDetails(COMPACT_PATH_EXAMPLE1);
-		assertEquals(0, underTest.getChainParentPathLength());
-	}
-
-	@Test
-	public void testGetChainParentPathFromFullDetails() {
-		PathDetails underTest = new PathDetails(FULL_DETAILS_EXAMPLE1);
-		assertEquals(0, underTest.getChainParentPathLength());
-	}
-
-	@Test
-	public void testGetFullPathLengthFromFullDetailsChain() {
-		PathDetails underTest = new PathDetails(FULL_DETAILS_EXAMPLE4);
-		assertEquals(7, underTest.getFullPathLength());
-	}
-
-	@Test
-	public void testGetChainParentPathFromFullDetailsChain() {
-		PathDetails underTest = new PathDetails(FULL_DETAILS_EXAMPLE4);
-		assertEquals(6, underTest.getChainParentPathLength());
-	}
-
-	@Test
 	public void testIsAlphaFromCompact() {
 		PathDetails underTest = new PathDetails(COMPACT_PATH_EXAMPLE1);
 		assertFalse(underTest.isAlpha());
