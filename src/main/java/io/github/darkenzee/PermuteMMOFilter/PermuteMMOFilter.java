@@ -8,8 +8,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.prefs.Preferences;
 
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
@@ -88,16 +90,26 @@ public class PermuteMMOFilter extends JFrame {
 			mntmOpenPathFile.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
+					Preferences settings = Preferences.userRoot().node("io/github/darenzee/PermuteMMOFilter/settings");
+					String lastDirectory = settings.get("lastFileChooserDir", "");
 					JFileChooser chooser = new JFileChooser((String) null);
 					FileNameExtensionFilter filter = new FileNameExtensionFilter("Text Files", "txt");
 					chooser.setFileFilter(filter);
 					chooser.setMultiSelectionEnabled(false);
+					if (lastDirectory.length() > 0) {
+						chooser.setCurrentDirectory(new File(lastDirectory));
+					}
 					if (chooser.showOpenDialog(self) == APPROVE_OPTION) {
 						try {
 							self.load(PathDetailsParser.loadFromFile(chooser.getSelectedFile()));
 						} catch (IOException e1) {
 							e1.printStackTrace();
 						}
+					}
+					try {
+						settings.put("lastFileChooserDir", chooser.getCurrentDirectory().getCanonicalPath());
+					} catch (IOException e1) {
+						e1.printStackTrace();
 					}
 				}
 			});
@@ -136,5 +148,13 @@ public class PermuteMMOFilter extends JFrame {
 
 	protected void load(List<PathDetails> paths) {
 		System.err.println(paths.size());
+		for (PathDetails path : paths) {
+			if (path.getChainParent() != null && path.getChainChildren().size() > 0) {
+				SinglePathViewer viewer = new SinglePathViewer(path);
+				viewer.setLocationRelativeTo(self);
+				viewer.setVisible(true);
+				break;
+			}
+		}
 	}
 }
