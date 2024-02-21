@@ -11,8 +11,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.prefs.Preferences;
 
@@ -28,14 +30,17 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JSpinner;
 import javax.swing.JTextArea;
 import javax.swing.KeyStroke;
+import javax.swing.SpinnerNumberModel;
 import javax.swing.border.BevelBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import io.github.darkenzee.PermuteMMOFilter.parser.PathDetails;
 import io.github.darkenzee.PermuteMMOFilter.parser.PathDetailsParser;
 import io.github.darkenzee.PermuteMMOFilter.tables.AutoWidthSortableJTable;
+import io.github.darkenzee.PermuteMMOFilter.tables.IRowClickedCallbacker;
 import io.github.darkenzee.PermuteMMOFilter.types.AnyYesNo;
 import io.github.darkenzee.PermuteMMOFilter.types.PokemonGender;
 import io.github.darkenzee.PermuteMMOFilter.types.PokemonNature;
@@ -63,6 +68,7 @@ public class PermuteMMOFilter extends JFrame {
 	private JLabel lblMultipleResults;
 	private JLabel lblChain;
 	private JLabel lblSkittish;
+	private JLabel lblPathLength;
 
 	private JComboBox<String> cbSpecies;
 	private JComboBox<ShinyType> cbShinyType;
@@ -73,31 +79,37 @@ public class PermuteMMOFilter extends JFrame {
 	private JComboBox<AnyYesNo> cbBonus;
 	private JComboBox<AnyYesNo> cbChain;
 	private JComboBox<AnyYesNo> cbMultiple;
+	
 	private JComboBox<AnyYesNo> cbSkittish;
 	private JComboBox<AnyYesNo> cbMultiScare;
 	private JComboBox<AnyYesNo> cbSkittishAggressive;
 	private JComboBox<AnyYesNo> cbSingleAdvances;
 
+	private JSpinner spinnerPathLength;
+	
 	private JScrollPane scrollPanePathDetails;
 	private JPanel panelStatus;
 	private AutoWidthSortableJTable<PathDetails> tablePathDetails;
+	
+	private List<PathDetails> currentPaths = new ArrayList<>();
+	private PathDetailsTableModel tableModel;
 
 	public PermuteMMOFilter() {
 		initGUI();
 	}
 
 	private void initGUI() {
-		setPreferredSize(new Dimension(750, 550));
-		setMinimumSize(new Dimension(750, 550));
+		setPreferredSize(new Dimension(800, 600));
+		setMinimumSize(new Dimension(800, 600));
 		setTitle("Permutation Filter");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setIconImage(
 				new ImageIcon(getClass().getResource("/icons/Hektakun-Pokemon-479-Rotom-Normal.72.png")).getImage());
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[] { 0, 0, 0, 0, 0, 0, 0, 0 };
-		gridBagLayout.rowHeights = new int[] { 0, 0, 0, 0, 0, 0, 0 };
+		gridBagLayout.rowHeights = new int[] { 0, 0, 0, 0, 0, 0, 0, 0 };
 		gridBagLayout.columnWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE };
-		gridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, Double.MIN_VALUE };
+		gridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, Double.MIN_VALUE };
 		getContentPane().setLayout(gridBagLayout);
 		setJMenuBar(getMenuBar_1());
 		GridBagConstraints gbc_lblSpecies = new GridBagConstraints();
@@ -244,18 +256,30 @@ public class PermuteMMOFilter extends JFrame {
 		gbc_cbSingleAdvances.gridx = 5;
 		gbc_cbSingleAdvances.gridy = 3;
 		getContentPane().add(getCbSingleAdvances(), gbc_cbSingleAdvances);
+		GridBagConstraints gbc_lblPathLength = new GridBagConstraints();
+		gbc_lblPathLength.anchor = GridBagConstraints.EAST;
+		gbc_lblPathLength.insets = new Insets(0, 5, 5, 5);
+		gbc_lblPathLength.gridx = 0;
+		gbc_lblPathLength.gridy = 4;
+		getContentPane().add(getLblPathLength(), gbc_lblPathLength);
+		GridBagConstraints gbc_spinnerPathLength = new GridBagConstraints();
+		gbc_spinnerPathLength.anchor = GridBagConstraints.WEST;
+		gbc_spinnerPathLength.insets = new Insets(0, 0, 5, 5);
+		gbc_spinnerPathLength.gridx = 1;
+		gbc_spinnerPathLength.gridy = 4;
+		getContentPane().add(getSpinnerPathLength(), gbc_spinnerPathLength);
 		GridBagConstraints gbc_scrollPanePathDetails = new GridBagConstraints();
 		gbc_scrollPanePathDetails.insets = new Insets(0, 0, 5, 0);
 		gbc_scrollPanePathDetails.gridwidth = 7;
 		gbc_scrollPanePathDetails.fill = GridBagConstraints.BOTH;
 		gbc_scrollPanePathDetails.gridx = 0;
-		gbc_scrollPanePathDetails.gridy = 4;
+		gbc_scrollPanePathDetails.gridy = 5;
 		getContentPane().add(getScrollPanePathDetails(), gbc_scrollPanePathDetails);
 		GridBagConstraints gbc_panelStatus = new GridBagConstraints();
 		gbc_panelStatus.gridwidth = 7;
 		gbc_panelStatus.fill = GridBagConstraints.BOTH;
 		gbc_panelStatus.gridx = 0;
-		gbc_panelStatus.gridy = 5;
+		gbc_panelStatus.gridy = 6;
 		getContentPane().add(getPanelStatus(), gbc_panelStatus);
 	}
 
@@ -342,21 +366,9 @@ public class PermuteMMOFilter extends JFrame {
 		return mntmLoadPathFromText;
 	}
 
-	protected void load(List<PathDetails> paths) {
-		System.err.println(paths.size());
-		for (PathDetails path : paths) {
-			if (path.getChainParent() != null && path.getChainChildren().size() > 0) {
-				SinglePathViewer viewer = new SinglePathViewer(path);
-				viewer.setLocationRelativeTo(self);
-				viewer.setVisible(true);
-				break;
-			}
-		}
-	}
-
 	private JComboBox<String> getCbSpecies() {
 		if (cbSpecies == null) {
-			cbSpecies = new JComboBox<>();
+			cbSpecies = new JComboBox<>(new String[] { "Any" });
 			cbSpecies.setPreferredSize(new Dimension(120, 22));
 			cbSpecies.setMinimumSize(new Dimension(120, 22));
 		}
@@ -372,7 +384,7 @@ public class PermuteMMOFilter extends JFrame {
 
 	private JLabel getLblGender() {
 		if (lblGender == null) {
-			lblGender = new JLabel("Gender");
+			lblGender = new JLabel("Gender (" + PokemonGender.Any.symbol() + ")");
 		}
 		return lblGender;
 	}
@@ -400,7 +412,7 @@ public class PermuteMMOFilter extends JFrame {
 
 	private JLabel getLblShinyType() {
 		if (lblShinyType == null) {
-			lblShinyType = new JLabel("Shiny Type");
+			lblShinyType = new JLabel("Shiny Type (" + ShinyType.Any.symbol() + ")");
 		}
 		return lblShinyType;
 	}
@@ -439,7 +451,7 @@ public class PermuteMMOFilter extends JFrame {
 
 	private JLabel getLblAlpha() {
 		if (lblAlpha == null) {
-			lblAlpha = new JLabel("Is Alpha");
+			lblAlpha = new JLabel("Is Alpha (α)");
 		}
 		return lblAlpha;
 	}
@@ -453,7 +465,7 @@ public class PermuteMMOFilter extends JFrame {
 
 	private JLabel getLblBonus() {
 		if (lblBonus == null) {
-			lblBonus = new JLabel("Is Bonus Round");
+			lblBonus = new JLabel("Is Bonus Round (BR)");
 		}
 		return lblBonus;
 	}
@@ -467,42 +479,42 @@ public class PermuteMMOFilter extends JFrame {
 
 	private JLabel getLblAggresive() {
 		if (lblAggresive == null) {
-			lblAggresive = new JLabel("Is Skittish Aggressive");
+			lblAggresive = new JLabel("Is Skittish Aggressive (AG)");
 		}
 		return lblAggresive;
 	}
 
 	private JLabel getLblMultiScare() {
 		if (lblMultiScare == null) {
-			lblMultiScare = new JLabel("Is Multi-Scare");
+			lblMultiScare = new JLabel("Is Multi-Scare (MS)");
 		}
 		return lblMultiScare;
 	}
 
 	private JLabel getLblSingleAdvances() {
 		if (lblSingleAdvances == null) {
-			lblSingleAdvances = new JLabel("Is Single Advances");
+			lblSingleAdvances = new JLabel("Is Single Advances (SA)");
 		}
 		return lblSingleAdvances;
 	}
 
 	private JLabel getLblMultipleResults() {
 		if (lblMultipleResults == null) {
-			lblMultipleResults = new JLabel("Has Multiple Results");
+			lblMultipleResults = new JLabel("Has Multiple Results (MR)");
 		}
 		return lblMultipleResults;
 	}
 
 	private JLabel getLblChain() {
 		if (lblChain == null) {
-			lblChain = new JLabel("Is Chain Result");
+			lblChain = new JLabel("Is Chain Result (CR)");
 		}
 		return lblChain;
 	}
 
 	private JLabel getLblSkittish() {
 		if (lblSkittish == null) {
-			lblSkittish = new JLabel("Is Skittish");
+			lblSkittish = new JLabel("Is Skittish (SK)");
 		}
 		return lblSkittish;
 	}
@@ -552,8 +564,59 @@ public class PermuteMMOFilter extends JFrame {
 	private AutoWidthSortableJTable<PathDetails> getTablePathDetails() {
 		if (tablePathDetails == null) {
 			tablePathDetails = new AutoWidthSortableJTable<>();
+			tablePathDetails.setActualModel(getTableModel());
+			tablePathDetails.onRowDoubleClicked(new IRowClickedCallbacker<PathDetails>() {
+				@Override
+				public void rowClicked(MouseEvent e, PathDetails selectedItem) {
+					SinglePathViewer dialog = new SinglePathViewer(selectedItem);
+					dialog.setLocationRelativeTo(self);
+					dialog.setVisible(true);
+				}
+			});
 		}
 		return tablePathDetails;
+	}
+
+	private JLabel getLblPathLength() {
+		if (lblPathLength == null) {
+			lblPathLength = new JLabel("Maximum Path Length");
+		}
+		return lblPathLength;
+	}
+
+	private JSpinner getSpinnerPathLength() {
+		if (spinnerPathLength == null) {
+			spinnerPathLength = new JSpinner();
+			spinnerPathLength.setModel(new SpinnerNumberModel(20, 1, 20, 1));
+		}
+		return spinnerPathLength;
+	}
+	
+	private PathDetailsTableModel getTableModel() {
+		if (tableModel == null) {
+			tableModel = new PathDetailsTableModel();
+			tableModel.updateModel(currentPaths);
+		}
+		return tableModel;
+	}
+
+	private void resetSelectors() {
+		getCbSpecies().setSelectedIndex(0);
+		getCbShinyType().setSelectedIndex(0);
+		
+		getSpinnerPathLength().setValue(20);
+	}
+	
+	private void updateStatus() {
+		lblStatus.setText(getTableModel().getRowCount() + " of " + currentPaths.size());
+	}
+
+	protected void load(List<PathDetails> paths) {
+		getTableModel().updateModel(new ArrayList<>());
+		resetSelectors();
+		this.currentPaths = paths;
+		getTableModel().updateModel(currentPaths);
+		updateStatus();
 	}
 
 	public static void main(String[] args) {
@@ -562,4 +625,5 @@ public class PermuteMMOFilter extends JFrame {
 		filter.setLocationRelativeTo(null);
 		filter.setVisible(true);
 	}
+
 }

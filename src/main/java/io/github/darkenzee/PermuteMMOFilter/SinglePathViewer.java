@@ -49,6 +49,7 @@ public class SinglePathViewer extends JDialog {
 		gbc_scrollPane.gridy = 0;
 		getContentPane().add(getScrollPane(), gbc_scrollPane);
 		GridBagConstraints gbc_btnShowAdditionalChains = new GridBagConstraints();
+		gbc_btnShowAdditionalChains.insets = new Insets(0, 0, 5, 5);
 		gbc_btnShowAdditionalChains.gridx = 1;
 		gbc_btnShowAdditionalChains.gridy = 1;
 		getContentPane().add(getBtnShowAdditionalChains(), gbc_btnShowAdditionalChains);
@@ -69,9 +70,9 @@ public class SinglePathViewer extends JDialog {
 				public void actionPerformed(ActionEvent e) {
 					showingChildren = !showingChildren;
 					if (showingChildren) {
-						getBtnShowAdditionalChains().setName("Hide Additional Chain Children");
+						getBtnShowAdditionalChains().setText("Hide Additional Chain Children");
 					} else {
-						getBtnShowAdditionalChains().setName("Show Additional Chain Children");
+						getBtnShowAdditionalChains().setText("Show Additional Chain Children");
 					}
 					populateTextArea();
 				}
@@ -100,6 +101,7 @@ public class SinglePathViewer extends JDialog {
 			path += getChildrenPaths(details.getChainChildren());
 		}
 		getTextArea().setText(path);
+		getTextArea().setCaretPosition(0);
 	}
 	
 	private String getChildrenPaths(List<PathDetails> children) {
