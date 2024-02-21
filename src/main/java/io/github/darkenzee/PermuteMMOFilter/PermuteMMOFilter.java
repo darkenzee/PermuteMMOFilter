@@ -16,8 +16,12 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.SortedSet;
+import java.util.TreeSet;
+import java.util.Vector;
 import java.util.prefs.Preferences;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
@@ -35,10 +39,14 @@ import javax.swing.JTextArea;
 import javax.swing.KeyStroke;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.border.BevelBorder;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import io.github.darkenzee.PermuteMMOFilter.parser.PathDetails;
 import io.github.darkenzee.PermuteMMOFilter.parser.PathDetailsParser;
+import io.github.darkenzee.PermuteMMOFilter.predicates.IPredicate;
+import io.github.darkenzee.PermuteMMOFilter.predicates.PredicateFilter;
 import io.github.darkenzee.PermuteMMOFilter.tables.AutoWidthSortableJTable;
 import io.github.darkenzee.PermuteMMOFilter.tables.IRowClickedCallbacker;
 import io.github.darkenzee.PermuteMMOFilter.types.AnyYesNo;
@@ -46,7 +54,7 @@ import io.github.darkenzee.PermuteMMOFilter.types.PokemonGender;
 import io.github.darkenzee.PermuteMMOFilter.types.PokemonNature;
 import io.github.darkenzee.PermuteMMOFilter.types.ShinyType;
 
-public class PermuteMMOFilter extends JFrame {
+public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeListener {
 	private static final long serialVersionUID = -2001943701794082933L;
 	private final PermuteMMOFilter self = this;
 
@@ -371,6 +379,7 @@ public class PermuteMMOFilter extends JFrame {
 			cbSpecies = new JComboBox<>(new String[] { "Any" });
 			cbSpecies.setPreferredSize(new Dimension(120, 22));
 			cbSpecies.setMinimumSize(new Dimension(120, 22));
+			cbSpecies.addActionListener(self);
 		}
 		return cbSpecies;
 	}
@@ -420,6 +429,7 @@ public class PermuteMMOFilter extends JFrame {
 	private JComboBox<ShinyType> getCbShinyType() {
 		if (cbShinyType == null) {
 			cbShinyType = new JComboBox<>(ShinyType.values());
+			cbShinyType.addActionListener(this);
 		}
 		return cbShinyType;
 	}
@@ -588,6 +598,7 @@ public class PermuteMMOFilter extends JFrame {
 		if (spinnerPathLength == null) {
 			spinnerPathLength = new JSpinner();
 			spinnerPathLength.setModel(new SpinnerNumberModel(20, 1, 20, 1));
+			spinnerPathLength.addChangeListener(self);
 		}
 		return spinnerPathLength;
 	}
@@ -601,22 +612,66 @@ public class PermuteMMOFilter extends JFrame {
 	}
 
 	private void resetSelectors() {
+		getTableModel().updateModel(new ArrayList<>());
+		
 		getCbSpecies().setSelectedIndex(0);
 		getCbShinyType().setSelectedIndex(0);
-		
+		getCbGender().setSelectedIndex(0);
+		getCbNature().setSelectedIndex(0);
+		getCbAlpha().setSelectedIndex(0);
+		getCbBonus().setSelectedIndex(0);
+		getCbChain().setSelectedIndex(0);
+		getCbMultiple().setSelectedIndex(0);
+		getCbSkittish().setSelectedIndex(0);
+		getCbMultiScare().setSelectedIndex(0);
+		getCbSkittishAggressive().setSelectedIndex(0);
+		getCbSingleAdvances().setSelectedIndex(0);
+
 		getSpinnerPathLength().setValue(20);
+		
+		Vector<String> species = new Vector<>();
+		species.add("Any");
+		SortedSet<String> currentSpecies = new TreeSet<>();
+		for (PathDetails details : currentPaths) {
+			currentSpecies.add(details.getSpecies());
+		}
+		species.addAll(currentSpecies);
+		getCbSpecies().setModel(new DefaultComboBoxModel<String>(species));
+		
+		getTableModel().updateModel(currentPaths);
+		updateStatus();
 	}
 	
 	private void updateStatus() {
 		lblStatus.setText(getTableModel().getRowCount() + " of " + currentPaths.size());
 	}
+	
+	private void updateFilters() {
+		List<IPredicate> predicates = new ArrayList<>();
+		if (getCbSpecies().getSelectedIndex() > 0) {
+			predicates.add(d -> d.getSpecies().equals(getCbSpecies().getSelectedItem()));
+		}
+		if (getCbShinyType().getSelectedIndex() > 0) {
+			predicates.add(d -> d.getShinyType().matchesExpected((ShinyType) getCbShinyType().getSelectedItem()));
+		}
+		List<PathDetails> filtered = new PredicateFilter(predicates).applyFilters(currentPaths);
+		getTableModel().updateModel(filtered);
+		updateStatus();
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		updateFilters();
+	}
+	
+	@Override
+	public void stateChanged(ChangeEvent e) {
+		updateFilters();
+	}
 
 	protected void load(List<PathDetails> paths) {
-		getTableModel().updateModel(new ArrayList<>());
-		resetSelectors();
 		this.currentPaths = paths;
-		getTableModel().updateModel(currentPaths);
-		updateStatus();
+		resetSelectors();
 	}
 
 	public static void main(String[] args) {
