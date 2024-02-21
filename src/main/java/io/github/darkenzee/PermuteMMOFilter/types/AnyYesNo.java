@@ -1,5 +1,5 @@
 package io.github.darkenzee.PermuteMMOFilter.types;
 
-public enum ShinyType {
-	Any, Star, Square, Not
+public enum AnyYesNo {
+	Any, Yes, No
 }

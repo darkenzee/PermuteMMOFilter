@@ -1,6 +1,7 @@
 package io.github.darkenzee.PermuteMMOFilter.types;
 
 public enum PokemonNature {
+	Any,
 	Adamant,
 	Bashful,
 	Bold,
