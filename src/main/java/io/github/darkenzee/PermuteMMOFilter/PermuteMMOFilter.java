@@ -15,12 +15,17 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.IOException;
+import java.net.JarURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.Vector;
 import java.util.function.Function;
+import java.util.jar.Attributes;
+import java.util.jar.Manifest;
 import java.util.prefs.Preferences;
 
 import javax.swing.DefaultComboBoxModel;
@@ -114,7 +119,7 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 	private void initGUI() {
 		setPreferredSize(new Dimension(800, 600));
 		setMinimumSize(new Dimension(800, 600));
-		setTitle("Permutation Filter");
+		setTitle("Permutation Filter - " + getProgramVersion());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setIconImage(
 				new ImageIcon(getClass().getResource("/icons/Hektakun-Pokemon-479-Rotom-Normal.72.png")).getImage());
@@ -716,6 +721,32 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 		getLblStatus().setText("Filtering...");
 	}
 
+	private String getProgramVersion() {
+		try {
+			return getMyManifestAttributes().getValue(Attributes.Name.IMPLEMENTATION_VERSION);
+		} catch (IOException e) {
+			Properties info = new Properties();
+			try {
+				info.load(getClass().getResourceAsStream("/info.properties"));
+				return info.getProperty("program.version", "Version Unknown");
+			} catch (IOException e1) {
+				return "Version Unknown";
+			}
+		}
+	}
+	
+	private Attributes getMyManifestAttributes() throws IOException {
+	    String className = getClass().getSimpleName() + ".class";
+	    String classPath = getClass().getResource(className).toString();
+	    if (!classPath.startsWith("jar")) {
+	        throw new IOException("I don't live in a jar file");
+	    }
+	    URL url = new URL(classPath);
+	    JarURLConnection jarConnection = (JarURLConnection) url.openConnection();
+	    Manifest manifest = jarConnection.getManifest();
+	    return manifest.getMainAttributes();
+	}
+	
 	private <T extends IMatchesExcpected<T>> IPredicate getPredicateFromCb(Function<PathDetails, T> getDetail,
 			JComboBox<T> comboBox) {
 		return d -> getDetail.apply(d).matchesExpected(comboBox.getModel().getElementAt(comboBox.getSelectedIndex()));
