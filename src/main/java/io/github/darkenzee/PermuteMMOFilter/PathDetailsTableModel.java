@@ -3,7 +3,6 @@ package io.github.darkenzee.PermuteMMOFilter;
 import io.github.darkenzee.PermuteMMOFilter.parser.PathDetails;
 import io.github.darkenzee.PermuteMMOFilter.tables.GenericTableModel;
 import io.github.darkenzee.PermuteMMOFilter.tables.RowConverter;
-import io.github.darkenzee.PermuteMMOFilter.types.AnyYesNo;
 import io.github.darkenzee.PermuteMMOFilter.types.PokemonGender;
 import io.github.darkenzee.PermuteMMOFilter.types.ShinyType;
 
@@ -24,15 +23,15 @@ public class PathDetailsTableModel extends GenericTableModel<PathDetails> {
 		public Object[] convertRow(PathDetails path) {
 			return new Object[] { path.getPath(), path.getShinyType().symbol(), path.getSpecies(),
 					path.getGender().symbol(), path.isAlpha() ? "α" : "", path.getNature(),
-					booleanToYesNo(path.isChain()), booleanToYesNo(path.isSpawnsMultipleResults()),
-					booleanToYesNo(path.isBonus()), booleanToYesNo(path.isSkittish()),
-					booleanToYesNo(path.isSkittishMultiScaring()), booleanToYesNo(path.isSkittishAggressive()),
-					booleanToYesNo(path.isSingleAdvances()) };
+					booleanToTickOrBlank(path.isChain()), booleanToTickOrBlank(path.isSpawnsMultipleResults()),
+					booleanToTickOrBlank(path.isBonus()), booleanToTickOrBlank(path.isSkittish()),
+					booleanToTickOrBlank(path.isSkittishMultiScaring()), booleanToTickOrBlank(path.isSkittishAggressive()),
+					booleanToTickOrBlank(path.isSingleAdvances()) };
 		}
 	};
 
-	private static String booleanToYesNo(boolean value) {
-		return value ? AnyYesNo.Yes.toString() : AnyYesNo.No.toString();
+	private static String booleanToTickOrBlank(boolean value) {
+		return value ? "✓" : "";
 	}
 
 	public PathDetailsTableModel() {

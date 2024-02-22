@@ -2,6 +2,7 @@ package io.github.darkenzee.PermuteMMOFilter;
 
 import static javax.swing.JFileChooser.APPROVE_OPTION;
 
+import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
@@ -19,6 +20,7 @@ import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.Vector;
+import java.util.function.Function;
 import java.util.prefs.Preferences;
 
 import javax.swing.DefaultComboBoxModel;
@@ -38,10 +40,12 @@ import javax.swing.JSpinner;
 import javax.swing.JTextArea;
 import javax.swing.KeyStroke;
 import javax.swing.SpinnerNumberModel;
+import javax.swing.SwingUtilities;
 import javax.swing.border.BevelBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.table.DefaultTableCellRenderer;
 
 import io.github.darkenzee.PermuteMMOFilter.parser.PathDetails;
 import io.github.darkenzee.PermuteMMOFilter.parser.PathDetailsParser;
@@ -50,6 +54,7 @@ import io.github.darkenzee.PermuteMMOFilter.predicates.PredicateFilter;
 import io.github.darkenzee.PermuteMMOFilter.tables.AutoWidthSortableJTable;
 import io.github.darkenzee.PermuteMMOFilter.tables.IRowClickedCallbacker;
 import io.github.darkenzee.PermuteMMOFilter.types.AnyYesNo;
+import io.github.darkenzee.PermuteMMOFilter.types.IMatchesExcpected;
 import io.github.darkenzee.PermuteMMOFilter.types.PokemonGender;
 import io.github.darkenzee.PermuteMMOFilter.types.PokemonNature;
 import io.github.darkenzee.PermuteMMOFilter.types.ShinyType;
@@ -87,18 +92,18 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 	private JComboBox<AnyYesNo> cbBonus;
 	private JComboBox<AnyYesNo> cbChain;
 	private JComboBox<AnyYesNo> cbMultiple;
-	
+
 	private JComboBox<AnyYesNo> cbSkittish;
 	private JComboBox<AnyYesNo> cbMultiScare;
 	private JComboBox<AnyYesNo> cbSkittishAggressive;
 	private JComboBox<AnyYesNo> cbSingleAdvances;
 
 	private JSpinner spinnerPathLength;
-	
+
 	private JScrollPane scrollPanePathDetails;
 	private JPanel panelStatus;
 	private AutoWidthSortableJTable<PathDetails> tablePathDetails;
-	
+
 	private List<PathDetails> currentPaths = new ArrayList<>();
 	private PathDetailsTableModel tableModel;
 
@@ -327,11 +332,17 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 						chooser.setCurrentDirectory(new File(lastDirectory));
 					}
 					if (chooser.showOpenDialog(self) == APPROVE_OPTION) {
-						try {
-							self.load(PathDetailsParser.loadFromFile(chooser.getSelectedFile()));
-						} catch (IOException e1) {
-							e1.printStackTrace();
-						}
+						statusLoading();
+						SwingUtilities.invokeLater(new Runnable() {
+							@Override
+							public void run() {
+								try {
+									self.load(PathDetailsParser.loadFromFile(chooser.getSelectedFile()));
+								} catch (IOException e1) {
+									e1.printStackTrace();
+								}
+							}
+						});
 					}
 					try {
 						settings.put("lastFileChooserDir", chooser.getCurrentDirectory().getCanonicalPath());
@@ -362,11 +373,17 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 					dialog.setVisible(true);
 					Integer value = (Integer) pane.getValue();
 					if (value != null && value.intValue() == JOptionPane.OK_OPTION) {
-						try {
-							self.load(PathDetailsParser.loadFromString(text.getText()));
-						} catch (IOException e1) {
-							e1.printStackTrace();
-						}
+						statusLoading();
+						SwingUtilities.invokeLater(new Runnable() {
+							@Override
+							public void run() {
+								try {
+									self.load(PathDetailsParser.loadFromString(text.getText()));
+								} catch (IOException e1) {
+									e1.printStackTrace();
+								}
+							}
+						});
 					}
 				}
 			});
@@ -401,6 +418,7 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 	private JComboBox<PokemonGender> getCbGender() {
 		if (cbGender == null) {
 			cbGender = new JComboBox<>(PokemonGender.values());
+			cbGender.addActionListener(self);
 		}
 		return cbGender;
 	}
@@ -415,6 +433,7 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 	private JComboBox<PokemonNature> getCbNature() {
 		if (cbNature == null) {
 			cbNature = new JComboBox<>(PokemonNature.values());
+			cbNature.addActionListener(self);
 		}
 		return cbNature;
 	}
@@ -469,6 +488,7 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 	private JComboBox<AnyYesNo> getCbAlpha() {
 		if (cbAlpha == null) {
 			cbAlpha = new JComboBox<>(AnyYesNo.values());
+			cbAlpha.addActionListener(self);
 		}
 		return cbAlpha;
 	}
@@ -483,6 +503,7 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 	private JComboBox<AnyYesNo> getCbBonus() {
 		if (cbBonus == null) {
 			cbBonus = new JComboBox<>(AnyYesNo.values());
+			cbBonus.addActionListener(self);
 		}
 		return cbBonus;
 	}
@@ -532,6 +553,7 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 	private JComboBox<AnyYesNo> getCbChain() {
 		if (cbChain == null) {
 			cbChain = new JComboBox<>(AnyYesNo.values());
+			cbChain.addActionListener(self);
 		}
 		return cbChain;
 	}
@@ -539,6 +561,7 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 	private JComboBox<AnyYesNo> getCbMultiple() {
 		if (cbMultiple == null) {
 			cbMultiple = new JComboBox<>(AnyYesNo.values());
+			cbMultiple.addActionListener(self);
 		}
 		return cbMultiple;
 	}
@@ -546,6 +569,7 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 	private JComboBox<AnyYesNo> getCbSkittish() {
 		if (cbSkittish == null) {
 			cbSkittish = new JComboBox<>(AnyYesNo.values());
+			cbSkittish.addActionListener(self);
 		}
 		return cbSkittish;
 	}
@@ -553,6 +577,7 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 	private JComboBox<AnyYesNo> getCbMultiScare() {
 		if (cbMultiScare == null) {
 			cbMultiScare = new JComboBox<>(AnyYesNo.values());
+			cbMultiScare.addActionListener(self);
 		}
 		return cbMultiScare;
 	}
@@ -560,6 +585,7 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 	private JComboBox<AnyYesNo> getCbSkittishAggressive() {
 		if (cbSkittishAggressive == null) {
 			cbSkittishAggressive = new JComboBox<>(AnyYesNo.values());
+			cbSkittishAggressive.addActionListener(self);
 		}
 		return cbSkittishAggressive;
 	}
@@ -567,6 +593,7 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 	private JComboBox<AnyYesNo> getCbSingleAdvances() {
 		if (cbSingleAdvances == null) {
 			cbSingleAdvances = new JComboBox<>(AnyYesNo.values());
+			cbSingleAdvances.addActionListener(self);
 		}
 		return cbSingleAdvances;
 	}
@@ -575,6 +602,37 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 		if (tablePathDetails == null) {
 			tablePathDetails = new AutoWidthSortableJTable<>();
 			tablePathDetails.setActualModel(getTableModel());
+
+			DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+			centerRenderer.setHorizontalAlignment( JLabel.CENTER );
+			
+			int med = 80;
+			tablePathDetails.getColumnModel().getColumn(2).setMaxWidth(med);
+			tablePathDetails.getColumnModel().getColumn(5).setMaxWidth(med);
+
+			int small = 25;
+			tablePathDetails.getColumnModel().getColumn(1).setMaxWidth(small);
+			tablePathDetails.getColumnModel().getColumn(3).setMaxWidth(small);
+			tablePathDetails.getColumnModel().getColumn(4).setMaxWidth(small);
+			tablePathDetails.getColumnModel().getColumn(6).setMaxWidth(small);
+			tablePathDetails.getColumnModel().getColumn(7).setMaxWidth(small);
+			tablePathDetails.getColumnModel().getColumn(8).setMaxWidth(small);
+			tablePathDetails.getColumnModel().getColumn(9).setMaxWidth(small);
+			tablePathDetails.getColumnModel().getColumn(10).setMaxWidth(small);
+			tablePathDetails.getColumnModel().getColumn(11).setMaxWidth(small);
+			tablePathDetails.getColumnModel().getColumn(12).setMaxWidth(small);
+			
+			tablePathDetails.getColumnModel().getColumn(1).setCellRenderer(centerRenderer);
+			tablePathDetails.getColumnModel().getColumn(3).setCellRenderer(centerRenderer);
+			tablePathDetails.getColumnModel().getColumn(4).setCellRenderer(centerRenderer);
+			tablePathDetails.getColumnModel().getColumn(6).setCellRenderer(centerRenderer);
+			tablePathDetails.getColumnModel().getColumn(7).setCellRenderer(centerRenderer);
+			tablePathDetails.getColumnModel().getColumn(8).setCellRenderer(centerRenderer);
+			tablePathDetails.getColumnModel().getColumn(9).setCellRenderer(centerRenderer);
+			tablePathDetails.getColumnModel().getColumn(10).setCellRenderer(centerRenderer);
+			tablePathDetails.getColumnModel().getColumn(11).setCellRenderer(centerRenderer);
+			tablePathDetails.getColumnModel().getColumn(12).setCellRenderer(centerRenderer);
+			
 			tablePathDetails.onRowDoubleClicked(new IRowClickedCallbacker<PathDetails>() {
 				@Override
 				public void rowClicked(MouseEvent e, PathDetails selectedItem) {
@@ -602,7 +660,7 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 		}
 		return spinnerPathLength;
 	}
-	
+
 	private PathDetailsTableModel getTableModel() {
 		if (tableModel == null) {
 			tableModel = new PathDetailsTableModel();
@@ -613,7 +671,7 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 
 	private void resetSelectors() {
 		getTableModel().updateModel(new ArrayList<>());
-		
+
 		getCbSpecies().setSelectedIndex(0);
 		getCbShinyType().setSelectedIndex(0);
 		getCbGender().setSelectedIndex(0);
@@ -628,7 +686,7 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 		getCbSingleAdvances().setSelectedIndex(0);
 
 		getSpinnerPathLength().setValue(20);
-		
+
 		Vector<String> species = new Vector<>();
 		species.add("Any");
 		SortedSet<String> currentSpecies = new TreeSet<>();
@@ -637,33 +695,72 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 		}
 		species.addAll(currentSpecies);
 		getCbSpecies().setModel(new DefaultComboBoxModel<String>(species));
-		
+
 		getTableModel().updateModel(currentPaths);
 		updateStatus();
 	}
-	
+
 	private void updateStatus() {
-		lblStatus.setText(getTableModel().getRowCount() + " of " + currentPaths.size());
+		self.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+		getLblStatus().setText(getTableModel().getRowCount() + " of " + currentPaths.size());
+
 	}
-	
+
+	private void statusLoading() {
+		self.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+		getLblStatus().setText("Loading...");
+	}
+
+	private void statusFiltering() {
+		self.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+		getLblStatus().setText("Filtering...");
+	}
+
+	private <T extends IMatchesExcpected<T>> IPredicate getPredicateFromCb(Function<PathDetails, T> getDetail,
+			JComboBox<T> comboBox) {
+		return d -> getDetail.apply(d).matchesExpected(comboBox.getModel().getElementAt(comboBox.getSelectedIndex()));
+	}
+
+	private IPredicate getPredicateFromCbBool(Function<PathDetails, Boolean> getBoolDetail,
+			JComboBox<AnyYesNo> comboBox) {
+		return d -> (getBoolDetail.apply(d) ? AnyYesNo.Yes : AnyYesNo.No)
+				.matchesExpected(comboBox.getModel().getElementAt(comboBox.getSelectedIndex()));
+	}
+
 	private void updateFilters() {
+		statusFiltering();
 		List<IPredicate> predicates = new ArrayList<>();
 		if (getCbSpecies().getSelectedIndex() > 0) {
 			predicates.add(d -> d.getSpecies().equals(getCbSpecies().getSelectedItem()));
 		}
-		if (getCbShinyType().getSelectedIndex() > 0) {
-			predicates.add(d -> d.getShinyType().matchesExpected((ShinyType) getCbShinyType().getSelectedItem()));
-		}
-		List<PathDetails> filtered = new PredicateFilter(predicates).applyFilters(currentPaths);
-		getTableModel().updateModel(filtered);
-		updateStatus();
+		predicates.add(getPredicateFromCb(PathDetails::getShinyType, getCbShinyType()));
+		predicates.add(getPredicateFromCb(PathDetails::getGender, getCbGender()));
+		predicates.add(getPredicateFromCb(PathDetails::getNature, getCbNature()));
+		predicates.add(getPredicateFromCbBool(PathDetails::isChain, getCbChain()));
+		predicates.add(getPredicateFromCbBool(PathDetails::isSpawnsMultipleResults, getCbMultiple()));
+		predicates.add(getPredicateFromCbBool(PathDetails::isAlpha, getCbAlpha()));
+		predicates.add(getPredicateFromCbBool(PathDetails::isBonus, getCbBonus()));
+		predicates.add(getPredicateFromCbBool(PathDetails::isSkittish, getCbSkittish()));
+		predicates.add(getPredicateFromCbBool(PathDetails::isSkittishMultiScaring, getCbMultiScare()));
+		predicates.add(getPredicateFromCbBool(PathDetails::isSkittishAggressive, getCbSkittishAggressive()));
+		predicates.add(getPredicateFromCbBool(PathDetails::isSingleAdvances, getCbSingleAdvances()));
+		predicates.add(d -> d.getFullPathLength() <= (int) getSpinnerPathLength().getValue());
+
+		SwingUtilities.invokeLater(new Runnable() {
+			@Override
+			public void run() {
+				List<PathDetails> filtered = new PredicateFilter(predicates).applyFilters(currentPaths);
+				getTableModel().updateModel(filtered);
+				updateStatus();
+			}
+		});
 	}
-	
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		updateFilters();
 	}
-	
+
 	@Override
 	public void stateChanged(ChangeEvent e) {
 		updateFilters();

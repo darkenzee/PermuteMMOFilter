@@ -1,6 +1,6 @@
 package io.github.darkenzee.PermuteMMOFilter.types;
 
-public enum PokemonNature {
+public enum PokemonNature implements IMatchesExcpected<PokemonNature> {
 	Any,
 	Adamant,
 	Bashful,
@@ -26,5 +26,15 @@ public enum PokemonNature {
 	Relaxed,
 	Sassy,
 	Serious,
-	Timid
+	Timid;
+
+	@Override
+	public boolean matchesExpected(PokemonNature expectedNature) {
+		switch (expectedNature) {
+		case Any:
+			return true;
+		default:
+			return this.equals(expectedNature);
+		}
+	}
 }

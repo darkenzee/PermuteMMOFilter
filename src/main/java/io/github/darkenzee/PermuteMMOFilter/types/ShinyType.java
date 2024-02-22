@@ -1,6 +1,6 @@
 package io.github.darkenzee.PermuteMMOFilter.types;
 
-public enum ShinyType {
+public enum ShinyType implements IMatchesExcpected<ShinyType> {
 	Any("✼"), Star("★"), Square("■"), Either("★■"), Not("🛇");
 	
 	private final String symbol;
@@ -13,14 +13,14 @@ public enum ShinyType {
 		return symbol;
 	}
 
-	public boolean matchesExpected(ShinyType type) {
-		switch (type) {
+	public boolean matchesExpected(ShinyType expectedType) {
+		switch (expectedType) {
 		case Any:
 			return true;
 		case Either:
 			return this.equals(Star) || this.equals(Square);
 		default:
-			return this.equals(type);
+			return this.equals(expectedType);
 		}
 	}
 }
