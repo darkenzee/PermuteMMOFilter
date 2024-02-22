@@ -17,6 +17,14 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 
+
+	<scm>
+		<connection>scm:git:https://github.com/darkenzee/PermuteMMOFilter.git</connection>
+		<developerConnection>scm:git:https://github.com/darkenzee/PermuteMMOFilter.git</developerConnection>
+		<tag>HEAD</tag>
+		<url>https://github.com/darkenzee/PermuteMMOFilter.git</url>
+	</scm>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
