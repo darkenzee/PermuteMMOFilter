@@ -94,7 +94,7 @@ public class GenericTableModel<T_Elements> extends DefaultTableModel
         return m_filteredCount;
     }
     
-    /**
+    /*
      * Override hook for custom sorting.
      */
     public Comparator<T_Elements> getComparator() {

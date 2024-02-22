@@ -255,10 +255,8 @@ public class TableSorter extends AbstractTableModel {
         }
         return viewToModel;
     }
-/**
+/*
  * Convert the row index in the view to the corresponding row index in the model 
- * @param viewIndex
- * @return
  */
     public int indexOfViewToModel(int viewIndex) {
         //do some range checking
@@ -273,10 +271,8 @@ public class TableSorter extends AbstractTableModel {
         }
     }
  
-    /**
+    /*
      * Convert the row index of the model to the corresponding row index in the view
-     * @param modelIndex
-     * @return
      */
     //Bug 30     
     public int indexOfModelToView( int modelIndex){
