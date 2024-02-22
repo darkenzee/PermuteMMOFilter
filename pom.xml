@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>io.github.darkenzee</groupId>
-	<artifactId>PermuteMMOFilter</artifactId>
+	<artifactId>permute-mmo-filter</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
