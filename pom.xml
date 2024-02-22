@@ -5,7 +5,7 @@
 
 	<groupId>io.github.darkenzee</groupId>
 	<artifactId>PermuteMMOFilter</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>PermuteMMOFilter</name>
@@ -20,7 +20,7 @@
 	<scm>
 		<connection>scm:git:https://github.com/darkenzee/PermuteMMOFilter.git</connection>
 		<developerConnection>scm:git:https://github.com/darkenzee/PermuteMMOFilter.git</developerConnection>
-		<tag>PermuteMMOFilter-0.0.1</tag>
+		<tag>HEAD</tag>
 		<url>https://github.com/darkenzee/PermuteMMOFilter.git</url>
 	</scm>
 
