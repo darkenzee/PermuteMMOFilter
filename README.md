@@ -4,6 +4,8 @@
 
 Tiny GUI program for filtering path results from PermuteMMO
 
+Requires Java 8 to run
+
 Load text file from PermuteMMO discord bot or paste short-form text into input from your own PermuteMMO output.
 
 ## Discord Bot Format
