@@ -23,7 +23,7 @@ public class PathDetailsParser {
 	}
 
 	public static List<PathDetails> loadFromString(String inputString) throws IOException {
-		try (InputStream inputStream = IOUtils.toInputStream(inputString, Charset.defaultCharset())) {
+		try (InputStream inputStream = IOUtils.toInputStream(inputString, Charset.forName("UTF-8"))) {
 			return loadFromInputStream(inputStream);
 		}
 	}
@@ -32,7 +32,7 @@ public class PathDetailsParser {
 		List<PathDetails> results = new ArrayList<>();
 		StringBuilder builder = new StringBuilder();
 		String line = null;
-		BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+		BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"));
 		PathTrie root = new PathTrie(null);
 		Map<Integer, PathDetails> lastPathOfLength = new HashMap<>();
 		while((line = reader.readLine()) != null) {
