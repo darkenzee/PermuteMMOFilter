@@ -19,6 +19,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+      with:
+        token: ${{secrets.BUILD_AUTOMATION_PAT}}
+        persist-credentials: true
     - name: Set up JDK 8
       uses: actions/setup-java@v3
       with:
@@ -33,6 +36,3 @@ jobs:
 
     - name: Maven Release
       run: mvn release:prepare release:perform -B -s .maven_settings.xml -DreleaseVersion=${{ github.event.inputs.releaseVersion }} -DdevelopmentVersion=${{ github.event.inputs.developmentVersion }}
-      env:
-        GITHUB_ACTOR: ${{ github.actor }}
-        GITHUB_TOKEN: ${{ github.token }}
