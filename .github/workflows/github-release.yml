@@ -7,7 +7,7 @@ on:
 
 jobs:
   tagged-release:
-    name: "Tagged Release"
+    permissions: write-all
     runs-on: "ubuntu-latest"
 
     steps:
