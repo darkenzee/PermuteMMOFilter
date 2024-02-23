@@ -1,0 +1,342 @@
+* A1|A1|A1|A1|A2|G1|G2|CR|A1|A1|A4      >>> Bonus Spawn4 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:   2
+PID: 0C518BDA
+EC: 4200253A
+IVs: 31/11/15/31/30/31
+Gender:  (M)
+Nature: Quirky
+Level: 35
+Height: 99 | Weight: 80
+* A1|A1|A1|A2|A1|G2|CR|A1|A4            >>> Bonus Spawn4 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:   8
+PID: 4D4507B9
+EC: C7710A89
+IVs: 8/31/31/5/31/14
+Gender:  (M)
+Nature: Bold
+Level: 33
+Height: 124 | Weight: 43
+* A1|A1|A1|A2|A1|G2|G1|CR|A1            >>> Bonus Spawn1 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:  12
+PID: 44FA870D
+EC: B457DCD5
+IVs: 15/25/31/31/31/12
+Gender:  (M)
+Nature: Serious
+Level: 33
+Height: 146 | Weight: 153
+* A1|A1|A1|A2|A1|G2|G1|CR|A2            >>> Bonus Spawn1 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:  12
+PID: 44FA870D
+EC: B457DCD5
+IVs: 15/25/31/31/31/12
+Gender:  (M)
+Nature: Serious
+Level: 33
+Height: 146 | Weight: 153
+* A1|A1|A1|A2|A1|G2|G1|CR|A3            >>> Bonus Spawn1 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:  12
+PID: 44FA870D
+EC: B457DCD5
+IVs: 15/25/31/31/31/12
+Gender:  (M)
+Nature: Serious
+Level: 33
+Height: 146 | Weight: 153
+* A1|A1|A1|A3|G1|CR|A1|A1|A1            >>> Bonus Spawn1 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:  13
+PID: 1A13A634
+EC: 9DC5E420
+IVs: 4/31/10/29/31/31
+Gender:  (M)
+Nature: Mild
+Level: 35
+Height: 65 | Weight: 125
+* A1|A1|A2|A2|G1|G1|G1|CR|A1|A1|A1      >>> Bonus Spawn1 = NOT αlpha - Dewott
+Shiny: ■ - Shiny Rolls:   1
+PID: 32BC7C58
+EC: FC2F7DE2
+IVs: 7/19/27/31/31/31
+Gender:  (M)
+Nature: Rash
+Level: 33
+Height: 126 | Weight: 94
+* A1|A1|A3|A4|CR|A1|A1                  >>> Bonus Spawn1 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:   7
+PID: 265E7BFB
+EC: DCE98D90
+IVs: 30/31/31/30/27/31
+Gender:  (M)
+Nature: Impish
+Level: 35
+Height: 188 | Weight: 211
+* A1|A1|A3|A4|CR|A1|A2                  >>> Bonus Spawn1 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:   7
+PID: 265E7BFB
+EC: DCE98D90
+IVs: 30/31/31/30/27/31
+Gender:  (M)
+Nature: Impish
+Level: 35
+Height: 188 | Weight: 211
+* A1|A2|A1|A1|A1|G2|G1|CR               >>> Bonus Spawn1 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:  17
+PID: 2D5BA5C1
+EC: C5B387E0
+IVs: 27/31/31/9/9/31
+Gender:  (F)
+Nature: Docile
+Level: 35
+Height: 153 | Weight: 123
+* A1|A2|A1|A1|A3|G1|CR                  >>> Bonus Spawn1 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:   2
+PID: E0B9A20B
+EC: F5CAE0A0
+IVs: 18/31/31/31/28/11
+Gender:  (M)
+Nature: Quirky
+Level: 34
+Height: 182 | Weight: 100
+* A1|A2|A1|A1|A4|CR|A1|A1|A4            >>> Bonus Spawn4 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:  15
+PID: 56B44B56
+EC: 2E7E99BC
+IVs: 19/31/26/31/31/12
+Gender:  (M)
+Nature: Sassy
+Level: 34
+Height: 208 | Weight: 159
+* A1|A2|A1|A2|G1|G1|G1|CR|A1|A1|A3      >>> Bonus Spawn3 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:   4
+PID: 164757C7
+EC: 1B74ECFE
+IVs: 31/7/31/20/31/7
+Gender:  (M)
+Nature: Adamant
+Level: 35
+Height: 150 | Weight: 170
+* A1|A2|A2|A1|G1|G2|CR                  >>> Bonus Spawn3 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:  17
+PID: A1396560
+EC: 6D8FE701
+IVs: 17/31/31/31/0/27
+Gender:  (M)
+Nature: Sassy
+Level: 34
+Height: 94 | Weight: 184
+* A1|A2|A2|A1|G2|G1|CR|A1|A1|A4         >>> Bonus Spawn4 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:  11
+PID: 4CF996DF
+EC: 2750213D
+IVs: 23/31/31/30/18/31
+Gender:  (M)
+Nature: Naughty
+Level: 35
+Height: 89 | Weight: 99
+* A1|A2|A3|CR|A1|A1|A2                  >>> Bonus Spawn2 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:   1
+PID: 74834666
+EC: 3BF2D4B6
+IVs: 26/11/31/31/20/31
+Gender:  (M)
+Nature: Jolly
+Level: 33
+Height: 150 | Weight: 197
+* A1|A3|A1|A1|G2|G1|CR                  >>> Bonus Spawn3 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:   8
+PID: 0AF47E96
+EC: CE5368B3
+IVs: 31/26/1/21/31/31
+Gender:  (M)
+Nature: Calm
+Level: 34
+Height: 109 | Weight: 136 ~~ Chain result!
+* -> -> -> -> -> -> -> A1|A1            >>> Bonus Spawn1 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:   1
+PID: FCF2A2F2
+EC: 0D02C416
+IVs: 19/13/31/10/31/31
+Gender:  (F)
+Nature: Relaxed
+Level: 33
+Height: 217 | Weight: 95 ~~ Chain result!
+* -> -> -> -> -> -> -> A1|A2            >>> Bonus Spawn1 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:   1
+PID: FCF2A2F2
+EC: 0D02C416
+IVs: 19/13/31/10/31/31
+Gender:  (F)
+Nature: Relaxed
+Level: 33
+Height: 217 | Weight: 95 ~~ Chain result!
+* A1|A3|A1|A2|G1|G1|CR|A1|A1|A4         >>> Bonus Spawn4 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:   4
+PID: D784856A
+EC: 96298FFA
+IVs: 17/31/24/31/12/31
+Gender:  (M)
+Nature: Quiet
+Level: 34
+Height: 181 | Weight: 33
+* A1|A4|A1|G1|G1|CR|A1|A2               >>> Bonus Spawn2 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:  16
+PID: 3ADA7786
+EC: AD9D0C68
+IVs: 31/4/31/31/3/7
+Gender:  (M)
+Nature: Gentle
+Level: 33
+Height: 157 | Weight: 155
+* A1|A4|A1|G1|G1|CR|A1|A3               >>> Bonus Spawn2 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:  16
+PID: 3ADA7786
+EC: AD9D0C68
+IVs: 31/4/31/31/3/7
+Gender:  (M)
+Nature: Gentle
+Level: 33
+Height: 157 | Weight: 155
+* A2|A1|A1|A1|A1|CR|A3                  >>> Bonus Spawn3 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:  11
+PID: 032A1AAE
+EC: E0EBA801
+IVs: 1/31/31/31/0/8
+Gender:  (M)
+Nature: Careful
+Level: 34
+Height: 195 | Weight: 253
+* A2|A1|A1|A1|A1|CR|A4                  >>> Bonus Spawn3 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:  11
+PID: 032A1AAE
+EC: E0EBA801
+IVs: 1/31/31/31/0/8
+Gender:  (M)
+Nature: Careful
+Level: 34
+Height: 195 | Weight: 253
+* A2|A1|A3|G3|CR|A2|A4                  >>> Bonus Spawn4 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:  17
+PID: 1F97B4AA
+EC: 469B77B9
+IVs: 31/26/31/31/9/25
+Gender:  (M)
+Nature: Quiet
+Level: 33
+Height: 156 | Weight: 131
+* A2|A1|A4|CR|A1|A1                     >>> Bonus Spawn1 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:  18
+PID: 24C27F22
+EC: 0DACC545
+IVs: 31/31/31/2/7/3
+Gender:  (M)
+Nature: Timid
+Level: 33
+Height: 127 | Weight: 114
+* A2|A1|A4|CR|A1|A2                     >>> Bonus Spawn1 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:  18
+PID: 24C27F22
+EC: 0DACC545
+IVs: 31/31/31/2/7/3
+Gender:  (M)
+Nature: Timid
+Level: 33
+Height: 127 | Weight: 114
+* A2|A4|G1|G2|CR|A1                     >>> Bonus Spawn1 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:  11
+PID: BD0C0365
+EC: 188FAB4E
+IVs: 24/31/31/24/0/31
+Gender:  (M)
+Nature: Bold
+Level: 34
+Height: 157 | Weight: 179
+* A2|A4|G1|G2|CR|A2                     >>> Bonus Spawn1 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:  11
+PID: BD0C0365
+EC: 188FAB4E
+IVs: 24/31/31/24/0/31
+Gender:  (M)
+Nature: Bold
+Level: 34
+Height: 157 | Weight: 179
+* A2|A4|G1|G2|CR|A3                     >>> Bonus Spawn1 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:  11
+PID: BD0C0365
+EC: 188FAB4E
+IVs: 24/31/31/24/0/31
+Gender:  (M)
+Nature: Bold
+Level: 34
+Height: 157 | Weight: 179
+* A3|A1|A1|A2|G1|CR|A3                  >>> Bonus Spawn3 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:   9
+PID: 60C1B1BC
+EC: 7EBCF31E
+IVs: 31/31/1/1/27/31
+Gender:  (M)
+Nature: Hardy
+Level: 34
+Height: 204 | Weight: 208
+* A3|A1|A1|A2|G1|CR|A4                  >>> Bonus Spawn3 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:   9
+PID: 60C1B1BC
+EC: 7EBCF31E
+IVs: 31/31/1/1/27/31
+Gender:  (M)
+Nature: Hardy
+Level: 34
+Height: 204 | Weight: 208
+* A3|A1|A2|G1|G1|G1|CR|A1|A1|A1         >>> Bonus Spawn1 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:  12
+PID: D7F751FE
+EC: 8696A08D
+IVs: 7/31/31/20/31/18
+Gender:  (M)
+Nature: Serious
+Level: 33
+Height: 162 | Weight: 205
+* A3|A2|A1|G1|G1|G1|CR|A4               >>> Bonus Spawn4 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:  17
+PID: D4B43B5B
+EC: 4E65868D
+IVs: 20/31/11/27/31/31
+Gender:  (F)
+Nature: Brave
+Level: 34
+Height: 199 | Weight: 126
+* A3|A2|A2|G1|CR                        >>> Bonus Spawn2 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:   3
+PID: 0071CE56
+EC: EE1E8D8E
+IVs: 15/31/31/12/4/31
+Gender:  (M)
+Nature: Rash
+Level: 33
+Height: 141 | Weight: 101
+* A3|A2|A2|G2|CR|A1|A1|A3               >>> Bonus Spawn3 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:  10
+PID: CF60DEA8
+EC: 84FC7511
+IVs: 31/28/31/31/24/10
+Gender:  (M)
+Nature: Hasty
+Level: 33
+Height: 113 | Weight: 69
+* A3|A2|A4|CR|A1|A4                     >>> Bonus Spawn4 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:  11
+PID: 98E30A65
+EC: DF1EE5BE
+IVs: 29/2/20/31/31/31
+Gender:  (M)
+Nature: Adamant
+Level: 33
+Height: 216 | Weight: 46
+* A3|A4|G2|CR|A2|A2                     >>> Bonus Spawn2 = NOT αlpha - Dewott
+Shiny: ★ - Shiny Rolls:  15
+PID: F62997E2
+EC: 2E00BC90
+IVs: 31/31/8/31/2/12
+Gender:  (M)
+Nature: Hardy
+Level: 34
+Height: 230 | Weight: 158

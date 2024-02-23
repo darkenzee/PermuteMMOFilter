@@ -1,0 +1,279 @@
+* B1|B1|S2|S2|S3|B1|B1                  >>>       Spawn1 = NOT αlpha - Turtwig
+Shiny: ★ - Shiny Rolls:  20
+PID: A2B949C3
+EC: 1C6FA316
+IVs: 28/24/9/5/28/3
+Gender:  (M)
+Nature: Modest
+Level: 1
+Height: 107 | Weight: 230 -- Skittish: Multi scaring!
+* B1|B1|S4|B1|S2|S4                     >>>       Spawn4 = NOT αlpha - Turtwig
+Shiny: ★ - Shiny Rolls:  15
+PID: DBF903D4
+EC: AC5EB73C
+IVs: 26/2/26/29/10/3
+Gender:  (M)
+Nature: Hardy
+Level: 1
+Height: 192 | Weight: 155 -- Skittish: Multi scaring!
+* B1|B1|S4|S4|A1                        >>>       Spawn1 = NOT αlpha - Turtwig
+Shiny: ★ - Shiny Rolls:  26
+PID: 05CA7642
+EC: 582A031D
+IVs: 17/19/24/8/19/7
+Gender:  (F)
+Nature: Jolly
+Level: 1
+Height: 118 | Weight: 68 -- Skittish: Multi scaring!
+* B1|B1|S4|S4|B1                        >>>       Spawn1 = NOT αlpha - Turtwig
+Shiny: ★ - Shiny Rolls:  26
+PID: 05CA7642
+EC: 582A031D
+IVs: 17/19/24/8/19/7
+Gender:  (F)
+Nature: Jolly
+Level: 1
+Height: 118 | Weight: 68 -- Skittish: Multi scaring!
+* B1|S2|B1|B1|B1|S3|B1|S2               >>>       Spawn2 = NOT αlpha - Turtwig
+Shiny: ■ - Shiny Rolls:  12
+PID: A7AACAC2
+EC: E072153D
+IVs: 30/30/26/1/4/8
+Gender:  (M)
+Nature: Calm
+Level: 1
+Height: 120 | Weight: 151 -- Skittish: Multi scaring!
+* B1|S2|S2|S2|B1|S4                     >>>       Spawn4 = NOT αlpha - Turtwig
+Shiny: ★ - Shiny Rolls:  29
+PID: FAEEC705
+EC: 417813C6
+IVs: 31/21/2/29/2/21
+Gender:  (M)
+Nature: Quiet
+Level: 0
+Height: 227 | Weight: 146 -- Skittish: Multi scaring!
+* B1|S3|B1|B1|B1|B1                     >>>       Spawn1 = NOT αlpha - Turtwig
+Shiny: ★ - Shiny Rolls:  12
+PID: 03A89E42
+EC: F436AA58
+IVs: 29/5/9/29/25/14
+Gender:  (M)
+Nature: Sassy
+Level: 0
+Height: 231 | Weight: 184 -- Skittish: Multi scaring!
+* B1|S3|B1|B1|B1|S2                     >>>       Spawn1 = NOT αlpha - Turtwig
+Shiny: ★ - Shiny Rolls:  12
+PID: 03A89E42
+EC: F436AA58
+IVs: 29/5/9/29/25/14
+Gender:  (M)
+Nature: Sassy
+Level: 0
+Height: 231 | Weight: 184 -- Skittish: Multi scaring!
+* B1|S3|B1|B1|B1|S3                     >>>       Spawn1 = NOT αlpha - Turtwig
+Shiny: ★ - Shiny Rolls:  12
+PID: 03A89E42
+EC: F436AA58
+IVs: 29/5/9/29/25/14
+Gender:  (M)
+Nature: Sassy
+Level: 0
+Height: 231 | Weight: 184 -- Skittish: Multi scaring!
+* B1|S3|B1|B1|B1|S4                     >>>       Spawn1 = NOT αlpha - Turtwig
+Shiny: ★ - Shiny Rolls:  12
+PID: 03A89E42
+EC: F436AA58
+IVs: 29/5/9/29/25/14
+Gender:  (M)
+Nature: Sassy
+Level: 0
+Height: 231 | Weight: 184 -- Skittish: Multi scaring!
+* B1|S3|B1|S4|B1                        >>>       Spawn1 = NOT αlpha - Turtwig
+Shiny: ★ - Shiny Rolls:  28
+PID: 5AA9CDE0
+EC: 7EA3027E
+IVs: 11/2/10/19/25/27
+Gender:  (M)
+Nature: Serious
+Level: 0
+Height: 123 | Weight: 80 -- Skittish: Multi scaring!
+* B1|S3|B1|S4|S2                        >>>       Spawn1 = NOT αlpha - Turtwig
+Shiny: ★ - Shiny Rolls:  28
+PID: 5AA9CDE0
+EC: 7EA3027E
+IVs: 11/2/10/19/25/27
+Gender:  (M)
+Nature: Serious
+Level: 0
+Height: 123 | Weight: 80 -- Skittish: Multi scaring!
+* B1|S4|S2|S3|S2                        >>>       Spawn2 = NOT αlpha - Turtwig
+Shiny: ★ - Shiny Rolls:  19
+PID: 19C73A36
+EC: AB65AE7C
+IVs: 15/4/15/11/20/13
+Gender:  (M)
+Nature: Relaxed
+Level: 0
+Height: 135 | Weight: 97 -- Skittish: Multi scaring!
+* B1|S4|S4|B1|S2                        >>>       Spawn2 = NOT αlpha - Turtwig
+Shiny: ★ - Shiny Rolls:  10
+PID: BE0407F4
+EC: 0A1B1716
+IVs: 26/21/7/11/16/6
+Gender:  (M)
+Nature: Careful
+Level: 0
+Height: 69 | Weight: 156 -- Skittish: Multi scaring!
+* S2|B1|B1|B1|B1|B1|B1|B1               >>>       Spawn1 = NOT αlpha - Turtwig
+Shiny: ★ - Shiny Rolls:  15
+PID: 6C6EBE4C
+EC: 980653B0
+IVs: 31/5/30/22/19/3
+Gender:  (M)
+Nature: Lax
+Level: 0
+Height: 235 | Weight: 138 -- Skittish: Multi scaring!
+* S2|B1|B1|B1|B1|B1|B1|S2               >>>       Spawn1 = NOT αlpha - Turtwig
+Shiny: ★ - Shiny Rolls:  15
+PID: 6C6EBE4C
+EC: 980653B0
+IVs: 31/5/30/22/19/3
+Gender:  (M)
+Nature: Lax
+Level: 0
+Height: 235 | Weight: 138 -- Skittish: Multi scaring!
+* S2|B1|B1|B1|B1|B1|B1|S3               >>>       Spawn1 = NOT αlpha - Turtwig
+Shiny: ★ - Shiny Rolls:  15
+PID: 6C6EBE4C
+EC: 980653B0
+IVs: 31/5/30/22/19/3
+Gender:  (M)
+Nature: Lax
+Level: 0
+Height: 235 | Weight: 138 -- Skittish: Multi scaring!
+* S2|B1|B1|S4|B1|B1|S3                  >>>       Spawn3 = NOT αlpha - Turtwig
+Shiny: ★ - Shiny Rolls:  32
+PID: 4F626F5A
+EC: D9C61AC6
+IVs: 20/12/20/22/19/13
+Gender:  (F)
+Nature: Naughty
+Level: 1
+Height: 130 | Weight: 22 -- Skittish: Multi scaring!
+* S2|B1|S2|B1|B1|S3|S4                  >>>       Spawn4 = NOT αlpha - Turtwig
+Shiny: ★ - Shiny Rolls:  22
+PID: D16B2447
+EC: C3E98312
+IVs: 13/7/21/16/23/28
+Gender:  (F)
+Nature: Lax
+Level: 0
+Height: 145 | Weight: 129 -- Skittish: Multi scaring!
+* S2|B1|S2|B1|S2                        >>>       Spawn2 = NOT αlpha - Turtwig
+Shiny: ★ - Shiny Rolls:  24
+PID: 14ADE24A
+EC: 936A064F
+IVs: 31/27/26/17/23/29
+Gender:  (M)
+Nature: Relaxed
+Level: 1
+Height: 143 | Weight: 112 -- Skittish: Multi scaring! ~~ Chain result!
+* -> -> -> -> -> B1                     >>>       Spawn1 = NOT αlpha - Turtwig
+Shiny: ★ - Shiny Rolls:  31
+PID: 788C14A1
+EC: 3D14F98C
+IVs: 8/27/26/10/6/8
+Gender:  (M)
+Nature: Gentle
+Level: 0
+Height: 88 | Weight: 87 -- Skittish: Multi scaring! ~~ Chain result!
+* -> -> -> -> -> S2                     >>>       Spawn1 = NOT αlpha - Turtwig
+Shiny: ★ - Shiny Rolls:  31
+PID: 788C14A1
+EC: 3D14F98C
+IVs: 8/27/26/10/6/8
+Gender:  (M)
+Nature: Gentle
+Level: 0
+Height: 88 | Weight: 87 -- Skittish: Multi scaring! ~~ Chain result!
+* -> -> -> -> -> S3                     >>>       Spawn1 = NOT αlpha - Turtwig
+Shiny: ★ - Shiny Rolls:  31
+PID: 788C14A1
+EC: 3D14F98C
+IVs: 8/27/26/10/6/8
+Gender:  (M)
+Nature: Gentle
+Level: 0
+Height: 88 | Weight: 87 -- Skittish: Multi scaring! ~~ Chain result!
+* S2|B1|S2|B1|S3                        >>>       Spawn2 = NOT αlpha - Turtwig
+Shiny: ★ - Shiny Rolls:  24
+PID: 14ADE24A
+EC: 936A064F
+IVs: 31/27/26/17/23/29
+Gender:  (M)
+Nature: Relaxed
+Level: 1
+Height: 143 | Weight: 112 -- Skittish: Multi scaring!
+* S2|B1|S2|B1|S4                        >>>       Spawn2 = NOT αlpha - Turtwig
+Shiny: ★ - Shiny Rolls:  24
+PID: 14ADE24A
+EC: 936A064F
+IVs: 31/27/26/17/23/29
+Gender:  (M)
+Nature: Relaxed
+Level: 1
+Height: 143 | Weight: 112 -- Skittish: Multi scaring!
+* S2|B1|S3|S2|B1|S4                     >>>       Spawn4 = NOT αlpha - Turtwig
+Shiny: ★ - Shiny Rolls:  30
+PID: 17B7060E
+EC: F3A376C5
+IVs: 21/26/11/16/13/21
+Gender:  (F)
+Nature: Bold
+Level: 1
+Height: 208 | Weight: 128 -- Skittish: Multi scaring!
+* S2|B1|S3|S2|S4                        >>>       Spawn4 = NOT αlpha - Turtwig
+Shiny: ★ - Shiny Rolls:   2
+PID: F6352D77
+EC: 8E516BAF
+IVs: 23/30/21/3/10/4
+Gender:  (F)
+Nature: Quiet
+Level: 0
+Height: 129 | Weight: 229 -- Skittish: Multi scaring!
+* S2|S2|B1|S2|B1|B1|S4                  >>>       Spawn4 = NOT αlpha - Turtwig
+Shiny: ★ - Shiny Rolls:   4
+PID: 18AFBB96
+EC: 6C7BE188
+IVs: 17/2/15/11/21/6
+Gender:  (M)
+Nature: Naive
+Level: 1
+Height: 105 | Weight: 181 -- Skittish: Multi scaring!
+* S2|S3|B1|S4|S2                        >>>       Spawn2 = NOT αlpha - Turtwig
+Shiny: ★ - Shiny Rolls:  16
+PID: 9E827BC6
+EC: D3B8B4A4
+IVs: 19/16/10/6/29/5
+Gender:  (M)
+Nature: Quirky
+Level: 0
+Height: 75 | Weight: 92 -- Skittish: Multi scaring!
+* S2|S4|B1|B1|S2|S4                     >>>       Spawn4 = NOT αlpha - Turtwig
+Shiny: ★ - Shiny Rolls:  11
+PID: 0DBC5D1E
+EC: 12BDAFF9
+IVs: 20/15/27/21/24/26
+Gender:  (M)
+Nature: Modest
+Level: 1
+Height: 58 | Weight: 163 -- Skittish: Multi scaring!
+* S3|S3|B1|S3|S4                        >>>       Spawn4 = NOT αlpha - Turtwig
+Shiny: ★ - Shiny Rolls:   8
+PID: 11C7C594
+EC: 3BA3BDE6
+IVs: 22/4/18/0/10/6
+Gender:  (M)
+Nature: Impish
+Level: 0
+Height: 38 | Weight: 215 -- Skittish: Multi scaring!

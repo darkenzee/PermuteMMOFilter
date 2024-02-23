@@ -1,0 +1,63 @@
+* A1|A3|G1|G1|CR|A2                     >>> Bonus Spawn2 = NOT αlpha - Bronzong
+Shiny: ★ - Shiny Rolls:   3
+PID: FF6F97F5
+EC: 64BB35F8
+IVs: 2/31/31/31/31/29
+Gender: 
+Nature: Impish
+Level: 63
+Height: 74 | Weight: 106
+* A1|A3|G1|G1|CR|A3                     >>> Bonus Spawn2 = NOT αlpha - Bronzong
+Shiny: ★ - Shiny Rolls:   3
+PID: FF6F97F5
+EC: 64BB35F8
+IVs: 2/31/31/31/31/29
+Gender: 
+Nature: Impish
+Level: 63
+Height: 74 | Weight: 106
+* A1|A3|G2|CR|A1|A2                     >>> Bonus Spawn2 = NOT αlpha - Bronzong
+Shiny: ★ - Shiny Rolls:  13
+PID: 4588D5F5
+EC: 043F2F67
+IVs: 9/31/31/10/0/31
+Gender: 
+Nature: Sassy
+Level: 64
+Height: 5 | Weight: 185
+* A3|A1|G2|CR|A3                        >>> Bonus Spawn3 = NOT αlpha - Bronzong
+Shiny: ★ - Shiny Rolls:  14
+PID: CFD48A50
+EC: C5DD8E14
+IVs: 31/2/31/1/31/15
+Gender: 
+Nature: Modest
+Level: 64
+Height: 152 | Weight: 209
+* A3|A1|G2|CR|A4                        >>> Bonus Spawn3 = NOT αlpha - Bronzong
+Shiny: ★ - Shiny Rolls:  14
+PID: CFD48A50
+EC: C5DD8E14
+IVs: 31/2/31/1/31/15
+Gender: 
+Nature: Modest
+Level: 64
+Height: 152 | Weight: 209
+* A3|A2|G1|G1|CR|A1                     >>> Bonus Spawn1 = NOT αlpha - Bronzong
+Shiny: ★ - Shiny Rolls:   2
+PID: 8599C256
+EC: DCA4B46E
+IVs: 31/31/6/31/3/13
+Gender: 
+Nature: Relaxed
+Level: 64
+Height: 173 | Weight: 116
+* A3|A2|G1|G1|CR|A2                     >>> Bonus Spawn1 = NOT αlpha - Bronzong
+Shiny: ★ - Shiny Rolls:   2
+PID: 8599C256
+EC: DCA4B46E
+IVs: 31/31/6/31/3/13
+Gender: 
+Nature: Relaxed
+Level: 64
+Height: 173 | Weight: 116

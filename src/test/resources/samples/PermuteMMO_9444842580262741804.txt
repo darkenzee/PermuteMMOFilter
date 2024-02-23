@@ -1,0 +1,189 @@
+* A1|A3|A3|G1|CR|A1|A1                  >>> Bonus Spawn1 = NOT αlpha - Machoke
+Shiny: ★ - Shiny Rolls:  15
+PID: FA347D1E
+EC: 3167AE81
+IVs: 25/12/31/23/31/31
+Gender:  (M)
+Nature: Rash
+Level: 61
+Height: 131 | Weight: 53
+* A1|A3|A3|G1|CR|A1|A2                  >>> Bonus Spawn1 = NOT αlpha - Machoke
+Shiny: ★ - Shiny Rolls:  15
+PID: FA347D1E
+EC: 3167AE81
+IVs: 25/12/31/23/31/31
+Gender:  (M)
+Nature: Rash
+Level: 61
+Height: 131 | Weight: 53
+* A2|A1|A1|A1|G1|G2|CR|A1|A1|A4         >>> Bonus Spawn4 = NOT αlpha - Machoke
+Shiny: ★ - Shiny Rolls:  17
+PID: 7E7F7583
+EC: 0DFE6000
+IVs: 28/31/31/31/19/23
+Gender:  (M)
+Nature: Hardy
+Level: 60
+Height: 224 | Weight: 166
+* A2|A1|A1|A2|CR|A1|A3                  >>> Bonus Spawn3 = NOT αlpha - Machoke
+Shiny: ★ - Shiny Rolls:   6
+PID: AFB9D248
+EC: FE7635DC
+IVs: 16/31/31/13/7/31
+Gender:  (M)
+Nature: Naughty
+Level: 60
+Height: 143 | Weight: 35
+* A2|A1|A1|A2|CR|A1|A4                  >>> Bonus Spawn3 = NOT αlpha - Machoke
+Shiny: ★ - Shiny Rolls:   6
+PID: AFB9D248
+EC: FE7635DC
+IVs: 16/31/31/13/7/31
+Gender:  (M)
+Nature: Naughty
+Level: 60
+Height: 143 | Weight: 35
+* A2|A1|A1|A2|G1|CR|A1|A1               >>> Bonus Spawn1 = NOT αlpha - Machoke
+Shiny: ★ - Shiny Rolls:  16
+PID: F50EBFAB
+EC: 885C051B
+IVs: 31/31/13/31/15/5
+Gender:  (M)
+Nature: Brave
+Level: 62
+Height: 158 | Weight: 116
+* A2|A1|A1|A2|G1|CR|A1|A2               >>> Bonus Spawn1 = NOT αlpha - Machoke
+Shiny: ★ - Shiny Rolls:  16
+PID: F50EBFAB
+EC: 885C051B
+IVs: 31/31/13/31/15/5
+Gender:  (M)
+Nature: Brave
+Level: 62
+Height: 158 | Weight: 116
+* A2|A1|A1|A2|G1|G1|CR|A2|A3            >>> Bonus Spawn3 = NOT αlpha - Machoke
+Shiny: ★ - Shiny Rolls:   6
+PID: 623C369C
+EC: 918C0AB1
+IVs: 31/31/31/6/31/7
+Gender:  (M)
+Nature: Timid
+Level: 60
+Height: 130 | Weight: 214
+* A2|A1|A1|A4|CR|A1                     >>> Bonus Spawn1 = NOT αlpha - Machoke
+Shiny: ★ - Shiny Rolls:  13
+PID: BADF42EE
+EC: D49D125D
+IVs: 3/31/31/28/19/31
+Gender:  (M)
+Nature: Impish
+Level: 62
+Height: 206 | Weight: 161
+* A2|A1|A1|A4|CR|A2                     >>> Bonus Spawn1 = NOT αlpha - Machoke
+Shiny: ★ - Shiny Rolls:  13
+PID: BADF42EE
+EC: D49D125D
+IVs: 3/31/31/28/19/31
+Gender:  (M)
+Nature: Impish
+Level: 62
+Height: 206 | Weight: 161
+* A2|A1|A1|A4|CR|A3                     >>> Bonus Spawn1 = NOT αlpha - Machoke
+Shiny: ★ - Shiny Rolls:  13
+PID: BADF42EE
+EC: D49D125D
+IVs: 3/31/31/28/19/31
+Gender:  (M)
+Nature: Impish
+Level: 62
+Height: 206 | Weight: 161
+* A2|A1|A2|G3|CR                        >>> Bonus Spawn4 = NOT αlpha - Machoke
+Shiny: ★ - Shiny Rolls:   3
+PID: 6C95E58D
+EC: 1873E7BF
+IVs: 5/31/24/31/0/31
+Gender:  (M)
+Nature: Lonely
+Level: 60
+Height: 175 | Weight: 190
+* A2|A2|A1|G1|G1|G1|CR|A1|A1|A1         >>> Bonus Spawn1 = NOT αlpha - Machoke
+Shiny: ■ - Shiny Rolls:   5
+PID: DE034CCC
+EC: 6F4F17BA
+IVs: 31/31/30/0/27/31
+Gender:  (M)
+Nature: Naughty
+Level: 60
+Height: 84 | Weight: 225
+* A2|A2|A1|G1|G2|CR|A1|A1               >>> Bonus Spawn1 = NOT αlpha - Machoke
+Shiny: ★ - Shiny Rolls:   3
+PID: FE181075
+EC: B58CBBCE
+IVs: 20/31/1/31/26/31
+Gender:  (M)
+Nature: Quirky
+Level: 62
+Height: 114 | Weight: 54
+* A2|A2|A1|G1|G2|CR|A1|A2               >>> Bonus Spawn1 = NOT αlpha - Machoke
+Shiny: ★ - Shiny Rolls:   3
+PID: FE181075
+EC: B58CBBCE
+IVs: 20/31/1/31/26/31
+Gender:  (M)
+Nature: Quirky
+Level: 62
+Height: 114 | Weight: 54
+* A3|A1|A3|G1|CR|A1|A1|A4               >>> Bonus Spawn4 = NOT αlpha - Machoke
+Shiny: ★ - Shiny Rolls:  11
+PID: 9C9D4F5F
+EC: DC59C622
+IVs: 2/31/7/31/5/31
+Gender:  (M)
+Nature: Brave
+Level: 62
+Height: 71 | Weight: 181
+* A3|A2|G1|CR|A1|A4                     >>> Bonus Spawn4 = NOT αlpha - Machoke
+Shiny: ★ - Shiny Rolls:  19
+PID: CFFE24E4
+EC: B750DFD3
+IVs: 9/15/3/31/31/31
+Gender:  (F)
+Nature: Adamant
+Level: 62
+Height: 221 | Weight: 74
+* A3|A3|CR                              >>> Bonus Spawn1 = NOT αlpha - Machoke
+Shiny: ★ - Shiny Rolls:   3
+PID: 24B77957
+EC: 7399E41B
+IVs: 16/4/31/31/31/24
+Gender:  (M)
+Nature: Calm
+Level: 62
+Height: 93 | Weight: 163
+* A3|A3|G1|G1|CR|A1|A3                  >>> Bonus Spawn3 = NOT αlpha - Machoke
+Shiny: ★ - Shiny Rolls:  10
+PID: AAE5C97F
+EC: A10BD346
+IVs: 31/29/31/18/14/31
+Gender:  (M)
+Nature: Impish
+Level: 61
+Height: 122 | Weight: 91
+* A3|A3|G1|G1|CR|A1|A4                  >>> Bonus Spawn3 = NOT αlpha - Machoke
+Shiny: ★ - Shiny Rolls:  10
+PID: AAE5C97F
+EC: A10BD346
+IVs: 31/29/31/18/14/31
+Gender:  (M)
+Nature: Impish
+Level: 61
+Height: 122 | Weight: 91
+* A4|A2|G1|G1|CR|A1|A1|A1               >>> Bonus Spawn1 = NOT αlpha - Machoke
+Shiny: ■ - Shiny Rolls:  12
+PID: 47DC5FA1
+EC: 0E74B5A6
+IVs: 10/31/31/31/14/23
+Gender:  (M)
+Nature: Hasty
+Level: 61
+Height: 44 | Weight: 108

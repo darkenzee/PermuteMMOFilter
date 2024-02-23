@@ -1,0 +1,288 @@
+* B1|B1|B1|S2|B1|G1|G1|CR|A2|A2         >>> Bonus Spawn2 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:  10
+PID: C13880B0
+EC: 80FFB5EF
+IVs: 31/31/12/31/28/31
+Gender:  (M)
+Nature: Calm
+Level: 75
+Height: 255 | Weight: 255 -- Skittish: Multi scaring!
+* B1|B1|S2|S2|G2|CR                     >>> Bonus Spawn3 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:  18
+PID: 2A90E3FE
+EC: 3935AD74
+IVs: 31/31/31/13/31/24
+Gender:  (F)
+Nature: Bold
+Level: 75
+Height: 255 | Weight: 255 -- Skittish: Multi scaring!
+* B1|S2|B1|S4|CR|A1|A1|A3               >>> Bonus Spawn3 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:  12
+PID: 3E3C88FD
+EC: 2BF5B22E
+IVs: 31/31/31/31/19/6
+Gender:  (F)
+Nature: Calm
+Level: 77
+Height: 255 | Weight: 255 -- Skittish: Multi scaring!
+* B1|S2|S3|G1|G1|CR|A2|A1               >>> Bonus Spawn1 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:   7
+PID: EB259D8E
+EC: E02260C5
+IVs: 31/31/31/31/17/27
+Gender:  (M)
+Nature: Naughty
+Level: 76
+Height: 255 | Weight: 255 -- Skittish: Multi scaring!
+* B1|S3|B1|B1|CR                        >>> Bonus Spawn1 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:  19
+PID: F9528653
+EC: 38540623
+IVs: 3/31/31/31/20/31
+Gender:  (F)
+Nature: Hasty
+Level: 76
+Height: 255 | Weight: 255 -- Skittish: Multi scaring!
+* B1|S3|B1|S3|G1|CR|A2|A2               >>> Bonus Spawn2 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:  13
+PID: 5F102A71
+EC: F0E155DA
+IVs: 31/27/31/31/31/16
+Gender:  (F)
+Nature: Calm
+Level: 77
+Height: 255 | Weight: 255 -- Skittish: Multi scaring!
+* B1|S3|S2|G1|CR|A2|A1                  >>> Bonus Spawn1 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:   7
+PID: 29F2F5C3
+EC: 2D563995
+IVs: 31/3/31/4/31/31
+Gender:  (F)
+Nature: Modest
+Level: 75
+Height: 255 | Weight: 255 -- Skittish: Multi scaring!
+* B1|S3|S2|G3|CR|A2|A3                  >>> Bonus Spawn3 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:   1
+PID: E19047D1
+EC: 1ED0D788
+IVs: 31/21/31/31/31/31
+Gender:  (M)
+Nature: Quiet
+Level: 76
+Height: 255 | Weight: 255 -- Skittish: Multi scaring!
+* B1|S4|B1|G1|G1|G1|CR|A1|A4            >>> Bonus Spawn4 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:   8
+PID: DBEAED25
+EC: 959C003B
+IVs: 31/31/29/31/31/19
+Gender:  (F)
+Nature: Naughty
+Level: 76
+Height: 255 | Weight: 255 -- Skittish: Multi scaring!
+* S2|B1|B1|B1|B1|G1|CR|A1|A1            >>> Bonus Spawn1 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:  15
+PID: EE8F4F72
+EC: B81B5F81
+IVs: 8/31/31/31/7/31
+Gender:  (M)
+Nature: Bashful
+Level: 76
+Height: 255 | Weight: 255 -- Skittish: Multi scaring!
+* S2|B1|B1|B1|B1|G1|CR|A1|A2            >>> Bonus Spawn1 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:  15
+PID: EE8F4F72
+EC: B81B5F81
+IVs: 8/31/31/31/7/31
+Gender:  (M)
+Nature: Bashful
+Level: 76
+Height: 255 | Weight: 255 -- Skittish: Multi scaring!
+* S2|B1|B1|S2|G1|CR|A4                  >>> Bonus Spawn4 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:   4
+PID: C494ED0F
+EC: E1AAA0CA
+IVs: 31/31/31/25/31/24
+Gender:  (F)
+Nature: Relaxed
+Level: 75
+Height: 255 | Weight: 255 -- Skittish: Multi scaring!
+* S2|B1|B1|S2|G1|G1|G1|CR|A1|A3         >>> Bonus Spawn3 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:   7
+PID: 0F903565
+EC: 9A75C07A
+IVs: 31/16/31/31/31/31
+Gender:  (M)
+Nature: Brave
+Level: 76
+Height: 255 | Weight: 255 -- Skittish: Multi scaring!
+* S2|B1|B1|S2|G1|G1|G1|CR|A1|A4         >>> Bonus Spawn3 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:   7
+PID: 0F903565
+EC: 9A75C07A
+IVs: 31/16/31/31/31/31
+Gender:  (M)
+Nature: Brave
+Level: 76
+Height: 255 | Weight: 255 -- Skittish: Multi scaring!
+* S2|B1|B1|S4|CR|A1                     >>> Bonus Spawn1 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:   5
+PID: 2063DB95
+EC: 3525DFFC
+IVs: 31/31/31/22/16/31
+Gender:  (M)
+Nature: Rash
+Level: 76
+Height: 255 | Weight: 255 -- Skittish: Multi scaring! ~~ Chain result!
+* -> -> -> -> -> -> A4                  >>> Bonus Spawn4 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:   1
+PID: 01BED142
+EC: 3C7919CF
+IVs: 31/31/10/21/31/31
+Gender:  (M)
+Nature: Quiet
+Level: 75
+Height: 255 | Weight: 255 -- Skittish: Multi scaring! ~~ Chain result!
+* S2|B1|B1|S4|CR|A2                     >>> Bonus Spawn1 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:   5
+PID: 2063DB95
+EC: 3525DFFC
+IVs: 31/31/31/22/16/31
+Gender:  (M)
+Nature: Rash
+Level: 76
+Height: 255 | Weight: 255 -- Skittish: Multi scaring!
+* S2|B1|B1|S4|CR|A3                     >>> Bonus Spawn1 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:   5
+PID: 2063DB95
+EC: 3525DFFC
+IVs: 31/31/31/22/16/31
+Gender:  (M)
+Nature: Rash
+Level: 76
+Height: 255 | Weight: 255 -- Skittish: Multi scaring!
+* S2|B1|S2|S2|G2|CR                     >>> Bonus Spawn1 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:  12
+PID: 2F6CAFD9
+EC: 29D3EDD0
+IVs: 29/31/31/31/25/31
+Gender:  (F)
+Nature: Bashful
+Level: 76
+Height: 255 | Weight: 255 -- Skittish: Multi scaring!
+* S2|B1|S4|G2|CR                        >>> Bonus Spawn4 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:  13
+PID: 561B56E6
+EC: E312C0FC
+IVs: 23/31/1/31/31/31
+Gender:  (M)
+Nature: Quiet
+Level: 75
+Height: 255 | Weight: 255 -- Skittish: Multi scaring!
+* S2|S2|S2|G2|G1|CR|A1|A2               >>> Bonus Spawn2 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:   2
+PID: EA1A2317
+EC: 9D24A2CE
+IVs: 14/31/31/31/2/31
+Gender:  (M)
+Nature: Quirky
+Level: 75
+Height: 255 | Weight: 255 -- Skittish: Multi scaring!
+* S2|S2|S2|G2|G1|CR|A1|A3               >>> Bonus Spawn2 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:   2
+PID: EA1A2317
+EC: 9D24A2CE
+IVs: 14/31/31/31/2/31
+Gender:  (M)
+Nature: Quirky
+Level: 75
+Height: 255 | Weight: 255 -- Skittish: Multi scaring!
+* S3|B1|B1|S2|G2|CR|A1|A1|A1            >>> Bonus Spawn1 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:   3
+PID: 4F37F2E8
+EC: E1F050EC
+IVs: 14/31/31/31/31/10
+Gender:  (M)
+Nature: Brave
+Level: 75
+Height: 255 | Weight: 255 -- Skittish: Multi scaring!
+* S3|B1|B1|S2|G2|CR|A1|A2               >>> Bonus Spawn2 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:   5
+PID: D1DFE215
+EC: 8F1826FE
+IVs: 31/24/9/31/31/31
+Gender:  (M)
+Nature: Relaxed
+Level: 77
+Height: 255 | Weight: 255 -- Skittish: Multi scaring!
+* S3|B1|B1|S2|G2|CR|A1|A3               >>> Bonus Spawn2 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:   5
+PID: D1DFE215
+EC: 8F1826FE
+IVs: 31/24/9/31/31/31
+Gender:  (M)
+Nature: Relaxed
+Level: 77
+Height: 255 | Weight: 255 -- Skittish: Multi scaring!
+* S3|B1|S2|G1|G1|G1|CR                  >>> Bonus Spawn1 = αlpha - Chatot
+Shiny: ■ - Shiny Rolls:   9
+PID: 15705226
+EC: E72CF0DA
+IVs: 28/31/31/31/24/31
+Gender:  (M)
+Nature: Serious
+Level: 77
+Height: 255 | Weight: 255 -- Skittish: Multi scaring!
+* S3|B1|S2|G3|CR|A2|A4                  >>> Bonus Spawn4 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:   7
+PID: F1E01451
+EC: EF377E95
+IVs: 31/31/31/27/31/25
+Gender:  (M)
+Nature: Impish
+Level: 76
+Height: 255 | Weight: 255 -- Skittish: Multi scaring!
+* S4|B1|B1|G1|CR|A3                     >>> Bonus Spawn3 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:   7
+PID: 4027204F
+EC: F1832651
+IVs: 31/26/31/16/31/31
+Gender:  (F)
+Nature: Naive
+Level: 77
+Height: 255 | Weight: 255 -- Skittish: Multi scaring!
+* S4|B1|B1|G1|CR|A4                     >>> Bonus Spawn3 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:   7
+PID: 4027204F
+EC: F1832651
+IVs: 31/26/31/16/31/31
+Gender:  (F)
+Nature: Naive
+Level: 77
+Height: 255 | Weight: 255 -- Skittish: Multi scaring!
+* S4|S2|G1|CR|A2|A1                     >>> Bonus Spawn1 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:  16
+PID: 03825F88
+EC: 55ACB1A5
+IVs: 31/31/17/31/2/31
+Gender:  (M)
+Nature: Lonely
+Level: 77
+Height: 255 | Weight: 255 -- Skittish: Multi scaring!
+* S4|S2|G2|G1|CR|A1|A3                  >>> Bonus Spawn3 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:  10
+PID: A46A007B
+EC: 24E4CC5A
+IVs: 31/31/31/31/18/4
+Gender:  (M)
+Nature: Rash
+Level: 76
+Height: 255 | Weight: 255 -- Skittish: Multi scaring!
+* S4|S2|G2|G1|CR|A1|A4                  >>> Bonus Spawn3 = αlpha - Chatot
+Shiny: ★ - Shiny Rolls:  10
+PID: A46A007B
+EC: 24E4CC5A
+IVs: 31/31/31/31/18/4
+Gender:  (M)
+Nature: Rash
+Level: 76
+Height: 255 | Weight: 255 -- Skittish: Multi scaring!

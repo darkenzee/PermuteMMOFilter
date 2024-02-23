@@ -1,0 +1,297 @@
+* A1|A1|A1|A1|A1|G2|CR|A1|A1|A2         >>> Bonus Spawn2 = αlpha - Carnivine
+Shiny: ★ - Shiny Rolls:  13
+PID: B35A8C01
+EC: 76426C63
+IVs: 31/25/31/31/31/23
+Gender:  (F)
+Nature: Docile
+Level: 77
+Height: 255 | Weight: 255
+* A1|A1|A2|A1|G2|CR|A1|A1|A3            >>> Bonus Spawn3 = αlpha - Carnivine
+Shiny: ★ - Shiny Rolls:  14
+PID: 61D67485
+EC: 2DF6C17C
+IVs: 19/7/31/31/31/31
+Gender:  (F)
+Nature: Modest
+Level: 75
+Height: 255 | Weight: 255
+* A1|A1|A2|A4|CR|A1|A3                  >>> Bonus Spawn3 = αlpha - Carnivine
+Shiny: ■ - Shiny Rolls:  19
+PID: 2853BD40
+EC: C08D4CF4
+IVs: 31/31/31/31/23/3
+Gender:  (M)
+Nature: Rash
+Level: 76
+Height: 255 | Weight: 255
+* A1|A1|A2|A4|CR|A1|A4                  >>> Bonus Spawn3 = αlpha - Carnivine
+Shiny: ■ - Shiny Rolls:  19
+PID: 2853BD40
+EC: C08D4CF4
+IVs: 31/31/31/31/23/3
+Gender:  (M)
+Nature: Rash
+Level: 76
+Height: 255 | Weight: 255
+* A1|A1|A3|G3|CR|A1                     >>> Bonus Spawn1 = αlpha - Carnivine
+Shiny: ■ - Shiny Rolls:  15
+PID: 3F11B1C6
+EC: 66A0E28B
+IVs: 31/31/3/31/2/31
+Gender:  (M)
+Nature: Modest
+Level: 76
+Height: 255 | Weight: 255
+* A1|A1|A3|G3|CR|A2                     >>> Bonus Spawn1 = αlpha - Carnivine
+Shiny: ■ - Shiny Rolls:  15
+PID: 3F11B1C6
+EC: 66A0E28B
+IVs: 31/31/3/31/2/31
+Gender:  (M)
+Nature: Modest
+Level: 76
+Height: 255 | Weight: 255
+* A1|A1|A3|G3|CR|A3                     >>> Bonus Spawn1 = αlpha - Carnivine
+Shiny: ■ - Shiny Rolls:  15
+PID: 3F11B1C6
+EC: 66A0E28B
+IVs: 31/31/3/31/2/31
+Gender:  (M)
+Nature: Modest
+Level: 76
+Height: 255 | Weight: 255
+* A1|A2|A3|G2|CR|A1|A4                  >>> Bonus Spawn4 = αlpha - Carnivine
+Shiny: ★ - Shiny Rolls:   1
+PID: D162A50D
+EC: 2F65BBA0
+IVs: 31/31/31/14/31/31
+Gender:  (F)
+Nature: Careful
+Level: 75
+Height: 255 | Weight: 255
+* A1|A3|A1|G2|CR|A1|A3                  >>> Bonus Spawn3 = αlpha - Carnivine
+Shiny: ★ - Shiny Rolls:  19
+PID: 5ADDD7CC
+EC: 23757289
+IVs: 31/31/31/0/31/14
+Gender:  (F)
+Nature: Hardy
+Level: 76
+Height: 255 | Weight: 255
+* A1|A3|A1|G2|CR|A1|A4                  >>> Bonus Spawn3 = αlpha - Carnivine
+Shiny: ★ - Shiny Rolls:  19
+PID: 5ADDD7CC
+EC: 23757289
+IVs: 31/31/31/0/31/14
+Gender:  (F)
+Nature: Hardy
+Level: 76
+Height: 255 | Weight: 255
+* A1|A3|A2|G1|CR|A2|A2                  >>> Bonus Spawn2 = αlpha - Carnivine
+Shiny: ★ - Shiny Rolls:  14
+PID: 5DE04FD7
+EC: DDC96A3F
+IVs: 31/31/23/22/31/31
+Gender:  (M)
+Nature: Quiet
+Level: 75
+Height: 255 | Weight: 255
+* A1|A4|G1|G1|CR|A2|A4                  >>> Bonus Spawn4 = αlpha - Carnivine
+Shiny: ★ - Shiny Rolls:  17
+PID: 38BB6530
+EC: 9953DFCE
+IVs: 31/31/31/6/31/31
+Gender:  (F)
+Nature: Serious
+Level: 75
+Height: 255 | Weight: 255
+* A1|A4|G1|G2|CR|A1                     >>> Bonus Spawn1 = αlpha - Carnivine
+Shiny: ★ - Shiny Rolls:  12
+PID: 83C2EECF
+EC: DB88B940
+IVs: 31/25/31/31/31/15
+Gender:  (F)
+Nature: Rash
+Level: 77
+Height: 255 | Weight: 255 ~~ Chain result!
+* -> -> -> -> -> -> A3                  >>> Bonus Spawn3 = αlpha - Carnivine
+Shiny: ★ - Shiny Rolls:   2
+PID: CDE24E67
+EC: 26886540
+IVs: 31/31/31/1/18/31
+Gender:  (F)
+Nature: Careful
+Level: 75
+Height: 255 | Weight: 255 ~~ Chain result!
+* -> -> -> -> -> -> A4                  >>> Bonus Spawn3 = αlpha - Carnivine
+Shiny: ★ - Shiny Rolls:   2
+PID: CDE24E67
+EC: 26886540
+IVs: 31/31/31/1/18/31
+Gender:  (F)
+Nature: Careful
+Level: 75
+Height: 255 | Weight: 255 ~~ Chain result!
+* A1|A4|G1|G2|CR|A2                     >>> Bonus Spawn1 = αlpha - Carnivine
+Shiny: ★ - Shiny Rolls:  12
+PID: 83C2EECF
+EC: DB88B940
+IVs: 31/25/31/31/31/15
+Gender:  (F)
+Nature: Rash
+Level: 77
+Height: 255 | Weight: 255
+* A1|A4|G1|G2|CR|A3                     >>> Bonus Spawn1 = αlpha - Carnivine
+Shiny: ★ - Shiny Rolls:  12
+PID: 83C2EECF
+EC: DB88B940
+IVs: 31/25/31/31/31/15
+Gender:  (F)
+Nature: Rash
+Level: 77
+Height: 255 | Weight: 255
+* A2|A1|A1|A2|CR|A1|A1|A1               >>> Bonus Spawn1 = αlpha - Carnivine
+Shiny: ★ - Shiny Rolls:  11
+PID: 20ABA6BC
+EC: 500CFAB9
+IVs: 24/19/31/31/31/31
+Gender:  (M)
+Nature: Quiet
+Level: 76
+Height: 255 | Weight: 255
+* A2|A1|A2|G1|G2|CR|A1                  >>> Bonus Spawn1 = αlpha - Carnivine
+Shiny: ★ - Shiny Rolls:  12
+PID: CB440809
+EC: 27EB465F
+IVs: 26/31/31/31/25/31
+Gender:  (M)
+Nature: Bold
+Level: 75
+Height: 255 | Weight: 255
+* A2|A1|A2|G1|G2|CR|A2                  >>> Bonus Spawn1 = αlpha - Carnivine
+Shiny: ★ - Shiny Rolls:  12
+PID: CB440809
+EC: 27EB465F
+IVs: 26/31/31/31/25/31
+Gender:  (M)
+Nature: Bold
+Level: 75
+Height: 255 | Weight: 255
+* A2|A1|A2|G1|G2|CR|A3                  >>> Bonus Spawn1 = αlpha - Carnivine
+Shiny: ★ - Shiny Rolls:  12
+PID: CB440809
+EC: 27EB465F
+IVs: 26/31/31/31/25/31
+Gender:  (M)
+Nature: Bold
+Level: 75
+Height: 255 | Weight: 255
+* A2|A1|A4|G1|CR|A3                     >>> Bonus Spawn3 = αlpha - Carnivine
+Shiny: ★ - Shiny Rolls:  15
+PID: 3D67144F
+EC: B39C37F8
+IVs: 31/30/24/31/31/31
+Gender:  (M)
+Nature: Brave
+Level: 77
+Height: 255 | Weight: 255
+* A2|A1|A4|G1|CR|A4                     >>> Bonus Spawn3 = αlpha - Carnivine
+Shiny: ★ - Shiny Rolls:  15
+PID: 3D67144F
+EC: B39C37F8
+IVs: 31/30/24/31/31/31
+Gender:  (M)
+Nature: Brave
+Level: 77
+Height: 255 | Weight: 255
+* A2|A2|A2|G2|CR|A2|A2                  >>> Bonus Spawn2 = αlpha - Carnivine
+Shiny: ★ - Shiny Rolls:   4
+PID: 3BA0173E
+EC: 78A08D9E
+IVs: 26/28/31/31/31/31
+Gender:  (M)
+Nature: Impish
+Level: 77
+Height: 255 | Weight: 255
+* A3|A1|A2|G1|G1|CR|A1                  >>> Bonus Spawn1 = αlpha - Carnivine
+Shiny: ■ - Shiny Rolls:   6
+PID: FD86AA53
+EC: 4CB020C5
+IVs: 24/31/31/27/31/31
+Gender:  (M)
+Nature: Relaxed
+Level: 75
+Height: 255 | Weight: 255
+* A3|A1|A2|G1|G1|CR|A2                  >>> Bonus Spawn1 = αlpha - Carnivine
+Shiny: ■ - Shiny Rolls:   6
+PID: FD86AA53
+EC: 4CB020C5
+IVs: 24/31/31/27/31/31
+Gender:  (M)
+Nature: Relaxed
+Level: 75
+Height: 255 | Weight: 255
+* A3|A1|A2|G1|G1|CR|A3                  >>> Bonus Spawn1 = αlpha - Carnivine
+Shiny: ■ - Shiny Rolls:   6
+PID: FD86AA53
+EC: 4CB020C5
+IVs: 24/31/31/27/31/31
+Gender:  (M)
+Nature: Relaxed
+Level: 75
+Height: 255 | Weight: 255 ~~ Spawns multiple results!
+* A3|A1|A2|G1|G1|CR|A3                  >>> Bonus Spawn3 = αlpha - Carnivine
+Shiny: ★ - Shiny Rolls:   8
+PID: 31DA9A41
+EC: 6FA495BD
+IVs: 31/31/25/31/9/31
+Gender:  (M)
+Nature: Hasty
+Level: 76
+Height: 255 | Weight: 255 ~~ Spawns multiple results!
+* A3|A1|A2|G1|G1|CR|A4                  >>> Bonus Spawn3 = αlpha - Carnivine
+Shiny: ★ - Shiny Rolls:   8
+PID: 31DA9A41
+EC: 6FA495BD
+IVs: 31/31/25/31/9/31
+Gender:  (M)
+Nature: Hasty
+Level: 76
+Height: 255 | Weight: 255
+* A3|A2|G3|CR                           >>> Bonus Spawn4 = αlpha - Carnivine
+Shiny: ■ - Shiny Rolls:   9
+PID: 03E8D6FC
+EC: 83DEB89D
+IVs: 30/31/31/7/31/31
+Gender:  (M)
+Nature: Impish
+Level: 77
+Height: 255 | Weight: 255
+* A4|A1|G1|G1|CR|A2|A3                  >>> Bonus Spawn3 = αlpha - Carnivine
+Shiny: ★ - Shiny Rolls:  17
+PID: 73C90BE1
+EC: E384AAB0
+IVs: 31/31/31/5/31/14
+Gender:  (M)
+Nature: Adamant
+Level: 77
+Height: 255 | Weight: 255
+* A4|A1|G2|G1|CR|A1|A2                  >>> Bonus Spawn2 = αlpha - Carnivine
+Shiny: ★ - Shiny Rolls:  11
+PID: 3FC90CD9
+EC: 2CD7B3A2
+IVs: 31/12/31/31/22/31
+Gender:  (F)
+Nature: Calm
+Level: 77
+Height: 255 | Weight: 255
+* A4|A1|G2|G1|CR|A1|A3                  >>> Bonus Spawn2 = αlpha - Carnivine
+Shiny: ★ - Shiny Rolls:  11
+PID: 3FC90CD9
+EC: 2CD7B3A2
+IVs: 31/12/31/31/22/31
+Gender:  (F)
+Nature: Calm
+Level: 77
+Height: 255 | Weight: 255

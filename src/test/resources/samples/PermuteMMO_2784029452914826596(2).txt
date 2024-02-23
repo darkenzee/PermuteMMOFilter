@@ -1,0 +1,621 @@
+* B1|A1|B1|B1|B1|S3|G1|CR|A1|A3         >>> Bonus Spawn3 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:  11
+PID: 001DABF7
+EC: 7E1C5DD6
+IVs: 23/17/31/31/31/28
+Gender:  (M)
+Nature: Rash
+Level: 63
+Height: 155 | Weight: 78 -- Skittish: Multi scaring!
+* B1|A1|S2|B1|S3|G1|CR|A3               >>> Bonus Spawn3 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:  16
+PID: 06B8BC09
+EC: 6C0894F2
+IVs: 31/31/17/23/31/30
+Gender:  (F)
+Nature: Modest
+Level: 62
+Height: 212 | Weight: 53 -- Skittish: Multi scaring!
+* B1|A1|S2|B1|S3|G1|CR|A4               >>> Bonus Spawn3 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:  16
+PID: 06B8BC09
+EC: 6C0894F2
+IVs: 31/31/17/23/31/30
+Gender:  (F)
+Nature: Modest
+Level: 62
+Height: 212 | Weight: 53 -- Skittish: Multi scaring!
+* B1|A1|S2|S3|G2|CR                     >>> Bonus Spawn4 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   7
+PID: 1A3EE8A2
+EC: 3DB99928
+IVs: 13/31/31/17/31/11
+Gender:  (F)
+Nature: Docile
+Level: 64
+Height: 110 | Weight: 77 -- Skittish: Multi scaring!
+* B1|B1|A1|B1|B1|S3|G1|CR|A1|A3         >>> Bonus Spawn3 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:  11
+PID: 001DABF7
+EC: 7E1C5DD6
+IVs: 23/17/31/31/31/28
+Gender:  (M)
+Nature: Rash
+Level: 63
+Height: 155 | Weight: 78 -- Skittish: Multi scaring!
+* B1|B1|B1|A1|B1|S3|G1|CR|A1|A3         >>> Bonus Spawn3 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:  11
+PID: 001DABF7
+EC: 7E1C5DD6
+IVs: 23/17/31/31/31/28
+Gender:  (M)
+Nature: Rash
+Level: 63
+Height: 155 | Weight: 78 -- Skittish: Multi scaring!
+* B1|B1|B1|B1|A1|S3|G1|CR|A1|A3         >>> Bonus Spawn3 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:  11
+PID: 001DABF7
+EC: 7E1C5DD6
+IVs: 23/17/31/31/31/28
+Gender:  (M)
+Nature: Rash
+Level: 63
+Height: 155 | Weight: 78 -- Skittish: Multi scaring!
+* B1|B1|B1|B1|B1|S3|G1|CR|A1|A3         >>> Bonus Spawn3 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:  11
+PID: 001DABF7
+EC: 7E1C5DD6
+IVs: 23/17/31/31/31/28
+Gender:  (M)
+Nature: Rash
+Level: 63
+Height: 155 | Weight: 78 -- Skittish: Multi scaring!
+* B1|B1|B2|B1|S3|G1|CR|A3               >>> Bonus Spawn3 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:  16
+PID: 06B8BC09
+EC: 6C0894F2
+IVs: 31/31/17/23/31/30
+Gender:  (F)
+Nature: Modest
+Level: 62
+Height: 212 | Weight: 53 -- Skittish: Multi scaring with aggressive!
+* B1|B1|B2|B1|S3|G1|CR|A4               >>> Bonus Spawn3 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:  16
+PID: 06B8BC09
+EC: 6C0894F2
+IVs: 31/31/17/23/31/30
+Gender:  (F)
+Nature: Modest
+Level: 62
+Height: 212 | Weight: 53 -- Skittish: Multi scaring with aggressive!
+* B1|B1|B2|S3|G2|CR                     >>> Bonus Spawn4 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   7
+PID: 1A3EE8A2
+EC: 3DB99928
+IVs: 13/31/31/17/31/11
+Gender:  (F)
+Nature: Docile
+Level: 64
+Height: 110 | Weight: 77 -- Skittish: Multi scaring with aggressive!
+* B1|B1|S2|A1|S3|G1|CR|A3               >>> Bonus Spawn3 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:  16
+PID: 06B8BC09
+EC: 6C0894F2
+IVs: 31/31/17/23/31/30
+Gender:  (F)
+Nature: Modest
+Level: 62
+Height: 212 | Weight: 53 -- Skittish: Multi scaring!
+* B1|B1|S2|A1|S3|G1|CR|A4               >>> Bonus Spawn3 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:  16
+PID: 06B8BC09
+EC: 6C0894F2
+IVs: 31/31/17/23/31/30
+Gender:  (F)
+Nature: Modest
+Level: 62
+Height: 212 | Weight: 53 -- Skittish: Multi scaring!
+* B1|B1|S2|B1|S3|G1|CR|A3               >>> Bonus Spawn3 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:  16
+PID: 06B8BC09
+EC: 6C0894F2
+IVs: 31/31/17/23/31/30
+Gender:  (F)
+Nature: Modest
+Level: 62
+Height: 212 | Weight: 53 -- Skittish: Multi scaring!
+* B1|B1|S2|B1|S3|G1|CR|A4               >>> Bonus Spawn3 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:  16
+PID: 06B8BC09
+EC: 6C0894F2
+IVs: 31/31/17/23/31/30
+Gender:  (F)
+Nature: Modest
+Level: 62
+Height: 212 | Weight: 53 -- Skittish: Multi scaring!
+* B1|B1|S2|S3|G2|CR                     >>> Bonus Spawn4 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   7
+PID: 1A3EE8A2
+EC: 3DB99928
+IVs: 13/31/31/17/31/11
+Gender:  (F)
+Nature: Docile
+Level: 64
+Height: 110 | Weight: 77 -- Skittish: Multi scaring!
+* B1|B2|B1|B1|S2|CR                     >>> Bonus Spawn2 = NOT αlpha - Glalie
+Shiny: ■ - Shiny Rolls:   7
+PID: 1C3B0665
+EC: 5B58CEDA
+IVs: 29/27/31/31/31/24
+Gender:  (F)
+Nature: Serious
+Level: 64
+Height: 120 | Weight: 45 -- Skittish: Multi scaring with aggressive!
+* B1|B2|B1|B1|S2|G1|CR                  >>> Bonus Spawn2 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   5
+PID: FB5C1203
+EC: 70DD7734
+IVs: 31/26/20/31/31/13
+Gender:  (F)
+Nature: Hasty
+Level: 62
+Height: 149 | Weight: 123 -- Skittish: Multi scaring with aggressive!
+* B1|B2|B1|S2|CR|A1|A1                  >>> Bonus Spawn1 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   6
+PID: F017B2FE
+EC: 6C633B09
+IVs: 31/31/5/31/19/2
+Gender:  (M)
+Nature: Lax
+Level: 64
+Height: 110 | Weight: 139 -- Skittish: Multi scaring with aggressive!
+* B1|S2|A1|B1|S2|CR                     >>> Bonus Spawn2 = NOT αlpha - Glalie
+Shiny: ■ - Shiny Rolls:   7
+PID: 1C3B0665
+EC: 5B58CEDA
+IVs: 29/27/31/31/31/24
+Gender:  (F)
+Nature: Serious
+Level: 64
+Height: 120 | Weight: 45 -- Skittish: Multi scaring!
+* B1|S2|A1|B1|S2|G1|CR                  >>> Bonus Spawn2 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   5
+PID: FB5C1203
+EC: 70DD7734
+IVs: 31/26/20/31/31/13
+Gender:  (F)
+Nature: Hasty
+Level: 62
+Height: 149 | Weight: 123 -- Skittish: Multi scaring!
+* B1|S2|A1|S2|CR|A1|A1                  >>> Bonus Spawn1 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   6
+PID: F017B2FE
+EC: 6C633B09
+IVs: 31/31/5/31/19/2
+Gender:  (M)
+Nature: Lax
+Level: 64
+Height: 110 | Weight: 139 -- Skittish: Multi scaring!
+* B1|S2|B1|A1|S2|CR                     >>> Bonus Spawn2 = NOT αlpha - Glalie
+Shiny: ■ - Shiny Rolls:   7
+PID: 1C3B0665
+EC: 5B58CEDA
+IVs: 29/27/31/31/31/24
+Gender:  (F)
+Nature: Serious
+Level: 64
+Height: 120 | Weight: 45 -- Skittish: Multi scaring!
+* B1|S2|B1|A1|S2|G1|CR                  >>> Bonus Spawn2 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   5
+PID: FB5C1203
+EC: 70DD7734
+IVs: 31/26/20/31/31/13
+Gender:  (F)
+Nature: Hasty
+Level: 62
+Height: 149 | Weight: 123 -- Skittish: Multi scaring!
+* B1|S2|B1|B1|B2|CR                     >>> Bonus Spawn2 = NOT αlpha - Glalie
+Shiny: ■ - Shiny Rolls:   7
+PID: 1C3B0665
+EC: 5B58CEDA
+IVs: 29/27/31/31/31/24
+Gender:  (F)
+Nature: Serious
+Level: 64
+Height: 120 | Weight: 45 -- Skittish: Multi scaring with aggressive!
+* B1|S2|B1|B1|B2|G1|CR                  >>> Bonus Spawn2 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   5
+PID: FB5C1203
+EC: 70DD7734
+IVs: 31/26/20/31/31/13
+Gender:  (F)
+Nature: Hasty
+Level: 62
+Height: 149 | Weight: 123 -- Skittish: Multi scaring with aggressive!
+* B1|S2|B1|B1|S2|CR                     >>> Bonus Spawn2 = NOT αlpha - Glalie
+Shiny: ■ - Shiny Rolls:   7
+PID: 1C3B0665
+EC: 5B58CEDA
+IVs: 29/27/31/31/31/24
+Gender:  (F)
+Nature: Serious
+Level: 64
+Height: 120 | Weight: 45 -- Skittish: Multi scaring!
+* B1|S2|B1|B1|S2|G1|CR                  >>> Bonus Spawn2 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   5
+PID: FB5C1203
+EC: 70DD7734
+IVs: 31/26/20/31/31/13
+Gender:  (F)
+Nature: Hasty
+Level: 62
+Height: 149 | Weight: 123 -- Skittish: Multi scaring!
+* B1|S2|B1|B2|CR|A1|A1                  >>> Bonus Spawn1 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   6
+PID: F017B2FE
+EC: 6C633B09
+IVs: 31/31/5/31/19/2
+Gender:  (M)
+Nature: Lax
+Level: 64
+Height: 110 | Weight: 139 -- Skittish: Multi scaring with aggressive!
+* B1|S2|B1|S2|CR|A1|A1                  >>> Bonus Spawn1 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   6
+PID: F017B2FE
+EC: 6C633B09
+IVs: 31/31/5/31/19/2
+Gender:  (M)
+Nature: Lax
+Level: 64
+Height: 110 | Weight: 139 -- Skittish: Multi scaring!
+* B1|S3|A1|B1|G2|CR|A1|A3               >>> Bonus Spawn3 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   1
+PID: 797E0C9A
+EC: A1CA19D1
+IVs: 31/4/31/31/31/18
+Gender:  (F)
+Nature: Gentle
+Level: 63
+Height: 135 | Weight: 149 -- Skittish: Multi scaring!
+* B1|S3|A1|B1|G2|G1|CR|A1|A1            >>> Bonus Spawn1 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   6
+PID: 66B23C61
+EC: 6C7794F3
+IVs: 31/6/31/31/26/7
+Gender:  (M)
+Nature: Jolly
+Level: 63
+Height: 94 | Weight: 150 -- Skittish: Multi scaring!
+* B1|S3|B1|A1|G2|CR|A1|A3               >>> Bonus Spawn3 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   1
+PID: 797E0C9A
+EC: A1CA19D1
+IVs: 31/4/31/31/31/18
+Gender:  (F)
+Nature: Gentle
+Level: 63
+Height: 135 | Weight: 149 -- Skittish: Multi scaring!
+* B1|S3|B1|A1|G2|G1|CR|A1|A1            >>> Bonus Spawn1 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   6
+PID: 66B23C61
+EC: 6C7794F3
+IVs: 31/6/31/31/26/7
+Gender:  (M)
+Nature: Jolly
+Level: 63
+Height: 94 | Weight: 150 -- Skittish: Multi scaring!
+* B1|S3|B1|B1|G2|CR|A1|A3               >>> Bonus Spawn3 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   1
+PID: 797E0C9A
+EC: A1CA19D1
+IVs: 31/4/31/31/31/18
+Gender:  (F)
+Nature: Gentle
+Level: 63
+Height: 135 | Weight: 149 -- Skittish: Multi scaring!
+* B1|S3|B1|B1|G2|G1|CR|A1|A1            >>> Bonus Spawn1 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   6
+PID: 66B23C61
+EC: 6C7794F3
+IVs: 31/6/31/31/26/7
+Gender:  (M)
+Nature: Jolly
+Level: 63
+Height: 94 | Weight: 150 -- Skittish: Multi scaring!
+* S2|A1|B1|S4|CR|A1|A1                  >>> Bonus Spawn1 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:  19
+PID: 4BB96D2D
+EC: 15AA6283
+IVs: 31/31/31/29/18/18
+Gender:  (M)
+Nature: Docile
+Level: 63
+Height: 17 | Weight: 150 -- Skittish: Multi scaring!
+* S2|A1|S2|B1|G1|CR                     >>> Bonus Spawn4 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   2
+PID: 1A68569E
+EC: 795ADF38
+IVs: 15/31/31/31/21/26
+Gender:  (F)
+Nature: Hardy
+Level: 64
+Height: 138 | Weight: 162 -- Skittish: Multi scaring!
+* S2|A1|S2|S3                           >>>       Spawn3 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:  13
+PID: FA5FC65C
+EC: A60500AF
+IVs: 10/24/11/17/8/11
+Gender:  (F)
+Nature: Quirky
+Level: 62
+Height: 159 | Weight: 201 -- Skittish: Multi scaring!
+* S2|B1|A1|S4|CR|A1|A1                  >>> Bonus Spawn1 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:  19
+PID: 4BB96D2D
+EC: 15AA6283
+IVs: 31/31/31/29/18/18
+Gender:  (M)
+Nature: Docile
+Level: 63
+Height: 17 | Weight: 150 -- Skittish: Multi scaring!
+* S2|B1|B2|B1|G1|CR                     >>> Bonus Spawn4 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   2
+PID: 1A68569E
+EC: 795ADF38
+IVs: 15/31/31/31/21/26
+Gender:  (F)
+Nature: Hardy
+Level: 64
+Height: 138 | Weight: 162 -- Skittish: Multi scaring with aggressive!
+* S2|B1|B2|S3                           >>>       Spawn3 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:  13
+PID: FA5FC65C
+EC: A60500AF
+IVs: 10/24/11/17/8/11
+Gender:  (F)
+Nature: Quirky
+Level: 62
+Height: 159 | Weight: 201 -- Skittish: Multi scaring with aggressive!
+* S2|B1|S2|A1|G1|CR                     >>> Bonus Spawn4 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   2
+PID: 1A68569E
+EC: 795ADF38
+IVs: 15/31/31/31/21/26
+Gender:  (F)
+Nature: Hardy
+Level: 64
+Height: 138 | Weight: 162 -- Skittish: Multi scaring!
+* S2|B1|S2|B1|G1|CR                     >>> Bonus Spawn4 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   2
+PID: 1A68569E
+EC: 795ADF38
+IVs: 15/31/31/31/21/26
+Gender:  (F)
+Nature: Hardy
+Level: 64
+Height: 138 | Weight: 162 -- Skittish: Multi scaring!
+* S2|B1|S2|S3                           >>>       Spawn3 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:  13
+PID: FA5FC65C
+EC: A60500AF
+IVs: 10/24/11/17/8/11
+Gender:  (F)
+Nature: Quirky
+Level: 62
+Height: 159 | Weight: 201 -- Skittish: Multi scaring!
+* S2|B2|B1|A1|G1|G1|G1|CR|A1|A1         >>> Bonus Spawn1 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:  16
+PID: 7D390964
+EC: F92C2C1F
+IVs: 31/4/24/31/11/31
+Gender:  (F)
+Nature: Lax
+Level: 63
+Height: 46 | Weight: 132 -- Skittish: Multi scaring with aggressive!
+* S2|B2|B1|A1|G2|G1|CR|A1               >>> Bonus Spawn1 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   9
+PID: FE59A1E5
+EC: 6ED9EA2E
+IVs: 31/6/21/31/1/31
+Gender:  (M)
+Nature: Serious
+Level: 64
+Height: 140 | Weight: 152 -- Skittish: Multi scaring with aggressive!
+* S2|B2|B1|A1|G2|G1|CR|A2               >>> Bonus Spawn1 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   9
+PID: FE59A1E5
+EC: 6ED9EA2E
+IVs: 31/6/21/31/1/31
+Gender:  (M)
+Nature: Serious
+Level: 64
+Height: 140 | Weight: 152 -- Skittish: Multi scaring with aggressive!
+* S2|B2|B1|B1|G1|G1|G1|CR|A1|A1         >>> Bonus Spawn1 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:  16
+PID: 7D390964
+EC: F92C2C1F
+IVs: 31/4/24/31/11/31
+Gender:  (F)
+Nature: Lax
+Level: 63
+Height: 46 | Weight: 132 -- Skittish: Multi scaring with aggressive!
+* S2|B2|B1|B1|G2|G1|CR|A1               >>> Bonus Spawn1 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   9
+PID: FE59A1E5
+EC: 6ED9EA2E
+IVs: 31/6/21/31/1/31
+Gender:  (M)
+Nature: Serious
+Level: 64
+Height: 140 | Weight: 152 -- Skittish: Multi scaring with aggressive!
+* S2|B2|B1|B1|G2|G1|CR|A2               >>> Bonus Spawn1 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   9
+PID: FE59A1E5
+EC: 6ED9EA2E
+IVs: 31/6/21/31/1/31
+Gender:  (M)
+Nature: Serious
+Level: 64
+Height: 140 | Weight: 152 -- Skittish: Multi scaring with aggressive!
+* S2|S2|A1|A1|G1|G1|G1|CR|A1|A1         >>> Bonus Spawn1 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:  16
+PID: 7D390964
+EC: F92C2C1F
+IVs: 31/4/24/31/11/31
+Gender:  (F)
+Nature: Lax
+Level: 63
+Height: 46 | Weight: 132 -- Skittish: Multi scaring!
+* S2|S2|A1|A1|G2|G1|CR|A1               >>> Bonus Spawn1 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   9
+PID: FE59A1E5
+EC: 6ED9EA2E
+IVs: 31/6/21/31/1/31
+Gender:  (M)
+Nature: Serious
+Level: 64
+Height: 140 | Weight: 152 -- Skittish: Multi scaring!
+* S2|S2|A1|A1|G2|G1|CR|A2               >>> Bonus Spawn1 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   9
+PID: FE59A1E5
+EC: 6ED9EA2E
+IVs: 31/6/21/31/1/31
+Gender:  (M)
+Nature: Serious
+Level: 64
+Height: 140 | Weight: 152 -- Skittish: Multi scaring!
+* S2|S2|A1|B1|G1|G1|G1|CR|A1|A1         >>> Bonus Spawn1 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:  16
+PID: 7D390964
+EC: F92C2C1F
+IVs: 31/4/24/31/11/31
+Gender:  (F)
+Nature: Lax
+Level: 63
+Height: 46 | Weight: 132 -- Skittish: Multi scaring!
+* S2|S2|A1|B1|G2|G1|CR|A1               >>> Bonus Spawn1 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   9
+PID: FE59A1E5
+EC: 6ED9EA2E
+IVs: 31/6/21/31/1/31
+Gender:  (M)
+Nature: Serious
+Level: 64
+Height: 140 | Weight: 152 -- Skittish: Multi scaring!
+* S2|S2|A1|B1|G2|G1|CR|A2               >>> Bonus Spawn1 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   9
+PID: FE59A1E5
+EC: 6ED9EA2E
+IVs: 31/6/21/31/1/31
+Gender:  (M)
+Nature: Serious
+Level: 64
+Height: 140 | Weight: 152 -- Skittish: Multi scaring!
+* S2|S2|B1|A1|G1|G1|G1|CR|A1|A1         >>> Bonus Spawn1 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:  16
+PID: 7D390964
+EC: F92C2C1F
+IVs: 31/4/24/31/11/31
+Gender:  (F)
+Nature: Lax
+Level: 63
+Height: 46 | Weight: 132 -- Skittish: Multi scaring!
+* S2|S2|B1|A1|G2|G1|CR|A1               >>> Bonus Spawn1 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   9
+PID: FE59A1E5
+EC: 6ED9EA2E
+IVs: 31/6/21/31/1/31
+Gender:  (M)
+Nature: Serious
+Level: 64
+Height: 140 | Weight: 152 -- Skittish: Multi scaring!
+* S2|S2|B1|A1|G2|G1|CR|A2               >>> Bonus Spawn1 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   9
+PID: FE59A1E5
+EC: 6ED9EA2E
+IVs: 31/6/21/31/1/31
+Gender:  (M)
+Nature: Serious
+Level: 64
+Height: 140 | Weight: 152 -- Skittish: Multi scaring!
+* S2|S2|B1|B1|G1|G1|G1|CR|A1|A1         >>> Bonus Spawn1 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:  16
+PID: 7D390964
+EC: F92C2C1F
+IVs: 31/4/24/31/11/31
+Gender:  (F)
+Nature: Lax
+Level: 63
+Height: 46 | Weight: 132 -- Skittish: Multi scaring!
+* S2|S2|B1|B1|G2|G1|CR|A1               >>> Bonus Spawn1 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   9
+PID: FE59A1E5
+EC: 6ED9EA2E
+IVs: 31/6/21/31/1/31
+Gender:  (M)
+Nature: Serious
+Level: 64
+Height: 140 | Weight: 152 -- Skittish: Multi scaring!
+* S2|S2|B1|B1|G2|G1|CR|A2               >>> Bonus Spawn1 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   9
+PID: FE59A1E5
+EC: 6ED9EA2E
+IVs: 31/6/21/31/1/31
+Gender:  (M)
+Nature: Serious
+Level: 64
+Height: 140 | Weight: 152 -- Skittish: Multi scaring!
+* S2|S3|A1|G3|CR|A3                     >>> Bonus Spawn3 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   5
+PID: A238533F
+EC: 89E123E7
+IVs: 31/31/31/20/0/7
+Gender:  (F)
+Nature: Sassy
+Level: 63
+Height: 131 | Weight: 169 -- Skittish: Multi scaring!
+* S2|S3|A1|G3|CR|A4                     >>> Bonus Spawn3 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   5
+PID: A238533F
+EC: 89E123E7
+IVs: 31/31/31/20/0/7
+Gender:  (F)
+Nature: Sassy
+Level: 63
+Height: 131 | Weight: 169 -- Skittish: Multi scaring!
+* S2|S3|B1|G3|CR|A3                     >>> Bonus Spawn3 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   5
+PID: A238533F
+EC: 89E123E7
+IVs: 31/31/31/20/0/7
+Gender:  (F)
+Nature: Sassy
+Level: 63
+Height: 131 | Weight: 169 -- Skittish: Multi scaring!
+* S2|S3|B1|G3|CR|A4                     >>> Bonus Spawn3 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:   5
+PID: A238533F
+EC: 89E123E7
+IVs: 31/31/31/20/0/7
+Gender:  (F)
+Nature: Sassy
+Level: 63
+Height: 131 | Weight: 169 -- Skittish: Multi scaring!
+* S4|A1|S3|CR|A1|A4                     >>> Bonus Spawn4 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:  19
+PID: 91DE4C64
+EC: 633EE643
+IVs: 24/9/31/25/31/31
+Gender:  (M)
+Nature: Sassy
+Level: 63
+Height: 56 | Weight: 200 -- Skittish: Multi scaring!
+* S4|B1|S3|CR|A1|A4                     >>> Bonus Spawn4 = NOT αlpha - Glalie
+Shiny: ★ - Shiny Rolls:  19
+PID: 91DE4C64
+EC: 633EE643
+IVs: 24/9/31/25/31/31
+Gender:  (M)
+Nature: Sassy
+Level: 63
+Height: 56 | Weight: 200 -- Skittish: Multi scaring!

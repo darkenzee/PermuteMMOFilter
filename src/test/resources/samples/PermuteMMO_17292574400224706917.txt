@@ -1,0 +1,81 @@
+* A1|A1|A1|A1|A1|G1|G2|CR|A1|A1         >>> Bonus Spawn1 = αlpha - Rotom
+Shiny: ★ - Shiny Rolls:  19
+PID: 31D1C8F3
+EC: 0524E774
+IVs: 31/12/31/28/31/31
+Gender: 
+Nature: Hardy
+Level: 80
+Height: 255 | Weight: 255 -- Single advances!
+* A1|A1|A1|A2|G3|CR|A4                  >>> Bonus Spawn4 = αlpha - Rotom
+Shiny: ★ - Shiny Rolls:  18
+PID: 189C2525
+EC: 6CD0715F
+IVs: 31/7/31/31/31/2
+Gender: 
+Nature: Relaxed
+Level: 82
+Height: 255 | Weight: 255
+* A1|A1|A2|A2|G1|G1|CR                  >>> Bonus Spawn2 = αlpha - Rotom
+Shiny: ★ - Shiny Rolls:  14
+PID: 5AB6F2FF
+EC: 7FCDA7AE
+IVs: 24/31/29/31/31/31
+Gender: 
+Nature: Hasty
+Level: 82
+Height: 255 | Weight: 255
+* A1|A1|A2|A4|CR|A1|A4                  >>> Bonus Spawn4 = αlpha - Rotom
+Shiny: ★ - Shiny Rolls:  13
+PID: 26F1283F
+EC: 48DAE238
+IVs: 16/31/31/14/31/31
+Gender: 
+Nature: Timid
+Level: 82
+Height: 255 | Weight: 255
+* A1|A2|A1|A2|G1|CR|A1|A4               >>> Bonus Spawn4 = αlpha - Rotom
+Shiny: ★ - Shiny Rolls:   1
+PID: 23ADC9E1
+EC: E1D7D0C8
+IVs: 31/31/31/23/31/31
+Gender: 
+Nature: Timid
+Level: 81
+Height: 255 | Weight: 255
+* A2|A1|A3|G1|G1|CR|A1|A2               >>> Bonus Spawn2 = αlpha - Rotom
+Shiny: ★ - Shiny Rolls:  17
+PID: E6059CE7
+EC: 2AA30C6F
+IVs: 24/31/31/1/31/31
+Gender: 
+Nature: Bashful
+Level: 80
+Height: 255 | Weight: 255
+* A2|A2|A1|CR|A1|A4                     >>> Bonus Spawn4 = αlpha - Rotom
+Shiny: ★ - Shiny Rolls:  13
+PID: 2920F0E7
+EC: 4E9AA935
+IVs: 31/20/31/31/23/31
+Gender: 
+Nature: Bashful
+Level: 82
+Height: 255 | Weight: 255
+* A3|A1|A1|G3|CR|A1|A1                  >>> Bonus Spawn1 = αlpha - Rotom
+Shiny: ★ - Shiny Rolls:  13
+PID: DCB2A9BE
+EC: 72FE950B
+IVs: 31/11/3/31/31/31
+Gender: 
+Nature: Naughty
+Level: 81
+Height: 255 | Weight: 255
+* A3|A1|A2|G1|G1|CR|A4                  >>> Bonus Spawn4 = αlpha - Rotom
+Shiny: ★ - Shiny Rolls:  19
+PID: 206BF5FA
+EC: 439F3DCA
+IVs: 22/31/31/31/31/27
+Gender: 
+Nature: Impish
+Level: 80
+Height: 255 | Weight: 255
