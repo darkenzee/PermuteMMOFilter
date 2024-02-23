@@ -5,7 +5,7 @@
 
 	<groupId>io.github.darkenzee</groupId>
 	<artifactId>permute-mmo-filter</artifactId>
-	<version>0.0.10-SNAPSHOT</version>
+	<version>0.1.1</version>
 	<packaging>jar</packaging>
 
 	<name>PermuteMMOFilter</name>
@@ -20,7 +20,7 @@
 	<scm>
 		<connection>scm:git:https://github.com/darkenzee/PermuteMMOFilter.git</connection>
 		<developerConnection>scm:git:https://github.com/darkenzee/PermuteMMOFilter.git</developerConnection>
-		<tag>HEAD</tag>
+		<tag>permute-mmo-filter-0.1.1</tag>
 		<url>https://github.com/darkenzee/PermuteMMOFilter.git</url>
 	</scm>
 
