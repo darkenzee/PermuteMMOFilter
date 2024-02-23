@@ -28,3 +28,7 @@ replay_pid*
 /.classpath
 /.project
 /.settings
+
+#Maven release stuff
+*.releaseBackup
+release.properties
