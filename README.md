@@ -1,5 +1,5 @@
 # PermuteMMOFilter
-[![ci workflow](https://github.com/darkenzee/PermuteMMOFilter/actions/workflows/ci.yml/badge.svg)](https://github.com/darkenzee/PermuteMMOFilter/actions/workflows/ci.yml)
+[![ci workflow](https://github.com/darkenzee/PermuteMMOFilter/actions/workflows/maven-build.yml/badge.svg)](https://github.com/darkenzee/PermuteMMOFilter/actions/workflows/maven-build.yml)
 
 
 Tiny GUI program for filtering path results from PermuteMMO
