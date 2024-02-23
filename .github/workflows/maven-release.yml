@@ -46,5 +46,6 @@ jobs:
         incremental|*)
           mvn build-helper:parse-version release:prepare release:perform -B -s .maven_settings.xml -DreleaseVersion='${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.incrementalVersion}' -DdevelopmentVersion='${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.nextIncrementalVersion}-SNAPSHOT'
           ;;
+        esac
       env:
         GITHUB_TOKEN: ${{ secrets.BUILD_AUTOMATION_PAT }}
