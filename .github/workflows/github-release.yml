@@ -1,9 +1,9 @@
 name: Github Release
 
 on:
-  push:
+  create:
     tags:
-      - "permute-mmo-filter-*"
+      - permute-mmo-filter-*
 
 jobs:
   tagged-release:
