@@ -24,6 +24,8 @@ public class PathDetailsTest {
 	private static final String COMPACT_PATH_EXAMPLE5 = "* -> -> -> -> -> -> -> -> -> A1|A2      >>> Bonus Spawn2 =   Bronzong: 10 * 31/07/31/17/25/31 Rash    -- NOT ALPHA ~~ Chain result!";
 	private static final String COMPACT_PATH_EXAMPLE6 = "* A1|A1|A1|A1|A1|G1|G2|CR|A1|A1         >>> Bonus Spawn1 = α-Rotom: 19 * 31/12/31/28/31/31 Hardy   -- Single advances!";
 	private static final String COMPACT_PATH_EXAMPLE7 = "* A3|A1|A2|G2|G1|CR|A3                  >>> Bonus Spawn1 = α-Carnivine (M):  6 ■ 24/31/31/27/31/31 Relaxed ~~ Spawns multiple results!";
+	private static final String COMPACT_PATH_EXAMPLE8 = "* A1|S4|S4                              >>>       Spawn4 =   Porygon2:  6 * 24/09/16/07/06/26 Hardy";
+	private static final String COMPACT_PATH_EXAMPLE9 = "* A1|S4|S4                              >>>       Spawn4 =   Porygon-Z:  6 * 24/09/16/07/06/26 Hardy";
 
 	private static final String FULL_DETAILS_EXAMPLE1;
 	private static final String FULL_DETAILS_EXAMPLE2;
@@ -66,6 +68,24 @@ public class PathDetailsTest {
 	public void testGetSpeciesFromCompact() {
 		PathDetails underTest = new PathDetails(COMPACT_PATH_EXAMPLE1);
 		assertEquals("Pichu", underTest.getSpecies());
+	}
+
+	@Test
+	public void testGetSpeciesFromCompact2() {
+		PathDetails underTest = new PathDetails(COMPACT_PATH_EXAMPLE2);
+		assertEquals("Bronzor", underTest.getSpecies());
+	}
+
+	@Test
+	public void testGetSpeciesFromCompact3() {
+		PathDetails underTest = new PathDetails(COMPACT_PATH_EXAMPLE8);
+		assertEquals("Porygon2", underTest.getSpecies());
+	}
+
+	@Test
+	public void testGetSpeciesFromCompact4() {
+		PathDetails underTest = new PathDetails(COMPACT_PATH_EXAMPLE9);
+		assertEquals("Porygon-Z", underTest.getSpecies());
 	}
 
 	@Test
@@ -289,7 +309,7 @@ public class PathDetailsTest {
 		PathDetails underTest = new PathDetails(FULL_DETAILS_EXAMPLE1);
 		assertFalse(underTest.isBonus());
 	}
-	
+
 	@Test
 	public void testIsChainFromCompact() {
 		PathDetails underTest = new PathDetails(COMPACT_PATH_EXAMPLE1);
@@ -313,7 +333,7 @@ public class PathDetailsTest {
 		PathDetails underTest = new PathDetails(FULL_DETAILS_EXAMPLE1);
 		assertFalse(underTest.isChainLabelled());
 	}
-	
+
 	@Test
 	public void testIsSkittshFromCompact() {
 		PathDetails underTest = new PathDetails(COMPACT_PATH_EXAMPLE3);
@@ -337,7 +357,7 @@ public class PathDetailsTest {
 		PathDetails underTest = new PathDetails(FULL_DETAILS_EXAMPLE2);
 		assertFalse(underTest.isSkittish());
 	}
-	
+
 	@Test
 	public void testIsSkittshAggressiveFromCompact() {
 		PathDetails underTest = new PathDetails(COMPACT_PATH_EXAMPLE3);
@@ -361,7 +381,7 @@ public class PathDetailsTest {
 		PathDetails underTest = new PathDetails(FULL_DETAILS_EXAMPLE2);
 		assertFalse(underTest.isSkittishAggressive());
 	}
-	
+
 	@Test
 	public void testIsSkittshMultiScaringFromCompact() {
 		PathDetails underTest = new PathDetails(COMPACT_PATH_EXAMPLE3);
@@ -385,7 +405,7 @@ public class PathDetailsTest {
 		PathDetails underTest = new PathDetails(FULL_DETAILS_EXAMPLE2);
 		assertFalse(underTest.isSkittishMultiScaring());
 	}
-	
+
 	@Test
 	public void testIsSingleAdvancesFromCompact() {
 		PathDetails underTest = new PathDetails(COMPACT_PATH_EXAMPLE3);
@@ -409,7 +429,7 @@ public class PathDetailsTest {
 		PathDetails underTest = new PathDetails(FULL_DETAILS_EXAMPLE4);
 		assertFalse(underTest.isSingleAdvances());
 	}
-	
+
 	@Test
 	public void testIsSpawnsMultipleResultsFromCompact() {
 		PathDetails underTest = new PathDetails(COMPACT_PATH_EXAMPLE3);
@@ -433,7 +453,7 @@ public class PathDetailsTest {
 		PathDetails underTest = new PathDetails(FULL_DETAILS_EXAMPLE4);
 		assertFalse(underTest.isSpawnsMultipleResults());
 	}
-	
+
 	@Test
 	public void testChildrenLinkage() {
 		PathDetails underTest1 = new PathDetails(COMPACT_PATH_EXAMPLE1);

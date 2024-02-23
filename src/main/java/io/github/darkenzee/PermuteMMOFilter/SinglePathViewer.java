@@ -14,6 +14,7 @@ import io.github.darkenzee.PermuteMMOFilter.parser.PathDetails;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Dimension;
+import java.awt.Font;
 
 public class SinglePathViewer extends JDialog {
 	private static final long serialVersionUID = 3615966264336957411L;
@@ -86,6 +87,7 @@ public class SinglePathViewer extends JDialog {
 		if (textArea == null) {
 			textArea = new JTextArea();
 			textArea.setEditable(false);
+			textArea.setFont(new Font("monospaced", Font.PLAIN, 12));
 			populateTextArea();
 		}
 		return textArea;

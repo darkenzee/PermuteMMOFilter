@@ -5,6 +5,7 @@ import static javax.swing.JFileChooser.APPROVE_OPTION;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -368,13 +369,18 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 			mntmLoadPathFromText.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					final JTextArea text = new JTextArea("", 20, 40);
+					final JTextArea text = new JTextArea("", 20, 80);
+					text.setFont(new Font("monospaced", Font.PLAIN, 12));
 					JOptionPane pane = new JOptionPane(
 							new Object[] { "Paste path from PermuteMMO below", new JScrollPane(text) },
 							JOptionPane.QUESTION_MESSAGE, JOptionPane.OK_CANCEL_OPTION);
 					pane.setWantsInput(false);
 					JDialog dialog = pane.createDialog(self, "Load From Text");
 					dialog.pack();
+					dialog.setModal(true);
+					dialog.setLocationRelativeTo(self);
+					dialog.setResizable(true);
+					dialog.setMinimumSize(dialog.getSize());
 					dialog.setVisible(true);
 					Integer value = (Integer) pane.getValue();
 					if (value != null && value.intValue() == JOptionPane.OK_OPTION) {

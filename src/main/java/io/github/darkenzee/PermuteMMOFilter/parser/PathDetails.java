@@ -74,7 +74,7 @@ public class PathDetails {
 		return path;
 	}
 
-	private static Pattern SPECIES_PATTERN_COMPACT = Pattern.compile("^\\*.* =\\s*(?:α-)?(\\S+)[ :]", PATTERN_FLAGS);
+	private static Pattern SPECIES_PATTERN_COMPACT = Pattern.compile("^\\*.* =\\s*(?:α-)?([-a-zA-Z0-9]+)[ :]", PATTERN_FLAGS);
 	private static Pattern SPECIES_PATTERN_FULL = Pattern.compile("^\\*.* - (\\S+)$", PATTERN_FLAGS);
 
 	public String getSpecies() {
