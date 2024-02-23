@@ -3,14 +3,14 @@ name: Maven Release
 on:
   workflow_dispatch:
     inputs:
-      releaseVersion:
-        description: "Default version to use when preparing a release."
+      releaseType:
+        description: "Release type to cange which version numbers to bump."
         required: true
-        default: "X.Y.Z"
-      developmentVersion:
-        description: "Default version to use for new local working copy."
-        required: true
-        default: "X.Y.Z-SNAPSHOT"
+        type: choice
+        options:
+        - incremental
+        - minor
+        - major
 
 jobs:
   release:
@@ -35,6 +35,16 @@ jobs:
         git config user.name "GitHub Actions"
 
     - name: Maven Release
-      run: mvn release:prepare release:perform -B -s .maven_settings.xml -DreleaseVersion=${{ github.event.inputs.releaseVersion }} -DdevelopmentVersion=${{ github.event.inputs.developmentVersion }}
+      run: | 
+        case "${{github.event.inputs.releaseType}}" in
+        major)
+          mvn build-helper:parse-version release:prepare release:perform -B -s .maven_settings.xml -DreleaseVersion='${parsedVersion.nextMajorVersion}.0.1' -DdevelopmentVersion='${parsedVersion.nextMajorVersion}.0.2-SNAPSHOT'
+          ;;
+        minor)
+          mvn build-helper:parse-version release:prepare release:perform -B -s .maven_settings.xml -DreleaseVersion='${parsedVersion.majorVersion}.${parsedVersion.nextMinorVersion}.1' -DdevelopmentVersion='${parsedVersion.majorVersion}.${parsedVersion.nextMinorVersion}.2-SNAPSHOT'
+          ;;
+        incremental|*)
+          mvn build-helper:parse-version release:prepare release:perform -B -s .maven_settings.xml -DreleaseVersion='${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.incrementalVersion}' -DdevelopmentVersion='${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.nextIncrementalVersion}-SNAPSHOT'
+          ;;
       env:
         GITHUB_TOKEN: ${{ secrets.BUILD_AUTOMATION_PAT }}
