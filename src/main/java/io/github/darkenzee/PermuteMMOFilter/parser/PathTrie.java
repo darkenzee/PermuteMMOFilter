@@ -7,18 +7,18 @@ import java.util.Map;
 
 public class PathTrie {
 	private final PathTrie parent;
-	//List to allow for multiple spawns at path
+	// List to allow for multiple spawns at path
 	private final List<PathDetails> detailsList = new ArrayList<>();
-	private final Map<String, PathTrie> childPaths = new LinkedHashMap<>();	
-	
+	private final Map<String, PathTrie> childPaths = new LinkedHashMap<>();
+
 	public PathTrie(PathTrie parent) {
 		this.parent = parent;
 	}
-	
+
 	private void appendDetails(PathDetails details) {
 		detailsList.add(details);
 	}
-	
+
 	public void addDetails(String pathFragment, PathDetails details) {
 		String[] parts = pathFragment.split("[|]", 2);
 		PathTrie child = childPaths.computeIfAbsent(parts[0], k -> new PathTrie(this));
@@ -28,11 +28,11 @@ public class PathTrie {
 			child.appendDetails(details);
 		}
 	}
-	
+
 	public PathTrie getParent() {
 		return parent;
 	}
-	
+
 	public PathTrie navigateToExistingParent(String pathFragment) {
 		String[] parts = pathFragment.split("[|]", 2);
 		PathTrie child = childPaths.get(parts[0]);
@@ -41,15 +41,18 @@ public class PathTrie {
 		}
 		return child;
 	}
-	
+
 	public void generateChainInfo() {
 		generateChainInfo(null);
 	}
-	
+
 	private void generateChainInfo(PathTrie currentChainParent) {
+		for (PathDetails currentDetails : detailsList) {
+			currentDetails.setSiblingCount(detailsList.size() - 1);
+		}
 		if (currentChainParent != null && detailsList.size() > 0) {
-			for(PathDetails parentDetails : currentChainParent.detailsList) {
-				for(PathDetails currentDetails : detailsList) {
+			for (PathDetails parentDetails : currentChainParent.detailsList) {
+				for (PathDetails currentDetails : detailsList) {
 					parentDetails.addChainChild(currentDetails);
 				}
 			}
@@ -58,5 +61,5 @@ public class PathTrie {
 			childPath.generateChainInfo(this.detailsList.size() > 0 ? this : currentChainParent);
 		}
 	}
-	
+
 }

@@ -49,6 +49,7 @@ public class PathDetails {
 
 	private PathDetails chainParent;
 	private final List<PathDetails> chainChildren = new ArrayList<>();
+	private int siblingCount = 0;
 
 	public PathDetails(String originalText) {
 		this.originalText = originalText;
@@ -332,6 +333,14 @@ public class PathDetails {
 	public void addChainChild(PathDetails chainChild) {
 		chainChildren.add(chainChild);
 		chainChild.setChainParent(this);
+	}
+	
+	public void setSiblingCount(int siblingCount) {
+		this.siblingCount = siblingCount;
+	}
+	
+	public int getPathSpawnCount() {
+		return 1 + siblingCount + (getChainParent() != null ? getChainParent().getPathSpawnCount() : 0);
 	}
 
 	@Override

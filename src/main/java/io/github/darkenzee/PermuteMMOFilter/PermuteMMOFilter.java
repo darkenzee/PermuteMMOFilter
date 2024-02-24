@@ -88,6 +88,7 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 	private JLabel lblChain;
 	private JLabel lblSkittish;
 	private JLabel lblPathLength;
+	private JLabel lblMinimumSpawns;
 
 	private JComboBox<String> cbSpecies;
 	private JComboBox<ShinyType> cbShinyType;
@@ -105,6 +106,7 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 	private JComboBox<AnyYesNo> cbSingleAdvances;
 
 	private JSpinner spinnerPathLength;
+	private JSpinner spinnerMinimumPathResults;
 
 	private JScrollPane scrollPanePathDetails;
 	private JPanel panelStatus;
@@ -118,8 +120,8 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 	}
 
 	private void initGUI() {
-		setPreferredSize(new Dimension(800, 600));
-		setMinimumSize(new Dimension(800, 600));
+		setPreferredSize(new Dimension(900, 700));
+		setMinimumSize(new Dimension(900, 700));
 		setTitle("Permutation Filter - " + getProgramVersion());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setIconImage(
@@ -287,6 +289,18 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 		gbc_spinnerPathLength.gridx = 1;
 		gbc_spinnerPathLength.gridy = 4;
 		getContentPane().add(getSpinnerPathLength(), gbc_spinnerPathLength);
+		GridBagConstraints gbc_lblMinimumSpawns = new GridBagConstraints();
+		gbc_lblMinimumSpawns.anchor = GridBagConstraints.EAST;
+		gbc_lblMinimumSpawns.insets = new Insets(0, 0, 5, 5);
+		gbc_lblMinimumSpawns.gridx = 2;
+		gbc_lblMinimumSpawns.gridy = 4;
+		getContentPane().add(getLblMinimumSpawns(), gbc_lblMinimumSpawns);
+		GridBagConstraints gbc_spinnerMinimumPathResults = new GridBagConstraints();
+		gbc_spinnerMinimumPathResults.anchor = GridBagConstraints.WEST;
+		gbc_spinnerMinimumPathResults.insets = new Insets(0, 0, 5, 5);
+		gbc_spinnerMinimumPathResults.gridx = 3;
+		gbc_spinnerMinimumPathResults.gridy = 4;
+		getContentPane().add(getSpinnerMinimumPathResults(), gbc_spinnerMinimumPathResults);
 		GridBagConstraints gbc_scrollPanePathDetails = new GridBagConstraints();
 		gbc_scrollPanePathDetails.insets = new Insets(0, 0, 5, 0);
 		gbc_scrollPanePathDetails.gridwidth = 7;
@@ -615,8 +629,8 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 			tablePathDetails.setActualModel(getTableModel());
 
 			DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
-			centerRenderer.setHorizontalAlignment( JLabel.CENTER );
-			
+			centerRenderer.setHorizontalAlignment(JLabel.CENTER);
+
 			int med = 80;
 			tablePathDetails.getColumnModel().getColumn(2).setMaxWidth(med);
 			tablePathDetails.getColumnModel().getColumn(5).setMaxWidth(med);
@@ -632,7 +646,7 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 			tablePathDetails.getColumnModel().getColumn(10).setMaxWidth(small);
 			tablePathDetails.getColumnModel().getColumn(11).setMaxWidth(small);
 			tablePathDetails.getColumnModel().getColumn(12).setMaxWidth(small);
-			
+
 			tablePathDetails.getColumnModel().getColumn(1).setCellRenderer(centerRenderer);
 			tablePathDetails.getColumnModel().getColumn(3).setCellRenderer(centerRenderer);
 			tablePathDetails.getColumnModel().getColumn(4).setCellRenderer(centerRenderer);
@@ -643,7 +657,7 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 			tablePathDetails.getColumnModel().getColumn(10).setCellRenderer(centerRenderer);
 			tablePathDetails.getColumnModel().getColumn(11).setCellRenderer(centerRenderer);
 			tablePathDetails.getColumnModel().getColumn(12).setCellRenderer(centerRenderer);
-			
+
 			tablePathDetails.onRowDoubleClicked(new IRowClickedCallbacker<PathDetails>() {
 				@Override
 				public void rowClicked(MouseEvent e, PathDetails selectedItem) {
@@ -672,6 +686,22 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 		return spinnerPathLength;
 	}
 
+	private JLabel getLblMinimumSpawns() {
+		if (lblMinimumSpawns == null) {
+			lblMinimumSpawns = new JLabel("Minimum Results on Path");
+		}
+		return lblMinimumSpawns;
+	}
+
+	private JSpinner getSpinnerMinimumPathResults() {
+		if (spinnerMinimumPathResults == null) {
+			spinnerMinimumPathResults = new JSpinner();
+			spinnerMinimumPathResults.setModel(new SpinnerNumberModel(1, 1, 20, 1));
+			spinnerMinimumPathResults.addChangeListener(self);
+		}
+		return spinnerMinimumPathResults;
+	}
+
 	private PathDetailsTableModel getTableModel() {
 		if (tableModel == null) {
 			tableModel = new PathDetailsTableModel();
@@ -697,6 +727,7 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 		getCbSingleAdvances().setSelectedIndex(0);
 
 		getSpinnerPathLength().setValue(20);
+		getSpinnerMinimumPathResults().setValue(1);
 
 		Vector<String> species = new Vector<>();
 		species.add("Any");
@@ -740,19 +771,19 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 			}
 		}
 	}
-	
+
 	private Attributes getMyManifestAttributes() throws IOException {
-	    String className = getClass().getSimpleName() + ".class";
-	    String classPath = getClass().getResource(className).toString();
-	    if (!classPath.startsWith("jar")) {
-	        throw new IOException("I don't live in a jar file");
-	    }
-	    URL url = new URL(classPath);
-	    JarURLConnection jarConnection = (JarURLConnection) url.openConnection();
-	    Manifest manifest = jarConnection.getManifest();
-	    return manifest.getMainAttributes();
+		String className = getClass().getSimpleName() + ".class";
+		String classPath = getClass().getResource(className).toString();
+		if (!classPath.startsWith("jar")) {
+			throw new IOException("I don't live in a jar file");
+		}
+		URL url = new URL(classPath);
+		JarURLConnection jarConnection = (JarURLConnection) url.openConnection();
+		Manifest manifest = jarConnection.getManifest();
+		return manifest.getMainAttributes();
 	}
-	
+
 	private <T extends IMatchesExcpected<T>> IPredicate getPredicateFromCb(Function<PathDetails, T> getDetail,
 			JComboBox<T> comboBox) {
 		return d -> getDetail.apply(d).matchesExpected(comboBox.getModel().getElementAt(comboBox.getSelectedIndex()));
@@ -782,6 +813,7 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 		predicates.add(getPredicateFromCbBool(PathDetails::isSkittishAggressive, getCbSkittishAggressive()));
 		predicates.add(getPredicateFromCbBool(PathDetails::isSingleAdvances, getCbSingleAdvances()));
 		predicates.add(d -> d.getFullPathLength() <= (int) getSpinnerPathLength().getValue());
+		predicates.add(d -> d.getPathSpawnCount() >= (int) getSpinnerMinimumPathResults().getValue());
 
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
