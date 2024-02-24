@@ -26,6 +26,7 @@ public class PathDetails {
 	private String pid;
 	private String ec;
 	private String ivs;
+	private String[] ivSplit;
 
 	private PokemonNature nature;
 	private PokemonGender gender;
@@ -37,6 +38,13 @@ public class PathDetails {
 	private Integer height;
 	private Integer weight;
 	private Integer fullPathLength;
+
+	private Integer ivHp;
+	private Integer ivAtk;
+	private Integer ivDef;
+	private Integer ivSpAtk;
+	private Integer ivSpDef;
+	private Integer ivSpeed;
 
 	private Boolean alpha;
 	private Boolean bonus;
@@ -75,7 +83,8 @@ public class PathDetails {
 		return path;
 	}
 
-	private static Pattern SPECIES_PATTERN_COMPACT = Pattern.compile("^\\*.* =\\s*(?:α-)?([-a-zA-Z0-9]+)[ :]", PATTERN_FLAGS);
+	private static Pattern SPECIES_PATTERN_COMPACT = Pattern.compile("^\\*.* =\\s*(?:α-)?([-a-zA-Z0-9]+)[ :]",
+			PATTERN_FLAGS);
 	private static Pattern SPECIES_PATTERN_FULL = Pattern.compile("^\\*.* - (\\S+)$", PATTERN_FLAGS);
 
 	public String getSpecies() {
@@ -112,6 +121,55 @@ public class PathDetails {
 			ivs = applyPattern(isCompactFormat() ? IVS_PATTERN_COMPACT : IVS_PATTERN_FULL);
 		}
 		return ivs;
+	}
+
+	private String[] getIvSplit() {
+		if (ivSplit == null) {
+			ivSplit = getIvs().split("/");
+		}
+		return ivSplit;
+	}
+
+	public int getIVHp() {
+		if (ivHp == null) {
+			ivHp = Integer.parseInt(getIvSplit()[0]);
+		}
+		return ivHp;
+	}
+
+	public int getIVAtk() {
+		if (ivAtk == null) {
+			ivAtk = Integer.parseInt(getIvSplit()[1]);
+		}
+		return ivAtk;
+	}
+
+	public int getIVDef() {
+		if (ivDef == null) {
+			ivDef = Integer.parseInt(getIvSplit()[2]);
+		}
+		return ivDef;
+	}
+
+	public int getIVSpAtk() {
+		if (ivSpAtk == null) {
+			ivSpAtk = Integer.parseInt(getIvSplit()[3]);
+		}
+		return ivSpAtk;
+	}
+
+	public int getIVSpDef() {
+		if (ivSpDef == null) {
+			ivSpDef = Integer.parseInt(getIvSplit()[4]);
+		}
+		return ivSpDef;
+	}
+
+	public int getIVSpeed() {
+		if (ivSpeed == null) {
+			ivSpeed = Integer.parseInt(getIvSplit()[5]);
+		}
+		return ivSpeed;
 	}
 
 	private static Pattern NATURE_PATTERN_COMPACT = Pattern.compile("(?:(?:\\d+\\/){5}\\d+)\\s+(\\S+)", PATTERN_FLAGS);
@@ -317,7 +375,7 @@ public class PathDetails {
 	public boolean isChain() {
 		return getChainParent() != null || chainChildren.size() > 0;
 	}
-	
+
 	public PathDetails getChainParent() {
 		return chainParent;
 	}
@@ -334,18 +392,19 @@ public class PathDetails {
 		chainChildren.add(chainChild);
 		chainChild.setChainParent(this);
 	}
-	
+
 	public void setSiblingCount(int siblingCount) {
 		this.siblingCount = siblingCount;
 	}
-	
+
 	public int getPathSpawnCount() {
 		return 1 + siblingCount + (getChainParent() != null ? getChainParent().getPathSpawnCount() : 0);
 	}
 
 	@Override
 	public String toString() {
-		return new ReflectionToStringBuilder(this, ToStringStyle.JSON_STYLE).setExcludeFieldNames("chainParent", "chainChildren").toString();
+		return new ReflectionToStringBuilder(this, ToStringStyle.JSON_STYLE)
+				.setExcludeFieldNames("chainParent", "chainChildren").toString();
 	}
 
 	private static Pattern simplePropertyPattern(String name) {

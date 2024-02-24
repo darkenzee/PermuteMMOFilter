@@ -122,6 +122,12 @@ public class PathDetailsTest {
 	public void testGetIvsFromCompact() {
 		PathDetails underTest = new PathDetails(COMPACT_PATH_EXAMPLE1);
 		assertEquals("24/09/16/07/06/26", underTest.getIvs());
+		assertEquals(24, underTest.getIVHp());
+		assertEquals(9, underTest.getIVAtk());
+		assertEquals(16, underTest.getIVDef());
+		assertEquals(7, underTest.getIVSpAtk());
+		assertEquals(6, underTest.getIVSpDef());
+		assertEquals(26, underTest.getIVSpeed());
 	}
 
 	@Test

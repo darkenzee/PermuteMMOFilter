@@ -120,8 +120,8 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 	}
 
 	private void initGUI() {
-		setPreferredSize(new Dimension(900, 700));
-		setMinimumSize(new Dimension(900, 700));
+		setPreferredSize(new Dimension(1200, 850));
+		setMinimumSize(new Dimension(1000, 800));
 		setTitle("Permutation Filter - " + getProgramVersion());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setIconImage(
@@ -630,12 +630,34 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 
 			DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
 			centerRenderer.setHorizontalAlignment(JLabel.CENTER);
+			DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
+			rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
 
-			int med = 80;
-			tablePathDetails.getColumnModel().getColumn(2).setMaxWidth(med);
-			tablePathDetails.getColumnModel().getColumn(5).setMaxWidth(med);
+			int medium = 80;
+			tablePathDetails.getColumnModel().getColumn(2).setMinWidth(medium);
+			tablePathDetails.getColumnModel().getColumn(5).setMinWidth(medium);
 
-			int small = 25;
+			tablePathDetails.getColumnModel().getColumn(2).setMaxWidth(medium);
+			tablePathDetails.getColumnModel().getColumn(5).setMaxWidth(medium);
+
+			int small = 40;
+			tablePathDetails.getColumnModel().getColumn(1).setMinWidth(small);
+			tablePathDetails.getColumnModel().getColumn(3).setMinWidth(small);
+			tablePathDetails.getColumnModel().getColumn(4).setMinWidth(small);
+			tablePathDetails.getColumnModel().getColumn(6).setMinWidth(small);
+			tablePathDetails.getColumnModel().getColumn(7).setMinWidth(small);
+			tablePathDetails.getColumnModel().getColumn(8).setMinWidth(small);
+			tablePathDetails.getColumnModel().getColumn(9).setMinWidth(small);
+			tablePathDetails.getColumnModel().getColumn(10).setMinWidth(small);
+			tablePathDetails.getColumnModel().getColumn(11).setMinWidth(small);
+			tablePathDetails.getColumnModel().getColumn(12).setMinWidth(small);
+			tablePathDetails.getColumnModel().getColumn(13).setMinWidth(small);
+			tablePathDetails.getColumnModel().getColumn(14).setMinWidth(small);
+			tablePathDetails.getColumnModel().getColumn(15).setMinWidth(small);
+			tablePathDetails.getColumnModel().getColumn(16).setMinWidth(small);
+			tablePathDetails.getColumnModel().getColumn(17).setMinWidth(small);
+			tablePathDetails.getColumnModel().getColumn(18).setMinWidth(small);
+			
 			tablePathDetails.getColumnModel().getColumn(1).setMaxWidth(small);
 			tablePathDetails.getColumnModel().getColumn(3).setMaxWidth(small);
 			tablePathDetails.getColumnModel().getColumn(4).setMaxWidth(small);
@@ -646,17 +668,31 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 			tablePathDetails.getColumnModel().getColumn(10).setMaxWidth(small);
 			tablePathDetails.getColumnModel().getColumn(11).setMaxWidth(small);
 			tablePathDetails.getColumnModel().getColumn(12).setMaxWidth(small);
+			tablePathDetails.getColumnModel().getColumn(13).setMaxWidth(small);
+			tablePathDetails.getColumnModel().getColumn(14).setMaxWidth(small);
+			tablePathDetails.getColumnModel().getColumn(15).setMaxWidth(small);
+			tablePathDetails.getColumnModel().getColumn(16).setMaxWidth(small);
+			tablePathDetails.getColumnModel().getColumn(17).setMaxWidth(small);
+			tablePathDetails.getColumnModel().getColumn(18).setMaxWidth(small);
+
 
 			tablePathDetails.getColumnModel().getColumn(1).setCellRenderer(centerRenderer);
 			tablePathDetails.getColumnModel().getColumn(3).setCellRenderer(centerRenderer);
 			tablePathDetails.getColumnModel().getColumn(4).setCellRenderer(centerRenderer);
-			tablePathDetails.getColumnModel().getColumn(6).setCellRenderer(centerRenderer);
-			tablePathDetails.getColumnModel().getColumn(7).setCellRenderer(centerRenderer);
-			tablePathDetails.getColumnModel().getColumn(8).setCellRenderer(centerRenderer);
-			tablePathDetails.getColumnModel().getColumn(9).setCellRenderer(centerRenderer);
-			tablePathDetails.getColumnModel().getColumn(10).setCellRenderer(centerRenderer);
-			tablePathDetails.getColumnModel().getColumn(11).setCellRenderer(centerRenderer);
 			tablePathDetails.getColumnModel().getColumn(12).setCellRenderer(centerRenderer);
+			tablePathDetails.getColumnModel().getColumn(13).setCellRenderer(centerRenderer);
+			tablePathDetails.getColumnModel().getColumn(14).setCellRenderer(centerRenderer);
+			tablePathDetails.getColumnModel().getColumn(15).setCellRenderer(centerRenderer);
+			tablePathDetails.getColumnModel().getColumn(16).setCellRenderer(centerRenderer);
+			tablePathDetails.getColumnModel().getColumn(17).setCellRenderer(centerRenderer);
+			tablePathDetails.getColumnModel().getColumn(18).setCellRenderer(centerRenderer);
+			
+			tablePathDetails.getColumnModel().getColumn(6).setCellRenderer(rightRenderer);
+			tablePathDetails.getColumnModel().getColumn(7).setCellRenderer(rightRenderer);
+			tablePathDetails.getColumnModel().getColumn(8).setCellRenderer(rightRenderer);
+			tablePathDetails.getColumnModel().getColumn(9).setCellRenderer(rightRenderer);
+			tablePathDetails.getColumnModel().getColumn(10).setCellRenderer(rightRenderer);
+			tablePathDetails.getColumnModel().getColumn(11).setCellRenderer(rightRenderer);
 
 			tablePathDetails.onRowDoubleClicked(new IRowClickedCallbacker<PathDetails>() {
 				@Override
