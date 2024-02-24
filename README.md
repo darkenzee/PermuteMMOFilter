@@ -46,3 +46,14 @@ Height: 74 | Weight: 106
 Double click on a row to show original text with chain parents (plus optionally show additional chain children).
 
 ![Path View](src/main/resources/screenshots/OriginalPathText.png "Path View")
+
+## Table sorting
+The table can be sorted on a particular column by clicking on the headers as follows.
+
+ * Mouse-click: Clears the sorting status of all other columns and advances the sorting status of that column through three values: {NOT_SORTED, ASCENDING, DESCENDING} (then back to NOT_SORTED again).
+
+ 
+ * SHIFT-mouse-click: Clears the sorting status of all other columns and cycles the sorting status of the column through the same three values, in the opposite order: {NOT_SORTED, DESCENDING, ASCENDING}.
+
+ 
+ * CONTROL-mouse-click and CONTROL-SHIFT-mouse-click: as above except that the changes to the column do not cancel the statuses of columns that are already sorting - giving a way to initiate a compound sort.
