@@ -64,6 +64,7 @@ import io.github.darkenzee.PermuteMMOFilter.types.IMatchesExcpected;
 import io.github.darkenzee.PermuteMMOFilter.types.PokemonGender;
 import io.github.darkenzee.PermuteMMOFilter.types.PokemonNature;
 import io.github.darkenzee.PermuteMMOFilter.types.ShinyType;
+import javax.swing.JButton;
 
 public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeListener {
 	private static final long serialVersionUID = -2001943701794082933L;
@@ -89,6 +90,15 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 	private JLabel lblSkittish;
 	private JLabel lblPathLength;
 	private JLabel lblMinimumSpawns;
+	private JLabel lblIVs;
+	private JLabel lblMin;
+	private JLabel lblMax;
+	private JLabel lblIvHp;
+	private JLabel lblIvAtk;
+	private JLabel lblIvDef;
+	private JLabel lblIvSpAtk;
+	private JLabel lblIvSpDef;
+	private JLabel lblIvSpeed;
 
 	private JComboBox<String> cbSpecies;
 	private JComboBox<ShinyType> cbShinyType;
@@ -107,6 +117,18 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 
 	private JSpinner spinnerPathLength;
 	private JSpinner spinnerMinimumPathResults;
+	private JSpinner spinnerMinIvHp;
+	private JSpinner spinnerMaxIvHp;
+	private JSpinner spinnerMinIvAtk;
+	private JSpinner spinnerMaxIvAtk;
+	private JSpinner spinnerMinIvDef;
+	private JSpinner spinnerMaxIvDef;
+	private JSpinner spinnerMinIvSpAtk;
+	private JSpinner spinnerMaxIvSpAtk;
+	private JSpinner spinnerMinIvSpDef;
+	private JSpinner spinnerMaxIvSpDef;
+	private JSpinner spinnerMinIvSpeed;
+	private JSpinner spinnerMaxIvSpeed;
 
 	private JScrollPane scrollPanePathDetails;
 	private JPanel panelStatus;
@@ -114,6 +136,7 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 
 	private List<PathDetails> currentPaths = new ArrayList<>();
 	private PathDetailsTableModel tableModel;
+	private JButton btnResetFilters;
 
 	public PermuteMMOFilter() {
 		initGUI();
@@ -121,15 +144,16 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 
 	private void initGUI() {
 		setPreferredSize(new Dimension(1200, 850));
-		setMinimumSize(new Dimension(1000, 800));
+		setMinimumSize(new Dimension(1030, 800));
 		setTitle("Permutation Filter - " + getProgramVersion());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setIconImage(
 				new ImageIcon(getClass().getResource("/icons/Hektakun-Pokemon-479-Rotom-Normal.72.png")).getImage());
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[] { 0, 0, 0, 0, 0, 0, 0, 0 };
+		gridBagLayout.columnWidths = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 		gridBagLayout.rowHeights = new int[] { 0, 0, 0, 0, 0, 0, 0, 0 };
-		gridBagLayout.columnWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE };
+		gridBagLayout.columnWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+				1.0, Double.MIN_VALUE };
 		gridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, Double.MIN_VALUE };
 		getContentPane().setLayout(gridBagLayout);
 		setJMenuBar(getMenuBar_1());
@@ -205,6 +229,48 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 		gbc_cbMultiScare.gridx = 5;
 		gbc_cbMultiScare.gridy = 1;
 		getContentPane().add(getCbMultiScare(), gbc_cbMultiScare);
+		GridBagConstraints gbc_lblIVs = new GridBagConstraints();
+		gbc_lblIVs.anchor = GridBagConstraints.SOUTHEAST;
+		gbc_lblIVs.insets = new Insets(0, 0, 5, 5);
+		gbc_lblIVs.gridx = 6;
+		gbc_lblIVs.gridy = 1;
+		getContentPane().add(getLblIVs(), gbc_lblIVs);
+		GridBagConstraints gbc_lblIvHp = new GridBagConstraints();
+		gbc_lblIvHp.anchor = GridBagConstraints.SOUTH;
+		gbc_lblIvHp.insets = new Insets(0, 0, 5, 5);
+		gbc_lblIvHp.gridx = 7;
+		gbc_lblIvHp.gridy = 1;
+		getContentPane().add(getLblIvHp(), gbc_lblIvHp);
+		GridBagConstraints gbc_lblIvAtk = new GridBagConstraints();
+		gbc_lblIvAtk.anchor = GridBagConstraints.SOUTH;
+		gbc_lblIvAtk.insets = new Insets(0, 0, 5, 5);
+		gbc_lblIvAtk.gridx = 8;
+		gbc_lblIvAtk.gridy = 1;
+		getContentPane().add(getLblIvAtk(), gbc_lblIvAtk);
+		GridBagConstraints gbc_lblIvDef = new GridBagConstraints();
+		gbc_lblIvDef.anchor = GridBagConstraints.SOUTH;
+		gbc_lblIvDef.insets = new Insets(0, 0, 5, 5);
+		gbc_lblIvDef.gridx = 9;
+		gbc_lblIvDef.gridy = 1;
+		getContentPane().add(getLblIvDef(), gbc_lblIvDef);
+		GridBagConstraints gbc_lblIvSpAtk = new GridBagConstraints();
+		gbc_lblIvSpAtk.anchor = GridBagConstraints.SOUTH;
+		gbc_lblIvSpAtk.insets = new Insets(0, 0, 5, 5);
+		gbc_lblIvSpAtk.gridx = 10;
+		gbc_lblIvSpAtk.gridy = 1;
+		getContentPane().add(getLblIvSpAtk(), gbc_lblIvSpAtk);
+		GridBagConstraints gbc_lblIvSpDef = new GridBagConstraints();
+		gbc_lblIvSpDef.anchor = GridBagConstraints.SOUTH;
+		gbc_lblIvSpDef.insets = new Insets(0, 0, 5, 5);
+		gbc_lblIvSpDef.gridx = 11;
+		gbc_lblIvSpDef.gridy = 1;
+		getContentPane().add(getLblIvSpDef(), gbc_lblIvSpDef);
+		GridBagConstraints gbc_lblIvSpeed = new GridBagConstraints();
+		gbc_lblIvSpeed.anchor = GridBagConstraints.SOUTH;
+		gbc_lblIvSpeed.insets = new Insets(0, 0, 5, 5);
+		gbc_lblIvSpeed.gridx = 12;
+		gbc_lblIvSpeed.gridy = 1;
+		getContentPane().add(getLblIvSpeed(), gbc_lblIvSpeed);
 		GridBagConstraints gbc_lblGender = new GridBagConstraints();
 		gbc_lblGender.anchor = GridBagConstraints.EAST;
 		gbc_lblGender.insets = new Insets(0, 0, 5, 5);
@@ -241,6 +307,42 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 		gbc_cbSkittishAggressive.gridx = 5;
 		gbc_cbSkittishAggressive.gridy = 2;
 		getContentPane().add(getCbSkittishAggressive(), gbc_cbSkittishAggressive);
+		GridBagConstraints gbc_lblMin = new GridBagConstraints();
+		gbc_lblMin.anchor = GridBagConstraints.EAST;
+		gbc_lblMin.insets = new Insets(0, 0, 5, 5);
+		gbc_lblMin.gridx = 6;
+		gbc_lblMin.gridy = 2;
+		getContentPane().add(getLblMin(), gbc_lblMin);
+		GridBagConstraints gbc_spinnerMinIvHp = new GridBagConstraints();
+		gbc_spinnerMinIvHp.insets = new Insets(0, 0, 5, 5);
+		gbc_spinnerMinIvHp.gridx = 7;
+		gbc_spinnerMinIvHp.gridy = 2;
+		getContentPane().add(getSpinnerMinIvHp(), gbc_spinnerMinIvHp);
+		GridBagConstraints gbc_spinnerMinIvAtk = new GridBagConstraints();
+		gbc_spinnerMinIvAtk.insets = new Insets(0, 0, 5, 5);
+		gbc_spinnerMinIvAtk.gridx = 8;
+		gbc_spinnerMinIvAtk.gridy = 2;
+		getContentPane().add(getSpinnerMinIvAtk(), gbc_spinnerMinIvAtk);
+		GridBagConstraints gbc_spinnerMinIvDef = new GridBagConstraints();
+		gbc_spinnerMinIvDef.insets = new Insets(0, 0, 5, 5);
+		gbc_spinnerMinIvDef.gridx = 9;
+		gbc_spinnerMinIvDef.gridy = 2;
+		getContentPane().add(getSpinnerMinIvDef(), gbc_spinnerMinIvDef);
+		GridBagConstraints gbc_spinnerMinIvSpAtk = new GridBagConstraints();
+		gbc_spinnerMinIvSpAtk.insets = new Insets(0, 0, 5, 5);
+		gbc_spinnerMinIvSpAtk.gridx = 10;
+		gbc_spinnerMinIvSpAtk.gridy = 2;
+		getContentPane().add(getSpinnerMinIvSpAtk(), gbc_spinnerMinIvSpAtk);
+		GridBagConstraints gbc_spinnerMinIvSpDef = new GridBagConstraints();
+		gbc_spinnerMinIvSpDef.insets = new Insets(0, 0, 5, 5);
+		gbc_spinnerMinIvSpDef.gridx = 11;
+		gbc_spinnerMinIvSpDef.gridy = 2;
+		getContentPane().add(getSpinnerMinIvSpDef(), gbc_spinnerMinIvSpDef);
+		GridBagConstraints gbc_spinnerMinIvSpeed = new GridBagConstraints();
+		gbc_spinnerMinIvSpeed.insets = new Insets(0, 0, 5, 5);
+		gbc_spinnerMinIvSpeed.gridx = 12;
+		gbc_spinnerMinIvSpeed.gridy = 2;
+		getContentPane().add(getSpinnerMinIvSpeed(), gbc_spinnerMinIvSpeed);
 		GridBagConstraints gbc_lblNature = new GridBagConstraints();
 		gbc_lblNature.anchor = GridBagConstraints.EAST;
 		gbc_lblNature.insets = new Insets(0, 0, 5, 5);
@@ -277,6 +379,42 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 		gbc_cbSingleAdvances.gridx = 5;
 		gbc_cbSingleAdvances.gridy = 3;
 		getContentPane().add(getCbSingleAdvances(), gbc_cbSingleAdvances);
+		GridBagConstraints gbc_lblMax = new GridBagConstraints();
+		gbc_lblMax.anchor = GridBagConstraints.EAST;
+		gbc_lblMax.insets = new Insets(0, 10, 5, 5);
+		gbc_lblMax.gridx = 6;
+		gbc_lblMax.gridy = 3;
+		getContentPane().add(getLblMax(), gbc_lblMax);
+		GridBagConstraints gbc_spinnerMaxIvHp = new GridBagConstraints();
+		gbc_spinnerMaxIvHp.insets = new Insets(0, 0, 5, 5);
+		gbc_spinnerMaxIvHp.gridx = 7;
+		gbc_spinnerMaxIvHp.gridy = 3;
+		getContentPane().add(getSpinnerMaxIvHp(), gbc_spinnerMaxIvHp);
+		GridBagConstraints gbc_spinnerMaxIvAtk = new GridBagConstraints();
+		gbc_spinnerMaxIvAtk.insets = new Insets(0, 0, 5, 5);
+		gbc_spinnerMaxIvAtk.gridx = 8;
+		gbc_spinnerMaxIvAtk.gridy = 3;
+		getContentPane().add(getSpinnerMaxIvAtk(), gbc_spinnerMaxIvAtk);
+		GridBagConstraints gbc_spinnerMaxIvDef = new GridBagConstraints();
+		gbc_spinnerMaxIvDef.insets = new Insets(0, 0, 5, 5);
+		gbc_spinnerMaxIvDef.gridx = 9;
+		gbc_spinnerMaxIvDef.gridy = 3;
+		getContentPane().add(getSpinnerMaxIvDef(), gbc_spinnerMaxIvDef);
+		GridBagConstraints gbc_spinnerMaxIvSpAtk = new GridBagConstraints();
+		gbc_spinnerMaxIvSpAtk.insets = new Insets(0, 0, 5, 5);
+		gbc_spinnerMaxIvSpAtk.gridx = 10;
+		gbc_spinnerMaxIvSpAtk.gridy = 3;
+		getContentPane().add(getSpinnerMaxIvSpAtk(), gbc_spinnerMaxIvSpAtk);
+		GridBagConstraints gbc_spinnerMaxIvSpDef = new GridBagConstraints();
+		gbc_spinnerMaxIvSpDef.insets = new Insets(0, 0, 5, 5);
+		gbc_spinnerMaxIvSpDef.gridx = 11;
+		gbc_spinnerMaxIvSpDef.gridy = 3;
+		getContentPane().add(getSpinnerMaxIvSpDef(), gbc_spinnerMaxIvSpDef);
+		GridBagConstraints gbc_spinnerMaxIvSpeed = new GridBagConstraints();
+		gbc_spinnerMaxIvSpeed.insets = new Insets(0, 0, 5, 5);
+		gbc_spinnerMaxIvSpeed.gridx = 12;
+		gbc_spinnerMaxIvSpeed.gridy = 3;
+		getContentPane().add(getSpinnerMaxIvSpeed(), gbc_spinnerMaxIvSpeed);
 		GridBagConstraints gbc_lblPathLength = new GridBagConstraints();
 		gbc_lblPathLength.anchor = GridBagConstraints.EAST;
 		gbc_lblPathLength.insets = new Insets(0, 5, 5, 5);
@@ -301,15 +439,22 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 		gbc_spinnerMinimumPathResults.gridx = 3;
 		gbc_spinnerMinimumPathResults.gridy = 4;
 		getContentPane().add(getSpinnerMinimumPathResults(), gbc_spinnerMinimumPathResults);
+		GridBagConstraints gbc_btnResetFilters = new GridBagConstraints();
+		gbc_btnResetFilters.anchor = GridBagConstraints.EAST;
+		gbc_btnResetFilters.gridwidth = 9;
+		gbc_btnResetFilters.insets = new Insets(0, 0, 5, 5);
+		gbc_btnResetFilters.gridx = 4;
+		gbc_btnResetFilters.gridy = 4;
+		getContentPane().add(getBtnResetFilters(), gbc_btnResetFilters);
 		GridBagConstraints gbc_scrollPanePathDetails = new GridBagConstraints();
 		gbc_scrollPanePathDetails.insets = new Insets(0, 0, 5, 0);
-		gbc_scrollPanePathDetails.gridwidth = 7;
+		gbc_scrollPanePathDetails.gridwidth = 14;
 		gbc_scrollPanePathDetails.fill = GridBagConstraints.BOTH;
 		gbc_scrollPanePathDetails.gridx = 0;
 		gbc_scrollPanePathDetails.gridy = 5;
 		getContentPane().add(getScrollPanePathDetails(), gbc_scrollPanePathDetails);
 		GridBagConstraints gbc_panelStatus = new GridBagConstraints();
-		gbc_panelStatus.gridwidth = 7;
+		gbc_panelStatus.gridwidth = 14;
 		gbc_panelStatus.fill = GridBagConstraints.BOTH;
 		gbc_panelStatus.gridx = 0;
 		gbc_panelStatus.gridy = 6;
@@ -623,6 +768,195 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 		return cbSingleAdvances;
 	}
 
+	private JLabel getLblIVs() {
+		if (lblIVs == null) {
+			lblIVs = new JLabel("IVs");
+		}
+		return lblIVs;
+	}
+
+	private JLabel getLblMin() {
+		if (lblMin == null) {
+			lblMin = new JLabel("Min");
+		}
+		return lblMin;
+	}
+
+	private JLabel getLblMax() {
+		if (lblMax == null) {
+			lblMax = new JLabel("Max");
+		}
+		return lblMax;
+	}
+
+	private JLabel getLblIvHp() {
+		if (lblIvHp == null) {
+			lblIvHp = new JLabel("HP");
+		}
+		return lblIvHp;
+	}
+
+	private JLabel getLblIvAtk() {
+		if (lblIvAtk == null) {
+			lblIvAtk = new JLabel("Atk");
+		}
+		return lblIvAtk;
+	}
+
+	private JLabel getLblIvDef() {
+		if (lblIvDef == null) {
+			lblIvDef = new JLabel("Def");
+		}
+		return lblIvDef;
+	}
+
+	private JLabel getLblIvSpAtk() {
+		if (lblIvSpAtk == null) {
+			lblIvSpAtk = new JLabel("SAt");
+		}
+		return lblIvSpAtk;
+	}
+
+	private JLabel getLblIvSpDef() {
+		if (lblIvSpDef == null) {
+			lblIvSpDef = new JLabel("SDf");
+		}
+		return lblIvSpDef;
+	}
+
+	private JLabel getLblIvSpeed() {
+		if (lblIvSpeed == null) {
+			lblIvSpeed = new JLabel("Spd");
+		}
+		return lblIvSpeed;
+	}
+
+	private JSpinner getSpinnerMinIvHp() {
+		if (spinnerMinIvHp == null) {
+			spinnerMinIvHp = new JSpinner();
+			spinnerMinIvHp.setModel(new SpinnerNumberModel(0, 0, 31, 1));
+			spinnerMinIvHp.addChangeListener(new MinSpinnerChangeListener(spinnerMinIvHp, self::getSpinnerMaxIvHp));
+			spinnerMinIvHp.addChangeListener(self);
+		}
+		return spinnerMinIvHp;
+	}
+
+	private JSpinner getSpinnerMaxIvHp() {
+		if (spinnerMaxIvHp == null) {
+			spinnerMaxIvHp = new JSpinner();
+			spinnerMaxIvHp.setModel(new SpinnerNumberModel(31, 0, 31, 1));
+			spinnerMaxIvHp.addChangeListener(new MaxSpinnerChangeListener(spinnerMaxIvHp, self::getSpinnerMinIvHp));
+			spinnerMaxIvHp.addChangeListener(self);
+		}
+		return spinnerMaxIvHp;
+	}
+
+	private JSpinner getSpinnerMinIvAtk() {
+		if (spinnerMinIvAtk == null) {
+			spinnerMinIvAtk = new JSpinner();
+			spinnerMinIvAtk.setModel(new SpinnerNumberModel(0, 0, 31, 1));
+			spinnerMinIvAtk.addChangeListener(new MinSpinnerChangeListener(spinnerMinIvAtk, self::getSpinnerMaxIvAtk));
+			spinnerMinIvAtk.addChangeListener(self);
+		}
+		return spinnerMinIvAtk;
+	}
+
+	private JSpinner getSpinnerMaxIvAtk() {
+		if (spinnerMaxIvAtk == null) {
+			spinnerMaxIvAtk = new JSpinner();
+			spinnerMaxIvAtk.setModel(new SpinnerNumberModel(31, 0, 31, 1));
+			spinnerMaxIvAtk.addChangeListener(new MaxSpinnerChangeListener(spinnerMaxIvAtk, self::getSpinnerMinIvAtk));
+			spinnerMaxIvAtk.addChangeListener(self);
+		}
+		return spinnerMaxIvAtk;
+	}
+
+	private JSpinner getSpinnerMinIvDef() {
+		if (spinnerMinIvDef == null) {
+			spinnerMinIvDef = new JSpinner();
+			spinnerMinIvDef.setModel(new SpinnerNumberModel(0, 0, 31, 1));
+			spinnerMinIvDef.addChangeListener(new MinSpinnerChangeListener(spinnerMinIvDef, self::getSpinnerMaxIvDef));
+			spinnerMinIvDef.addChangeListener(self);
+		}
+		return spinnerMinIvDef;
+	}
+
+	private JSpinner getSpinnerMaxIvDef() {
+		if (spinnerMaxIvDef == null) {
+			spinnerMaxIvDef = new JSpinner();
+			spinnerMaxIvDef.setModel(new SpinnerNumberModel(31, 0, 31, 1));
+			spinnerMaxIvDef.addChangeListener(new MaxSpinnerChangeListener(spinnerMaxIvDef, self::getSpinnerMinIvDef));
+			spinnerMaxIvDef.addChangeListener(self);
+		}
+		return spinnerMaxIvDef;
+	}
+
+	private JSpinner getSpinnerMinIvSpAtk() {
+		if (spinnerMinIvSpAtk == null) {
+			spinnerMinIvSpAtk = new JSpinner();
+			spinnerMinIvSpAtk.setModel(new SpinnerNumberModel(0, 0, 31, 1));
+			spinnerMinIvSpAtk
+					.addChangeListener(new MinSpinnerChangeListener(spinnerMinIvSpAtk, self::getSpinnerMaxIvSpAtk));
+			spinnerMinIvSpAtk.addChangeListener(self);
+		}
+		return spinnerMinIvSpAtk;
+	}
+
+	private JSpinner getSpinnerMaxIvSpAtk() {
+		if (spinnerMaxIvSpAtk == null) {
+			spinnerMaxIvSpAtk = new JSpinner();
+			spinnerMaxIvSpAtk.setModel(new SpinnerNumberModel(31, 0, 31, 1));
+			spinnerMaxIvSpAtk
+					.addChangeListener(new MaxSpinnerChangeListener(spinnerMaxIvSpAtk, self::getSpinnerMinIvSpAtk));
+			spinnerMaxIvSpAtk.addChangeListener(self);
+		}
+		return spinnerMaxIvSpAtk;
+	}
+
+	private JSpinner getSpinnerMinIvSpDef() {
+		if (spinnerMinIvSpDef == null) {
+			spinnerMinIvSpDef = new JSpinner();
+			spinnerMinIvSpDef.setModel(new SpinnerNumberModel(0, 0, 31, 1));
+			spinnerMinIvSpDef
+					.addChangeListener(new MinSpinnerChangeListener(spinnerMinIvSpDef, self::getSpinnerMaxIvSpDef));
+			spinnerMinIvSpDef.addChangeListener(self);
+		}
+		return spinnerMinIvSpDef;
+	}
+
+	private JSpinner getSpinnerMaxIvSpDef() {
+		if (spinnerMaxIvSpDef == null) {
+			spinnerMaxIvSpDef = new JSpinner();
+			spinnerMaxIvSpDef.setModel(new SpinnerNumberModel(31, 0, 31, 1));
+			spinnerMaxIvSpDef
+					.addChangeListener(new MaxSpinnerChangeListener(spinnerMaxIvSpDef, self::getSpinnerMinIvSpDef));
+			spinnerMaxIvSpDef.addChangeListener(self);
+		}
+		return spinnerMaxIvSpDef;
+	}
+
+	private JSpinner getSpinnerMinIvSpeed() {
+		if (spinnerMinIvSpeed == null) {
+			spinnerMinIvSpeed = new JSpinner();
+			spinnerMinIvSpeed.setModel(new SpinnerNumberModel(0, 0, 31, 1));
+			spinnerMinIvSpeed
+					.addChangeListener(new MinSpinnerChangeListener(spinnerMinIvSpeed, self::getSpinnerMaxIvSpeed));
+			spinnerMinIvSpeed.addChangeListener(self);
+		}
+		return spinnerMinIvSpeed;
+	}
+
+	private JSpinner getSpinnerMaxIvSpeed() {
+		if (spinnerMaxIvSpeed == null) {
+			spinnerMaxIvSpeed = new JSpinner();
+			spinnerMaxIvSpeed.setModel(new SpinnerNumberModel(31, 0, 31, 1));
+			spinnerMaxIvSpeed
+					.addChangeListener(new MaxSpinnerChangeListener(spinnerMaxIvSpeed, self::getSpinnerMinIvSpeed));
+			spinnerMaxIvSpeed.addChangeListener(self);
+		}
+		return spinnerMaxIvSpeed;
+	}
+
 	private AutoWidthSortableJTable<PathDetails> getTablePathDetails() {
 		if (tablePathDetails == null) {
 			tablePathDetails = new AutoWidthSortableJTable<>();
@@ -657,7 +991,7 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 			tablePathDetails.getColumnModel().getColumn(16).setMinWidth(small);
 			tablePathDetails.getColumnModel().getColumn(17).setMinWidth(small);
 			tablePathDetails.getColumnModel().getColumn(18).setMinWidth(small);
-			
+
 			tablePathDetails.getColumnModel().getColumn(1).setMaxWidth(small);
 			tablePathDetails.getColumnModel().getColumn(3).setMaxWidth(small);
 			tablePathDetails.getColumnModel().getColumn(4).setMaxWidth(small);
@@ -675,7 +1009,6 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 			tablePathDetails.getColumnModel().getColumn(17).setMaxWidth(small);
 			tablePathDetails.getColumnModel().getColumn(18).setMaxWidth(small);
 
-
 			tablePathDetails.getColumnModel().getColumn(1).setCellRenderer(centerRenderer);
 			tablePathDetails.getColumnModel().getColumn(3).setCellRenderer(centerRenderer);
 			tablePathDetails.getColumnModel().getColumn(4).setCellRenderer(centerRenderer);
@@ -686,7 +1019,7 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 			tablePathDetails.getColumnModel().getColumn(16).setCellRenderer(centerRenderer);
 			tablePathDetails.getColumnModel().getColumn(17).setCellRenderer(centerRenderer);
 			tablePathDetails.getColumnModel().getColumn(18).setCellRenderer(centerRenderer);
-			
+
 			tablePathDetails.getColumnModel().getColumn(6).setCellRenderer(rightRenderer);
 			tablePathDetails.getColumnModel().getColumn(7).setCellRenderer(rightRenderer);
 			tablePathDetails.getColumnModel().getColumn(8).setCellRenderer(rightRenderer);
@@ -738,6 +1071,18 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 		return spinnerMinimumPathResults;
 	}
 
+	private JButton getBtnResetFilters() {
+		if (btnResetFilters == null) {
+			btnResetFilters = new JButton("Reset Filters");
+			btnResetFilters.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					resetSelectors();
+				}
+			});
+		}
+		return btnResetFilters;
+	}
+
 	private PathDetailsTableModel getTableModel() {
 		if (tableModel == null) {
 			tableModel = new PathDetailsTableModel();
@@ -764,6 +1109,19 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 
 		getSpinnerPathLength().setValue(20);
 		getSpinnerMinimumPathResults().setValue(1);
+
+		getSpinnerMinIvHp().setValue(0);
+		getSpinnerMaxIvHp().setValue(31);
+		getSpinnerMinIvAtk().setValue(0);
+		getSpinnerMaxIvAtk().setValue(31);
+		getSpinnerMinIvDef().setValue(0);
+		getSpinnerMaxIvDef().setValue(31);
+		getSpinnerMinIvSpAtk().setValue(0);
+		getSpinnerMaxIvSpAtk().setValue(31);
+		getSpinnerMinIvSpDef().setValue(0);
+		getSpinnerMaxIvSpDef().setValue(31);
+		getSpinnerMinIvSpeed().setValue(0);
+		getSpinnerMaxIvSpeed().setValue(31);
 
 		Vector<String> species = new Vector<>();
 		species.add("Any");
@@ -831,12 +1189,22 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 				.matchesExpected(comboBox.getModel().getElementAt(comboBox.getSelectedIndex()));
 	}
 
+	private IPredicate getMinBoundFromSpinner(Function<PathDetails, Integer> getIntDetail, JSpinner spinner) {
+		return d -> getIntDetail.apply(d) >= (int) spinner.getValue();
+	}
+
+	private IPredicate getMaxBoundFromSpinner(Function<PathDetails, Integer> getIntDetail, JSpinner spinner) {
+		return d -> getIntDetail.apply(d) <= (int) spinner.getValue();
+	}
+
 	private void updateFilters() {
 		statusFiltering();
 		List<IPredicate> predicates = new ArrayList<>();
+
 		if (getCbSpecies().getSelectedIndex() > 0) {
 			predicates.add(d -> d.getSpecies().equals(getCbSpecies().getSelectedItem()));
 		}
+
 		predicates.add(getPredicateFromCb(PathDetails::getShinyType, getCbShinyType()));
 		predicates.add(getPredicateFromCb(PathDetails::getGender, getCbGender()));
 		predicates.add(getPredicateFromCb(PathDetails::getNature, getCbNature()));
@@ -848,8 +1216,22 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 		predicates.add(getPredicateFromCbBool(PathDetails::isSkittishMultiScaring, getCbMultiScare()));
 		predicates.add(getPredicateFromCbBool(PathDetails::isSkittishAggressive, getCbSkittishAggressive()));
 		predicates.add(getPredicateFromCbBool(PathDetails::isSingleAdvances, getCbSingleAdvances()));
-		predicates.add(d -> d.getFullPathLength() <= (int) getSpinnerPathLength().getValue());
-		predicates.add(d -> d.getPathSpawnCount() >= (int) getSpinnerMinimumPathResults().getValue());
+
+		predicates.add(getMaxBoundFromSpinner(PathDetails::getFullPathLength, getSpinnerPathLength()));
+		predicates.add(getMinBoundFromSpinner(PathDetails::getPathSpawnCount, getSpinnerMinimumPathResults()));
+
+		predicates.add(getMinBoundFromSpinner(PathDetails::getIVHp, getSpinnerMinIvHp()));
+		predicates.add(getMaxBoundFromSpinner(PathDetails::getIVHp, getSpinnerMaxIvHp()));
+		predicates.add(getMinBoundFromSpinner(PathDetails::getIVAtk, getSpinnerMinIvAtk()));
+		predicates.add(getMaxBoundFromSpinner(PathDetails::getIVAtk, getSpinnerMaxIvAtk()));
+		predicates.add(getMinBoundFromSpinner(PathDetails::getIVDef, getSpinnerMinIvDef()));
+		predicates.add(getMaxBoundFromSpinner(PathDetails::getIVDef, getSpinnerMaxIvDef()));
+		predicates.add(getMinBoundFromSpinner(PathDetails::getIVSpAtk, getSpinnerMinIvSpAtk()));
+		predicates.add(getMaxBoundFromSpinner(PathDetails::getIVSpAtk, getSpinnerMaxIvSpAtk()));
+		predicates.add(getMinBoundFromSpinner(PathDetails::getIVSpDef, getSpinnerMinIvSpDef()));
+		predicates.add(getMaxBoundFromSpinner(PathDetails::getIVSpDef, getSpinnerMaxIvSpDef()));
+		predicates.add(getMinBoundFromSpinner(PathDetails::getIVSpeed, getSpinnerMinIvSpeed()));
+		predicates.add(getMaxBoundFromSpinner(PathDetails::getIVSpeed, getSpinnerMaxIvSpeed()));
 
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
