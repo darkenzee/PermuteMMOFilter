@@ -65,6 +65,7 @@ import io.github.darkenzee.PermuteMMOFilter.types.PokemonGender;
 import io.github.darkenzee.PermuteMMOFilter.types.PokemonNature;
 import io.github.darkenzee.PermuteMMOFilter.types.ShinyType;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 
 public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeListener {
 	private static final long serialVersionUID = -2001943701794082933L;
@@ -115,8 +116,6 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 	private JComboBox<AnyYesNo> cbSkittishAggressive;
 	private JComboBox<AnyYesNo> cbSingleAdvances;
 
-	private JSpinner spinnerPathLength;
-	private JSpinner spinnerMinimumPathResults;
 	private JSpinner spinnerMinIvHp;
 	private JSpinner spinnerMaxIvHp;
 	private JSpinner spinnerMinIvAtk;
@@ -129,14 +128,20 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 	private JSpinner spinnerMaxIvSpDef;
 	private JSpinner spinnerMinIvSpeed;
 	private JSpinner spinnerMaxIvSpeed;
+	private JSpinner spinnerPathLength;
+	private JSpinner spinnerMinimumPathResults;
 
+	private JCheckBox chckbxMinResultsMustMatchFilters;
+	
+	private JButton btnResetFilters;
+	
 	private JScrollPane scrollPanePathDetails;
 	private JPanel panelStatus;
 	private AutoWidthSortableJTable<PathDetails> tablePathDetails;
 
 	private List<PathDetails> currentPaths = new ArrayList<>();
 	private PathDetailsTableModel tableModel;
-	private JButton btnResetFilters;
+	
 
 	public PermuteMMOFilter() {
 		initGUI();
@@ -439,11 +444,17 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 		gbc_spinnerMinimumPathResults.gridx = 3;
 		gbc_spinnerMinimumPathResults.gridy = 4;
 		getContentPane().add(getSpinnerMinimumPathResults(), gbc_spinnerMinimumPathResults);
+		GridBagConstraints gbc_chckbxMinResultsMustMatchFilters = new GridBagConstraints();
+		gbc_chckbxMinResultsMustMatchFilters.anchor = GridBagConstraints.WEST;
+		gbc_chckbxMinResultsMustMatchFilters.insets = new Insets(0, 0, 5, 5);
+		gbc_chckbxMinResultsMustMatchFilters.gridx = 4;
+		gbc_chckbxMinResultsMustMatchFilters.gridy = 4;
+		getContentPane().add(getChckbxMinResultsMustMatchFilters(), gbc_chckbxMinResultsMustMatchFilters);
 		GridBagConstraints gbc_btnResetFilters = new GridBagConstraints();
 		gbc_btnResetFilters.anchor = GridBagConstraints.EAST;
-		gbc_btnResetFilters.gridwidth = 9;
+		gbc_btnResetFilters.gridwidth = 7;
 		gbc_btnResetFilters.insets = new Insets(0, 0, 5, 5);
-		gbc_btnResetFilters.gridx = 4;
+		gbc_btnResetFilters.gridx = 6;
 		gbc_btnResetFilters.gridy = 4;
 		getContentPane().add(getBtnResetFilters(), gbc_btnResetFilters);
 		GridBagConstraints gbc_scrollPanePathDetails = new GridBagConstraints();
@@ -1083,6 +1094,15 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 		return btnResetFilters;
 	}
 
+
+	private JCheckBox getChckbxMinResultsMustMatchFilters() {
+		if (chckbxMinResultsMustMatchFilters == null) {
+			chckbxMinResultsMustMatchFilters = new JCheckBox("Must Match Filters");
+			chckbxMinResultsMustMatchFilters.addActionListener(self);
+		}
+		return chckbxMinResultsMustMatchFilters;
+	}
+	
 	private PathDetailsTableModel getTableModel() {
 		if (tableModel == null) {
 			tableModel = new PathDetailsTableModel();
@@ -1122,6 +1142,8 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 		getSpinnerMaxIvSpDef().setValue(31);
 		getSpinnerMinIvSpeed().setValue(0);
 		getSpinnerMaxIvSpeed().setValue(31);
+		
+		getChckbxMinResultsMustMatchFilters().setSelected(false);
 
 		Vector<String> species = new Vector<>();
 		species.add("Any");
@@ -1217,9 +1239,6 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 		predicates.add(getPredicateFromCbBool(PathDetails::isSkittishAggressive, getCbSkittishAggressive()));
 		predicates.add(getPredicateFromCbBool(PathDetails::isSingleAdvances, getCbSingleAdvances()));
 
-		predicates.add(getMaxBoundFromSpinner(PathDetails::getFullPathLength, getSpinnerPathLength()));
-		predicates.add(getMinBoundFromSpinner(PathDetails::getPathSpawnCount, getSpinnerMinimumPathResults()));
-
 		predicates.add(getMinBoundFromSpinner(PathDetails::getIVHp, getSpinnerMinIvHp()));
 		predicates.add(getMaxBoundFromSpinner(PathDetails::getIVHp, getSpinnerMaxIvHp()));
 		predicates.add(getMinBoundFromSpinner(PathDetails::getIVAtk, getSpinnerMinIvAtk()));
@@ -1232,6 +1251,15 @@ public class PermuteMMOFilter extends JFrame implements ActionListener, ChangeLi
 		predicates.add(getMaxBoundFromSpinner(PathDetails::getIVSpDef, getSpinnerMaxIvSpDef()));
 		predicates.add(getMinBoundFromSpinner(PathDetails::getIVSpeed, getSpinnerMinIvSpeed()));
 		predicates.add(getMaxBoundFromSpinner(PathDetails::getIVSpeed, getSpinnerMaxIvSpeed()));
+		
+		predicates.add(getMaxBoundFromSpinner(PathDetails::getFullPathLength, getSpinnerPathLength()));
+		
+		if (getChckbxMinResultsMustMatchFilters().isSelected()) {
+			PredicateFilter subFilter = new PredicateFilter(new ArrayList<>(predicates));
+			predicates.add(d -> d.getPathSpawnCountWithFilters(subFilter) >= (int)getSpinnerMinimumPathResults().getValue());
+		} else {
+			predicates.add(getMinBoundFromSpinner(PathDetails::getPathSpawnCount, getSpinnerMinimumPathResults()));
+		}
 
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override

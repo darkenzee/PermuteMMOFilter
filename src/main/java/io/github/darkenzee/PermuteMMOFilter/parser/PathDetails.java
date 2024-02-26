@@ -10,6 +10,7 @@ import java.util.regex.Pattern;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import io.github.darkenzee.PermuteMMOFilter.predicates.PredicateFilter;
 import io.github.darkenzee.PermuteMMOFilter.types.PokemonGender;
 import io.github.darkenzee.PermuteMMOFilter.types.PokemonNature;
 import io.github.darkenzee.PermuteMMOFilter.types.ShinyType;
@@ -57,7 +58,7 @@ public class PathDetails {
 
 	private PathDetails chainParent;
 	private final List<PathDetails> chainChildren = new ArrayList<>();
-	private int siblingCount = 0;
+	private final List<PathDetails> siblings = new ArrayList<>();
 
 	public PathDetails(String originalText) {
 		this.originalText = originalText;
@@ -393,12 +394,28 @@ public class PathDetails {
 		chainChild.setChainParent(this);
 	}
 
-	public void setSiblingCount(int siblingCount) {
-		this.siblingCount = siblingCount;
+	public void addSibling(PathDetails sibling) {
+		siblings.add(sibling);
 	}
 
 	public int getPathSpawnCount() {
-		return 1 + siblingCount + (getChainParent() != null ? getChainParent().getPathSpawnCount() : 0);
+		return 1 + siblings.size() + (getChainParent() != null ? getChainParent().getPathSpawnCount() : 0);
+	}
+	
+	public int getPathSpawnCountWithFilters(PredicateFilter filter) {
+		int count = 0;
+		if (getChainParent() != null) {
+			count += getChainParent().getPathSpawnCountWithFilters(filter);
+		}
+		if (filter.passesPredicates(this)) {
+			count++;
+		}
+		for (PathDetails sibling : siblings) {
+			if (filter.passesPredicates(sibling)) {
+				count++;
+			}
+		}
+		return count;
 	}
 
 	@Override

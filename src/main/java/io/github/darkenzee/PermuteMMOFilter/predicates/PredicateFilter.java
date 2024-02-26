@@ -23,8 +23,12 @@ public class PredicateFilter {
 		.collect(Collectors.toList());
 	}
 	
+	public boolean passesPredicates(PathDetails details) {
+		return predicates.size() == predicates.stream().filter(p->p.matches(details)).count();
+	}
+	
 	private boolean applyFilter(PathDetails details) {
-		boolean passesPredicates = predicates.size() == predicates.stream().filter(p->p.matches(details)).count();
+		boolean passesPredicates = passesPredicates(details);
 		if (passesPredicates) {
 			return true;
 		}

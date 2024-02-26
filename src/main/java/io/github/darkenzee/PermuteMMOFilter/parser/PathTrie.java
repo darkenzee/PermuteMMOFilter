@@ -48,7 +48,11 @@ public class PathTrie {
 
 	private void generateChainInfo(PathTrie currentChainParent) {
 		for (PathDetails currentDetails : detailsList) {
-			currentDetails.setSiblingCount(detailsList.size() - 1);
+			for (PathDetails siblingDetails : detailsList) {
+				if (currentDetails != siblingDetails) {
+					currentDetails.addSibling(siblingDetails);
+				}
+			}
 		}
 		if (currentChainParent != null && detailsList.size() > 0) {
 			for (PathDetails parentDetails : currentChainParent.detailsList) {
