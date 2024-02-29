@@ -46,4 +46,5 @@ jobs:
         labelColor: '#3d454d'
         message: "${{ steps.test_results.outputs.passed }} passed${{ steps.test_results.outputs.failed > 0 && format(', {0} failed', steps.test_results.outputs.failed) || ''}}${{ steps.test_results.outputs.skipped > 0 && format(', {0} skipped') || ''}}"
         color: ${{ steps.test_results.outputs.conclusion == 'success' && '#32c955' || 'red' }}
+        link: "['${{steps.test_results.outputs.url}}']"
                 
