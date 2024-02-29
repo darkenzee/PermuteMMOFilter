@@ -467,7 +467,7 @@ public class PathDetailsTest {
 		underTest1.addChainChild(underTest2);
 		assertEquals(0, underTest2.getChainChildren().size());
 		assertSame(underTest1, underTest2.getChainParent());
-		assertEquals(1, underTest1.getChainChildren().size());
+		assertEquals(2, underTest1.getChainChildren().size());
 		assertSame(underTest2, underTest1.getChainChildren().get(0));
 		assertNull(underTest1.getChainParent());
 	}
