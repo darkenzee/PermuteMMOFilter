@@ -46,7 +46,7 @@ jobs:
         label: 'Tests'
         labelColor: '#3d454d'
         message: "${{ steps.test_results.outputs.passed }} passed${{ steps.test_results.outputs.failed > 0 && format(', {0} failed', steps.test_results.outputs.failed) || ''}}${{ steps.test_results.outputs.skipped > 0 && format(', {0} skipped', steps.test_results.outputs.skipped) || ''}}"
-        color: ${{ steps.test_results.outputs.conclusion == 'success' && '#32c955' || 'red' }}
+        color: ${{ steps.test_results.outputs.conclusion == 'success' && '#32c955' || '#d63847' }}
 
     - name: Create Test Results Redirect Html
       uses: fjogeleit/http-request-action@v1.15.2
