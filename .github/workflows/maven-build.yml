@@ -55,4 +55,4 @@ jobs:
         url: "https://api.github.com/gists/b2e4dd221203a0d004c7d060849d3e43"
         method: "PATCH"
         customHeaders: '{"Accept": "application/vnd.github+json", "Authorization": "Bearer ${{ secrets.GIST_TOKEN }}", "X-GitHub-Api-Version": "2022-11-28"}'
-        data: '{"description": "Html Redirect to Test Results", "files": {"PermuteMMOFilter-junit-redirect.html":{"content": "<html><head><meta http-equiv=\"refresh\" content=\"0; URL=${{steps.test_results.outputs.url_html}}\"</head></html>"}}}'
+        data: '{"description": "Html Redirect to Test Results", "files": {"PermuteMMOFilter-junit-redirect.html":{"content": "<html><head><meta http-equiv=\"Cache-Control\" content=\"no-store\" /><meta http-equiv=\"refresh\" content=\"0; URL=${{steps.test_results.outputs.url_html}}\"</head></html>"}}}'
