@@ -49,7 +49,7 @@ jobs:
         color: ${{ steps.test_results.outputs.conclusion == 'success' && '#32c955' || 'red' }}
      
     - name: Create Test Results Redirect Html
-      uses: gorgbus/gist-actions@v1.0.0
+      uses: gorgbus/gist-actions@1.0.0
       if: always()
       env:
         GITHUB_TOKEN: ${{ secrets.GIST_TOKEN }}
