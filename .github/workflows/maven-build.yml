@@ -13,14 +13,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    
     - name: Set up JDK 8
       uses: actions/setup-java@v4
       with:
         java-version: '8'
         distribution: 'corretto'
         cache: maven
+    
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    
     - name: 🧪✅❌ Publish Test Report
       uses: dorny/test-reporter@v1.8.0
       if: always()
@@ -29,3 +32,10 @@ jobs:
         path: target/surefire-reports/*.xml
         reporter: java-junit
         fail-on-error: true
+
+    - name: CI Badges
+      uses: GaelGirodon/ci-badges-action@v1.1.0
+      with:
+        gist-id: 1adc6e2e2a100187949bb9fcec235421
+        token: ${{ secrets.GIST_TOKEN }}
+            
