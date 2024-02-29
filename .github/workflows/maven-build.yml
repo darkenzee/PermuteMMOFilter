@@ -24,7 +24,7 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     
-    - name: 🧪✅❌ Publish Test Repor
+    - name: 🧪✅❌ Publish Test Report
       id: test_results
       uses: dorny/test-reporter@v1.8.0
       if: always()
