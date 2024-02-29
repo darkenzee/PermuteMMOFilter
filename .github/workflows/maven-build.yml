@@ -42,6 +42,6 @@ jobs:
         filename: "PermuteMMOFilter-junit.json"
         label: 'Tests'
         labelColor: 'lightgrey'
-        message: "${{ steps.test_results.outputs.passed }} passed"
+        message: "${{ steps.test_results.outputs.passed }} passed${{ steps.test_results.outputs.failed > 0 && join(', ', steps.test_results.outputs.failed, ' failed') || ''}}"
         color: ${{ steps.test_results.outputs.conclusion == 'success' && 'brightgreen' || 'red' }}
                 
