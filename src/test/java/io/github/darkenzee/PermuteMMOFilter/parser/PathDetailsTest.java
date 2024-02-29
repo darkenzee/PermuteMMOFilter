@@ -10,6 +10,7 @@ import java.io.IOException;
 
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
+import org.junit.Ignore;
 
 import io.github.darkenzee.PermuteMMOFilter.types.PokemonGender;
 import io.github.darkenzee.PermuteMMOFilter.types.PokemonNature;
@@ -470,6 +471,17 @@ public class PathDetailsTest {
 		assertEquals(1, underTest1.getChainChildren().size());
 		assertSame(underTest2, underTest1.getChainChildren().get(0));
 		assertNull(underTest1.getChainParent());
+	}
+
+	@Test
+	public void testFailing() {
+		assertTrue(false);
+	}
+
+	@Test
+	@Ignore
+	public void testIgnored() {
+		assertTrue(true);
 	}
 
 }
