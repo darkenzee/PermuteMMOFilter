@@ -47,4 +47,15 @@ jobs:
         labelColor: '#3d454d'
         message: "${{ steps.test_results.outputs.passed }} passed${{ steps.test_results.outputs.failed > 0 && format(', {0} failed', steps.test_results.outputs.failed) || ''}}${{ steps.test_results.outputs.skipped > 0 && format(', {0} skipped') || ''}}"
         color: ${{ steps.test_results.outputs.conclusion == 'success' && '#32c955' || 'red' }}
-                
+     
+    - name: Create Test Results Redirect Html
+      uses: gorgbus/gist-actions@v1.0.0
+      if: always()
+      env:
+        GITHUB_TOKEN: ${{ secrets.GIST_TOKEN }}
+      with:
+        action: "update"
+        gist_id: "b2e4dd221203a0d004c7d060849d3e43"
+        file_name: "PermuteMMOFilter-junit-redirect.html"
+        content: '<html><head><meta http-equiv="refresh" content="0; URL=${{steps.test_results.outputs.url_html}}"</head></html>'
+        
