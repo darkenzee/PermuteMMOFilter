@@ -24,7 +24,8 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     
-    - name: 🧪✅❌ Publish Test Report
+    - name: 🧪✅❌ Publish Test Repor
+      id: test_results
       uses: dorny/test-reporter@v1.8.0
       if: always()
       with:
@@ -33,9 +34,14 @@ jobs:
         reporter: java-junit
         fail-on-error: true
 
-    - name: CI Badges
-      uses: GaelGirodon/ci-badges-action@v1.1.0
+    - name: Create Test Results Badge
+      uses: schneegans/dynamic-badges-action@v1.7.0
       with:
-        gist-id: 1adc6e2e2a100187949bb9fcec235421
-        token: ${{ secrets.GIST_TOKEN }}
-            
+        auth: ${{ secrets.GIST_SECRET }}
+        gistID: "1adc6e2e2a100187949bb9fcec235421"
+        filename: "PermuteMMOFilter-junit.json"
+        label: 'Tests'
+        labelColor: 'lightgrey'
+        message: "${{ steps.test_results.outputs.passed }} passed${{ steps.test_results.outputs.failed > 0 && join(', ', steps.test_results.outputs.failed, ' failed') || ''}}${{ steps.test_results.outputs.skipped > 0 && join(', ', steps.test_results.outputs.skipped, ' skipped') || ''}}"
+        color: ${{ steps.test_results.outputs.conclusion == 'success' && 'brightgreen' || 'red' }}
+                
