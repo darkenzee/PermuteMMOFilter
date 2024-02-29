@@ -41,8 +41,7 @@ jobs:
         gistID: "1adc6e2e2a100187949bb9fcec235421"
         filename: "PermuteMMOFilter-junit.json"
         style: 'plastic'
-        namedLogo: 'jenkins'
-        logoColor: 'white'
+        namedLogo: 'junit5'
         label: 'Tests'
         labelColor: '#3d454d'
         message: "${{ steps.test_results.outputs.passed }} passed${{ steps.test_results.outputs.failed > 0 && format(', {0} failed', steps.test_results.outputs.failed) || ''}}${{ steps.test_results.outputs.skipped > 0 && format(', {0} skipped') || ''}}"
