@@ -60,3 +60,8 @@ The table can be sorted on a particular column by clicking on the headers as fol
 
  
 ![Sorting Example](src/main/resources/screenshots/SortingExample.png "Sorting Example")
+
+## See Also
+
+[Guide to using PermuteMMO bots](https://rotomlabs.net/guide/legends-arceus-outbreak-rng-manipulation)
+[Guide to MultiSpawner permuation method](https://docs.google.com/document/u/2/d/e/2PACX-1vQSpV5XYwVYu5nflyx0fVZdvF1iX4HUz32A_d8Wm79ctEOCrkJRTHEHJjwaou04Spb4CMvCuFMnnrua/pub)
